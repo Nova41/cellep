@@ -1,0 +1,96 @@
+::selection {
+  background: $cl-orange;
+  color: $white;
+  text-shadow: none;
+}
+::-moz-selection{
+  background: $cl-orange;
+  color: $white;
+  text-shadow: none;
+}
+::-webkit-selection{
+  background: $cl-orange;
+  color: $white;
+  text-shadow: none;
+}
+
+/*
+::-webkit-input-placeholder { color: $white; font-style: italic; }
+:-moz-placeholder           { color: $white; font-style: italic; }
+::-moz-placeholder          { color: $white; font-style: italic; }
+:-ms-input-placeholder      { color: $white; font-style: italic; }
+*/
+
+::-webkit-scrollbar {
+   -webkit-appearance: none;
+   width: $bsu*0.75;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 0;
+   background-color: $ui;
+}
+
+
+// .box--area
+
+$i: 1;
+@each $area in $areas {
+	
+	.box--#{$area} {
+		*::-webkit-scrollbar-thumb {
+      @extend %ui-#{$area};
+    }
+	}
+	
+	$i: $i + 1;
+}
+
+
+.page-aside {
+    &::-webkit-scrollbar-thumb {
+       background-color: $cl-lt_blue;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+@include media-query('lap-and-up') {
+  .nowrap { 
+    white-space: nowrap; 
+  }
+}
+
+
+%bg-para-mim { background-color: $bg-para-mim !important; }
+%ui-para-mim { background-color: $ui-para-mim !important; }
+%sec-para-mim { background-color: $sec-para-mim !important; }
+%bg-para-minha-familia { background-color: $bg-para-minha-familia !important; }
+%ui-para-minha-familia { background-color: $ui-para-minha-familia !important; }
+%sec-para-minha-familia { background-color: $sec-para-minha-familia !important; }
+%bg-para-minha-empresa { background-color: $bg-para-minha-empresa !important; }
+%ui-para-minha-empresa { background-color: $ui-para-minha-empresa !important; }
+%sec-para-minha-empresa { background-color: $sec-para-minha-empresa !important; }
+%bg-para-minha-escola { background-color: $bg-para-minha-escola !important; }
+%ui-para-minha-escola { background-color: $ui-para-minha-escola !important; }
+%sec-para-minha-escola { background-color: $sec-para-minha-escola !important; }
+%bg-agende-sua-visita { background-color: $bg-agende-sua-visita !important; }
+%ui-agende-sua-visita { background-color: $ui-agende-sua-visita !important; }
+%bg-institucional { background-color: $bg-institucional !important; }
+%ui-institucional { background-color: $ui-institucional !important; }
+
+%corte-para-mim { border-bottom-color: $bg-para-mim !important; }
+%corte-para-minha-familia { border-bottom-color: $bg-para-minha-familia !important; }
+%corte-para-minha-empresa { border-bottom-color: $bg-para-minha-empresa !important; }
+%corte-para-minha-escola { border-bottom-color: $bg-para-minha-escola !important; }
+%corte-agende-sua-visita { border-bottom-color: $bg-agende-sua-visita !important; }
+%corte-institucional { border-bottom-color: $bg-institucional !important; }

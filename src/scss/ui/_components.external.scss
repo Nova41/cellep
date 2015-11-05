@@ -1,0 +1,48 @@
+#wpmem_reg, 
+#wpmem_login {
+  label {
+    float: left;
+    clear: both;
+  }
+  
+  .div_text,
+  .button_div {
+    float: right;
+    margin-bottom: $baseline*3;
+  }
+  
+  
+  .link-text{clear: both;}
+  .link-text a{color:$white; font-weight:normal;}
+  
+  .button_div { 
+    clear: both;
+    @include btn();
+    
+    .buttons {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+    .box--para-mim & .button_div           { @include btn($form-btns, $bg-para-mim); }
+    .box--para-minha-familia & .button_div { @include btn($form-btns, $bg-para-minha-familia); }
+    .box--para-minha-empresa & .button_div { @include btn($form-btns, $bg-para-minha-empresa); }
+    .box--para-minha-escola & .button_div  { @include btn($form-btns, $bg-para-minha-escola); }
+    .box--agende-sua-visita & .button_div  { @include btn($form-btns, $bg-agende-sua-visita); }
+    .box--institucional & .button_div      { @include btn($form-btns, $bg-institucional); }
+    
+  fieldset {
+    padding: 0;
+    border: none;
+  }
+  
+  .req-text,
+  legend { @extend .hidden; }
+}
+
+.form-bottom {
+  float:right;
+}
+
+.clear{clear:both;}

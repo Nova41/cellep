@@ -1,0 +1,150 @@
+html,
+body,
+p {
+  font-family: $base-font-family;
+  @include font-size($base-font-size);
+}
+
+.content p { @include font-size($h6-size); }
+
+a {
+  color: $ui;
+  text-decoration: none;
+
+  .box--para-mim &            { color: $ui-para-mim; }
+  .box--para-minha-familia &  { color: $ui-para-minha-familia; }
+  .box--para-minha-empresa &  { color: $ui-para-minha-empresa; }
+  .box--para-minha-escola &   { color: $ui-para-minha-escola; }
+  .box--agende-sua-visita &   { color: $ui-agende-sua-visita; }
+  .box--institucional &       { color: $ui-institucional; }
+
+  .infobox &,
+  .coursebox & {
+    color: $white;
+    border-bottom: 1px solid;
+    font-weight: $semibold;
+    display: inline-block;
+    line-height: 1.5;
+    
+    @include media-query('desk') {
+			&[href^="tel:"] {
+				cursor: text;
+				border: none;
+			}
+		}
+  }
+}
+
+@include headings(1,6) {
+  font-family: $headings-font;
+  text-transform: uppercase;
+  color: $white;
+  line-height: 1.2;
+  text-align: left;
+  margin: $bsu 0 $bsu--small;
+}
+
+  h3 {
+    @include font-size($h4-size, 1.3);
+    margin-top: $bsu--large;
+  }
+
+.infobox__title { margin-top: 0; }
+
+.box__title,
+.page-title {
+		font-weight: $bold;
+	  text-transform: uppercase;
+	  margin: 0;
+	  margin-bottom: $bsu;
+	  @include font-size($h3-size, 1);
+
+	  @include media-query('desk') {
+	  	line-height: .85;
+	  }
+
+	  @include media-query('wide') {
+	  	@include font-size($h1-size, .85);
+	  }
+
+		span {
+		  font-weight: $light;
+		  display: block;
+
+		  @include media-query('wide') {
+		  	font-weight: $thin;
+		  }
+		}
+	}
+
+.part-title,
+.part-subtitle {
+  margin-top: $bsu;
+  
+  &:first-child { margin-top: 0; }
+}
+
+.part-title { @include font-size($h4-size, 1.2); }
+.part-subtitle { @include font-size($h5-size, 1.2); }
+
+.page-title {
+  font-weight: $bold; 
+  text-transform: uppercase;
+  margin-bottom: $bsu;
+  margin-top: 0;
+  @include size(100%, inherit);
+  @include corte($cl-lt_blue, $bg-institucional, $bsu*2, halve($bsu));
+  
+  @include media-query('desk') {
+    margin-bottom: 0;
+    padding-right: halve($bsu);
+    
+    align-items: stretch;
+	  
+	  .no-flexbox & {
+	  	display: inline-block;
+	  	height: 100%;
+	  }
+  }
+	
+	.clip span {
+	  font-weight:$thin;
+	  display: block;
+	}
+	
+	.timeline & {
+	  padding-bottom: $bsu--large;
+	  margin-bottom: $bsu--large;
+	}
+}
+  
+.part-title,
+.title-units {
+  margin-bottom: $bsu;
+}
+
+.content .special { 
+  font-weight: $semibold;
+  margin: $bsu--large 0 0 0;
+}
+
+ul {
+  margin-bottom: $bsu;
+}
+
+ul, li {
+  list-style: disc;
+  padding-left: $bsu;
+  
+  form & {
+    padding: 0;
+    list-style: disc;
+  }
+}
+
+  li {
+      padding-left: 0;
+    @include media-query('wide') {
+      padding-left: $bsu--small;
+    }
+  }

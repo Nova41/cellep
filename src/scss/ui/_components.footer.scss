@@ -1,0 +1,35 @@
+.footer {
+  padding: $bsu;
+  width: 100%;
+  overflow: hidden;
+  
+  @include media-query('desk') {
+    padding: $bsu $bsu--large $bsu/4;
+  }
+  
+  @include media-query('wide') {
+    padding: $bsu*2 $bsu*3;
+  }
+}
+
+.logo-cambridge {
+  float: left;
+  
+  @include media-query('desk') {
+    padding-top: $bsu;
+  }
+  
+  img {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    
+    @include media-query('lap-and-up') {
+      margin: 0;
+    }
+    
+    @include media-query('wide') {
+      width: 90%;
+    }
+  }
+}

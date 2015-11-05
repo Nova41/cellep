@@ -1,45 +1,117 @@
-//----------------------------------*\
-// SCSS MIXINS
-//----------------------------------*/
+/*------------------------------------*\
+    $APP GENERAL SETTINGS
+\*------------------------------------*/
 
-@import 'mixins/_position.scss';
+@import 'ui/_settings.colors.scss';
+@import '_settings.vars.scss';
 
-//----------------------------------*\
-// CONFIG MODULES
-//----------------------------------*/
 
-// Config modules
-@import 'modules/_vars.scss';
-@import 'modules/_clearfix.scss';
-@import 'modules/_defaults.scss';
-@import 'modules/_normalize.scss';
-//----------------------------------*\
-// PARTIALS
-//----------------------------------*/
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
 
-@import 'partials/_header.scss';
-@import 'partials/_nav.scss';
-@import 'partials/_sidebar.scss';
-@import 'partials/_main.scss';
-@import 'partials/_footer.scss';
+@import 'framework/_tools.functions.scss';
 
-//----------------------------------*\
-// OBJECTS & MODULES
-//----------------------------------*/
+/* FRAMEWORK SETTINGS */
 
-@import 'modules/_buttons.scss';
-@import 'modules/_inputs.scss';
-@import 'modules/_lists.scss';
-@import 'modules/_typography.scss';
-@import 'modules/_misc.scss';
-@import 'modules/_app.scss';
+@import 'framework/_settings.defaults.scss';
+@import 'framework/_settings.responsive.scss';
 
-// Enhancement modules
-@import 'modules/_breakpoints.scss';
-@import 'modules/_print.scss';
 
-//----------------------------------*\
-// VENDOR
-//----------------------------------*/
+/* FRAMEWORK TOOLS */
 
-@import 'vendor/_external.scss';
+@import 'framework/_tools.mixins.scss';
+@import 'framework/_tools.responsive.scss';
+// @import 'framework/_tools.grid-generator.scss';
+
+
+/* FRAMEWORK GENERIC */
+
+@import 'framework/_generic.normalize.scss';
+@import 'framework/_generic.reset.scss';
+@import 'framework/_generic.box-sizing.scss';
+
+
+/* FRAMEWORK BASE */
+
+@import 'framework/_base.code.scss';
+@import 'framework/_base.forms.scss';
+
+
+@import 'framework/_base.headings.scss';
+@import 'framework/_base.images.scss';
+@import 'framework/_base.lists.scss';
+@import 'framework/_base.page.scss';
+@import 'framework/_base.paragraphs.scss';
+
+
+/* FRAMEWORK OBJECTS */
+
+// $enable-box--flush:   true;
+// $enable-box--tiny:    true;
+// $enable-box--small:   true;
+// $enable-box--large:   true;
+// $enable-box--huge:    true;
+@import 'framework/_object.box.scss';
+
+// $enable-media--tiny:          true;
+// $enable-media--small:         true;
+// $enable-media--large:         true;
+// $enable-media--huge:          true;
+// $enable-media--rev:           true;
+// $enable-media--flush:         true;
+// $enable-media--responsive:    true;
+// $media-collapse-at:           720px;
+@import 'framework/_object.media.scss';
+
+// $enable-list-inline--delimited:   true;
+// $list-inline-delimit-character:   "|\00A0";
+@import 'framework/_object.list-inline.scss';
+
+
+/* FRAMEWORK TRUMPS */
+
+@import 'framework/_trumps.clearfix.scss';
+@import 'framework/_trumps.print.scss';
+
+
+
+/*------------------------------------*\
+    $UI
+\*------------------------------------*/
+
+
+/* UI TOOLS */
+
+@import 'ui/_tools.mixins.scss';
+
+
+/* UI BASE */
+
+@import 'ui/_base.extras.scss';
+@import 'ui/_base.fonts.scss';
+@import 'ui/_base.typography.scss';
+@import 'ui/_base.forms.scss';
+
+
+/* UI COMPONENTS */
+
+@import 'ui/_components.app.scss';
+@import 'ui/_components.header.scss';
+@import 'ui/_components.footer.scss';
+@import 'ui/_components.nav-mobile.scss';
+@import 'ui/_components.nav.scss';
+@import 'ui/_components.icons.scss';
+@import 'ui/_components.main.scss';
+@import 'ui/_components.sidebar.scss';
+@import 'ui/_components.external.scss';
+
+/* UI TRUMPS */
+
+/* UI OBJECTS */
+
+
+
+/* UI PLUGINS */
+
+

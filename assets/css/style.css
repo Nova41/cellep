@@ -1,32 +1,48 @@
-.clear:before, .clear:after {
-  content: ' ';
-  display: table; }
-
-.clear {
-  *zoom: 1; }
-  .clear:after {
-    clear: both; }
-
-* {
-  box-sizing: border-box;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility; }
-
-html {
-  font-size: 62.5%;
-  background: -webkit-radial-gradient(center, ellipse, #F7F6F0 0, #c2ba8c 80%, #b0a66b 100%);
-  background: radial-gradient(ellipse at center, #F7F6F0 0, #c2ba8c 80%, #b0a66b 100%); }
-
-body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #444;
-  -webkit-transition: all 0.4s 0.3s ease-in;
-          transition: all 0.4s 0.3s ease-in; }
-
-body, html {
-  min-height: 100vh;
-  overflow: hidden; }
-
+@charset "UTF-8";
+/*------------------------------------*\
+    $APP GENERAL SETTINGS
+\*------------------------------------*/
+/*------------------------------------*\
+    $BASE COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+    $PALLETA
+\*------------------------------------*/
+/*------------------------------------*\
+    $SECTIONS
+\*------------------------------------*/
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/**
+ * Place any variables that should override holy-grail.css’ defaults here.
+ */
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/* FRAMEWORK SETTINGS */
+/*!
+ * based on inuitcss, by @csswizardry
+ *
+ * github.com/inuitcss | inuitcss.com
+ */
+/* FRAMEWORK TOOLS */
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include headings(1, 3){
+           color:#BADA55;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+/* FRAMEWORK GENERIC */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -346,60 +362,502 @@ table {
 td, th {
   padding: 0; }
 
-.logo {
-  margin: -58px 0 0 -100px;
-  position: absolute;
-  top: 50%;
-  left: 50%; }
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
+/**
+ * As well as using normalize.css, it is often advantageous to remove all
+ * margins from certain elements.
+ */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
+  margin: 0;
+  padding: 0; }
 
-.nav ul {
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title], dfn[title] {
+  cursor: help; }
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u, ins {
+  text-decoration: none; }
+
+/**
+ * Apply faux underlines to inserted text via `border-bottom`.
+ */
+ins {
+  border-bottom: 1px solid; }
+
+/*------------------------------------*\
+    #BOX-SIZING
+\*------------------------------------*/
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* FRAMEWORK BASE */
+/*------------------------------------*\
+    $CODE
+\*------------------------------------*/
+/**
+ * Use an explicit font stack to ensure browsers render correct `line-height`.
+ */
+pre {
+  overflow: auto; }
+
+pre mark {
+  background: none;
+  border-bottom: 1px solid;
+  color: inherit; }
+
+/**
+ * Add comments to your code examples, e.g.:
+ *
+   <code>&lt;/div&gt;<span class=code-comment>&lt;!-- /wrapper --&gt;</span></code>
+ *
+ */
+.code-comment {
+  /**
+     * Override this setting in your theme stylesheet
+     */
+  opacity: 0.75;
+  filter: alpha(opacity=75); }
+
+/**
+ * You can add line numbers to your code examples but be warned, it requires
+ * some pretty funky looking markup, e.g.:
+ *
+   <ol class=line-numbers>
+       <li><code>.nav{</code></li>
+       <li><code>    list-style:none;</code></li>
+       <li><code>    margin-left:0;</code></li>
+       <li><code>}</code></li>
+       <li><code>    .nav > li,</code></li>
+       <li><code>        .nav > li > a{</code></li>
+       <li><code>            display:inline-block;</code></li>
+       <li><code>           *display:inline-block;</code></li>
+       <li><code>            zoom:1;</code></li>
+       <li><code>        }</code></li>
+   </ol>
+ *
+ * 1. Make the list look like code.
+ * 2. Give the list flush numbers with a leading zero.
+ * 3. Make sure lines of code don’t wrap.
+ * 4. Give the code form by forcing the `code` to honour white-space.
+ */
+.line-numbers {
+  font-family: monospace, serif;
+  /* [1] */
+  list-style: decimal-leading-zero inside;
+  /* [2] */
+  white-space: nowrap;
+  /* [3] */
+  overflow: auto;
+  /* [3] */
+  margin-left: 0; }
+
+.line-numbers code {
+  white-space: pre;
+  /* [4] */ }
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/**
+ *
+ * Demo: jsfiddle.net/inuitcss/MhHHU
+ *
+ */
+fieldset {
+  padding: 20px; }
+
+/**
+ * Text inputs
+ *
+ * Instead of a `[type]` selector for each kind of form input, we just use a
+ * class to target any/every one, e.g.:
+   <input type=text class=text-input>
+   <input type=email class=text-input>
+   <input type=password class=text-input>
+ *
+ */
+.text-input, textarea {
+  /**
+     * Style these via your theme stylesheet.
+     */ }
+
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+   <ul class=form-fields>
+       <li>
+           <label />
+           <input />
+       </li>
+       <li>
+           <label />
+           <select />
+       </li>
+       <li>
+           <label />
+           <input />
+       </li>
+   </ul>
+ *
+ */
+.form-fields {
+  list-style: none;
+  margin: 0; }
+
+.form-fields > li:last-child {
+  margin-bottom: 0; }
+
+/**
+ * Labels
+ *
+ * Define a `.label` class as well as a `label` element. This means we can apply
+ * label-like styling to meta-labels for groups of options where a `label`
+ * element is not suitable, e.g.:
+ *
+   <li>
+       <span class=label>Select an option below:</span>
+       <ul class="multi-list  four-cols">
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+       </ul>
+   </li>
+ *
+ */
+label, .label {
+  display: block; }
+
+/**
+     * Extra help text in `label`s, e.g.:
+     *
+       <label>Card number <small class=additional>No spaces</small></label>
+     *
+     */
+.additional {
+  display: block;
+  font-weight: normal; }
+
+/*
+ * Groups of checkboxes and radios, e.g.:
+ *
+   <li>
+       <ul class=check-list>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+       </ul>
+   </li>
+ *
+ */
+.check-list {
+  list-style: none;
+  margin: 0; }
+
+/*
+     * Labels in check-lists
+     */
+.check-label, .check-list label, .check-list .label {
+  display: inline-block; }
+
+/**
+ * Spoken forms are for forms that read like spoken word, e.g.:
+ *
+   <li class=spoken-form>
+       Hello, my <label for=spoken-name>name</label> is
+       <input type=text class=text-input id=spoken-name>. My home
+       <label for=country>country</label> is
+       <select id=country>
+           <option>UK</option>
+           <option>US</option>
+           <option>Other</option>
+       </select>
+   </li>
+ *
+ */
+.spoken-form label {
+  display: inline-block;
+  font: inherit; }
+
+/**
+ * Extra help text displayed after a field when that field is in focus, e.g.:
+ *
+   <label for=email>Email:</label>
+   <input type=email class=text-input id=email>
+   <small class=extra-help>.edu emails only</small>
+ *
+ * We leave the help text in the document flow and merely set it to
+ * `visibility:hidden;`. This means that it won’t interfere with anything once
+ * it reappears.
+ *
+ */
+/*small*/
+.extra-help {
+  display: inline-block;
+  visibility: hidden; }
+
+.text-input:active + .extra-help, .text-input:focus + .extra-help {
+  visibility: visible; }
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+h1, .alpha {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.5; }
+
+h2, .beta {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.6; }
+
+h3, .gamma {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1; }
+
+h4, .delta {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+h5, .epsilon {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333; }
+
+h6, .zeta {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+
+/**
+ * Heading groups and generic any-heading class.
+ * To target any heading of any level simply apply a class of `.hN`, e.g.:
+ *
+   <hgroup>
+       <h1 class=hN>holy-grail.css</h1>
+       <h2 class=hN>Best. Framework. Ever!</h2>
+   </hgroup>
+ *
+ */
+hgroup .hN {
+  margin-bottom: 0; }
+
+/**
+ * A series of classes for setting massive type; for use in heroes, mastheads,
+ * promos, etc.
+ */
+.giga {
+  font-size: 120px;
+  font-size: 7.5rem;
+  line-height: 1; }
+
+.mega {
+  font-size: 72px;
+  font-size: 4.5rem;
+  line-height: 1; }
+
+.kilo {
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1; }
+
+/*------------------------------------*\
+    #IMAGES
+\*------------------------------------*/
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */ }
+
+/**
+ * 1. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ *    to remove the effects.
+ * 2. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+.gm-style img, img[width], img[height] {
+  /* [2] */
+  max-width: none; }
+
+/*------------------------------------*\
+    $LISTS
+\*------------------------------------*/
+/**
+ * Remove vertical spacing from nested lists.
+ */
+li > ul, li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Have a numbered `ul` without the semantics implied by using an `ol`.
+ */
+/*ul*/
+.numbered-list {
+  list-style-type: decimal; }
+
+/*------------------------------------*\
+    #PAGE
+\*------------------------------------*/
+/**
+ * High-, page-level styling.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Prevent certain mobile browsers from automatically zooming fonts.
+ * 5. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* [1] */
+  background-color: #172833;
+  color: #fff;
+  overflow-y: scroll;
+  /* [2] */
+  min-height: 100%;
+  /* [3] */
+  -webkit-text-size-adjust: 100%;
+  /* [4] */
+  -ms-text-size-adjust: 100%;
+  /* [4] */
+  -moz-osx-font-smoothing: grayscale;
+  /* [5] */
+  -webkit-font-smoothing: antialiased;
+  /* [5] */ }
+
+/*------------------------------------*\
+    $PARAGRAPHS
+\*------------------------------------*/
+/**
+ * The `.lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger.
+ */
+.lede, .lead {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333; }
+
+/* FRAMEWORK OBJECTS */
+/*------------------------------------*\
+    #BOX
+\*------------------------------------*/
+/**
+ * The box object simply boxes off content.
+ */
+/**
+ * 1. So we can apply the `.box` class to naturally-inline elements.
+ */
+.box {
+  display: block;
+  /* [1] */
+  padding: 20px; }
+  .box > :last-child {
+    margin-bottom: 0; }
+
+/*------------------------------------*\
+    #MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+.media {
+  display: block; }
+
+.media__img {
+  float: left;
+  margin-right: 20px; }
+  .media__img > img {
+    display: block; }
+
+.media__body {
+  overflow: hidden;
+  display: block; }
+  .media__body, .media__body > :last-child {
+    margin-bottom: 0; }
+
+/*------------------------------------*\
+    #LIST-INLINE
+\*------------------------------------*/
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+.list-inline {
+  margin: 0;
+  padding: 0;
   list-style: none; }
+  .list-inline > li {
+    display: inline-block; }
 
-@font-face {
-  font-family: 'Font-Name';
-  src: url('../fonts/font-name.eot');
-  src: url('../fonts/font-name.eot?#iefix') format('embedded-opentype'), url('../fonts/font-name.woff') format('woff'), url('../fonts/font-name.ttf') format('truetype'), url('../fonts/font-name.svg#font-name') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-::-moz-selection {
-  background: #333;
-  color: #fff;
-  text-shadow: none; }
-
-::selection {
-  background: #333;
-  color: #fff;
-  text-shadow: none; }
-
-::-moz-selection {
-  background: #333;
-  color: #fff;
-  text-shadow: none; }
-
-::-webkit-selection {
-  background: #333;
-  color: #fff;
-  text-shadow: none; }
-
-@media only screen and (min-width: 320px) { }
-
-@media only screen and (min-width: 480px) { }
-
-@media only screen and (min-width: 768px) { }
-
-@media only screen and (min-width: 1024px) { }
-
-@media only screen and (min-width: 1140px) { }
-
-@media only screen and (min-width: 1280px) { }
-
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { }
+/* FRAMEWORK TRUMPS */
+/*------------------------------------*\
+    #CLEARFIX
+\*------------------------------------*/
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
+ * over and over in your markup.
+ */
+.clearfix:after, .box:after, .media:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 @media print {
-  @page {
-    margin: 0.5cm; }
-
   * {
     background: transparent !important;
     color: #000 !important;
@@ -422,8 +880,3925 @@ td, th {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
+  @page {
+    margin: 0.5cm; }
+
   p, h2, h3 {
     orphans: 3;
     widows: 3; }
   h2, h3 {
     page-break-after: avoid; } }
+
+/*------------------------------------*\
+    $UI
+\*------------------------------------*/
+/* UI TOOLS */
+.grid__item, .grid-tiles__item, .grid-externo__item, .single .page-header, .page .page-header, .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid, .single .content-grid, .page .content-grid, .grid-interno__item, .infobox-grid {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  box-sizing: border-box; }
+
+.wpcf7-form-control-wrap, .div_text, .btn, .wpcf7-validation-errors, .wpcf7-mail-sent-ok, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a, .corte {
+  display: inline-block;
+  outline: none;
+  position: relative; }
+  .wpcf7-form-control-wrap::after, .div_text::after, .btn::after, .wpcf7-validation-errors::after, .wpcf7-mail-sent-ok::after, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after, .corte::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -2px;
+    bottom: -2px; }
+
+.wpcf7-form-control-wrap, .div_text, .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text, .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text, .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text, .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text, .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text, .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text, .click-to-call__form .wpcf7-form-control-wrap, .click-to-call__form .div_text, .form__register .wpcf7-form-control-wrap {
+  overflow: hidden; }
+  .wpcf7-form-control-wrap::before, .div_text::before, .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before, .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before, .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before, .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before, .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before, .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before, .click-to-call__form .wpcf7-form-control-wrap::before, .click-to-call__form .div_text::before, .form__register .wpcf7-form-control-wrap::before {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0; }
+  .wpcf7-form-control-wrap > input, .div_text > input, .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .div_text > input, .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .div_text > input, .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .div_text > input, .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .div_text > input, .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .div_text > input, .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .div_text > input, .click-to-call__form .wpcf7-form-control-wrap > input, .click-to-call__form .div_text > input, .form__register .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea, .div_text > textarea, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .div_text > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .div_text > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .div_text > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .div_text > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .div_text > textarea, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .div_text > textarea, .click-to-call__form .wpcf7-form-control-wrap > textarea, .click-to-call__form .div_text > textarea, .form__register .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select, .div_text > select, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > select, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > select, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > select, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > select, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > select, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > select, .click-to-call__form .wpcf7-form-control-wrap > select, .click-to-call__form .div_text > select, .form__register .wpcf7-form-control-wrap > select {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: none; }
+
+/* UI BASE */
+::-moz-selection {
+  background: #F58229;
+  color: #fff;
+  text-shadow: none; }
+::selection {
+  background: #F58229;
+  color: #fff;
+  text-shadow: none; }
+
+::-moz-selection {
+  background: #F58229;
+  color: #fff;
+  text-shadow: none; }
+
+::-webkit-selection {
+  background: #F58229;
+  color: #fff;
+  text-shadow: none; }
+
+/*
+::-webkit-input-placeholder { color: $white; font-style: italic; }
+:-moz-placeholder           { color: $white; font-style: italic; }
+::-moz-placeholder          { color: $white; font-style: italic; }
+:-ms-input-placeholder      { color: $white; font-style: italic; }
+*/
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 15px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: #F58229; }
+
+.page-aside::-webkit-scrollbar-thumb {
+  background-color: #00BBCE; }
+
+.hidden, #wpmem_reg .req-text, #wpmem_reg legend, #wpmem_login .req-text, #wpmem_login legend {
+  display: none !important; }
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important; }
+
+@media screen and (min-width: 768px) {
+  .nowrap {
+    white-space: nowrap; } }
+
+.box--para-mim, .box--para-mim .box__header, .s-para-mim .box--para-mim {
+  background-color: #F58229 !important; }
+
+.box--para-mim *::-webkit-scrollbar-thumb {
+  background-color: #C9243A !important; }
+
+.box--para-minha-familia, .box--para-minha-familia .box__header, .s-para-minha-familia .box--para-minha-familia {
+  background-color: #0095DA !important; }
+
+.box--para-minha-familia *::-webkit-scrollbar-thumb {
+  background-color: #5C2D91 !important; }
+
+.box--para-minha-empresa, .box--para-minha-empresa .box__header, .s-para-minha-empresa .box--para-minha-empresa {
+  background-color: #942977 !important; }
+
+.box--para-minha-empresa *::-webkit-scrollbar-thumb {
+  background-color: #00BBCE !important; }
+
+.box--para-minha-escola, .box--para-minha-escola .box__header, .s-para-minha-escola .box--para-minha-escola {
+  background-color: #2A2A86 !important; }
+
+.box--para-minha-escola *::-webkit-scrollbar-thumb {
+  background-color: #0095DA !important; }
+
+.box--agende-sua-visita, .box--agende-sua-visita .box__header, .s-agende-sua-visita .box--agende-sua-visita {
+  background-color: #C9243A !important; }
+
+.box--agende-sua-visita *::-webkit-scrollbar-thumb {
+  background-color: #EF4066 !important; }
+
+.box--institucional, .box--institucional .box__header, .s-institucional .box--institucional {
+  background-color: #5C2D91 !important; }
+
+.box--institucional *::-webkit-scrollbar-thumb {
+  background-color: #F58229 !important; }
+
+.s-para-mim .box--para-mim .box__header::after {
+  border-bottom-color: #F58229 !important; }
+
+.s-para-minha-familia .box--para-minha-familia .box__header::after {
+  border-bottom-color: #0095DA !important; }
+
+.s-para-minha-empresa .box--para-minha-empresa .box__header::after {
+  border-bottom-color: #942977 !important; }
+
+.s-para-minha-escola .box--para-minha-escola .box__header::after {
+  border-bottom-color: #2A2A86 !important; }
+
+.s-agende-sua-visita .box--agende-sua-visita .box__header::after {
+  border-bottom-color: #C9243A !important; }
+
+.s-institucional .box--institucional .box__header::after {
+  border-bottom-color: #5C2D91 !important; }
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-light.eot');
+  src: url('../fonts/hurme-geometric-light.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-light.woff') format('woff'), url('../fonts/hurme-geometric-light.ttf') format('truetype'), url('../fonts/hurme-geometric-light.svg#hurme-geometric') format('svg');
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-regular.eot');
+  src: url('../fonts/hurme-geometric-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-regular.woff') format('woff'), url('../fonts/hurme-geometric-regular.ttf') format('truetype'), url('../fonts/hurme-geometric-regular.svg#hurme-geometric') format('svg');
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-bold.eot');
+  src: url('../fonts/hurme-geometric-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-bold.woff') format('woff'), url('../fonts/hurme-geometric-bold.ttf') format('truetype'), url('../fonts/hurme-geometric-bold.svg#hurme-geometric') format('svg');
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-black.eot');
+  src: url('../fonts/hurme-geometric-black.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-black.woff') format('woff'), url('../fonts/hurme-geometric-black.ttf') format('truetype'), url('../fonts/hurme-geometric-black.svg#hurme-geometric') format('svg');
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-semibold.eot');
+  src: url('../fonts/hurme-geometric-semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-semibold.woff') format('woff'), url('../fonts/hurme-geometric-semibold.ttf') format('truetype'), url('../fonts/hurme-geometric-semibold.svg#hurme-geometric') format('svg');
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hurme geometric';
+  src: url('../fonts/hurme-geometric-thin.eot');
+  src: url('../fonts/hurme-geometric-thin.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-thin.woff') format('woff'), url('../fonts/hurme-geometric-thin.ttf') format('truetype'), url('../fonts/hurme-geometric-thin.svg#hurme-geometric') format('svg');
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'roihu';
+  src: url('../fonts/roihu-bold.eot');
+  src: url('../fonts/roihu-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/roihu-bold.woff') format('woff'), url('../fonts/roihu-bold.ttf') format('truetype'), url('../fonts/roihu-bold.svg#roihu-bold') format('svg');
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'roihu';
+  src: url('../fonts/roihu-medium.eot');
+  src: url('../fonts/roihu-medium.eot?#iefix') format('embedded-opentype'), url('../fonts/roihu-medium.woff') format('woff'), url('../fonts/roihu-medium.ttf') format('truetype'), url('../fonts/roihu-medium.svg#roihu-medium') format('svg');
+  font-weight: 400;
+  font-style: normal; }
+
+html, body, p {
+  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+.content p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+
+a {
+  color: #F58229;
+  text-decoration: none; }
+  .box--para-mim a {
+    color: #C9243A; }
+  .box--para-minha-familia a {
+    color: #5C2D91; }
+  .box--para-minha-empresa a {
+    color: #00BBCE; }
+  .box--para-minha-escola a {
+    color: #0095DA; }
+  .box--agende-sua-visita a {
+    color: #EF4066; }
+  .box--institucional a {
+    color: #F58229; }
+  .infobox a, .coursebox a {
+    color: #fff;
+    border-bottom: 1px solid;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 1.5; }
+    @media screen and (min-width: 1025px) {
+      .infobox a[href^="tel:"], .coursebox a[href^="tel:"] {
+        cursor: text;
+        border: none; } }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+  text-align: left;
+  margin: 20px 0 10px; }
+
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-top: 40px; }
+
+.infobox__title {
+  margin-top: 0; }
+
+.box__title, .page-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1; }
+  @media screen and (min-width: 1025px) {
+    .box__title, .page-title {
+      line-height: .85; } }
+  @media screen and (min-width: 1500px) {
+    .box__title, .page-title {
+      font-size: 32px;
+      font-size: 2rem;
+      line-height: 0.85; } }
+  .box__title span, .page-title span {
+    font-weight: 300;
+    display: block; }
+    @media screen and (min-width: 1500px) {
+      .box__title span, .page-title span {
+        font-weight: 100; } }
+
+.part-title, .part-subtitle {
+  margin-top: 20px; }
+  .part-title:first-child, .part-subtitle:first-child {
+    margin-top: 0; }
+
+.part-title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+.part-subtitle {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.2; }
+
+.page-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 0;
+  width: 100%;
+  height: inherit;
+  background-color: #00BBCE;
+  padding: 10px;
+  padding-right: 50px; }
+  .page-title::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #5C2D91 transparent; }
+  @media screen and (min-width: 1025px) {
+    .page-title {
+      margin-bottom: 0;
+      padding-right: 10px;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch; }
+      .no-flexbox .page-title {
+        display: inline-block;
+        height: 100%; } }
+  .page-title .clip span {
+    font-weight: 100;
+    display: block; }
+  .timeline .page-title {
+    padding-bottom: 40px;
+    margin-bottom: 40px; }
+
+.part-title, .title-units {
+  margin-bottom: 20px; }
+
+.content .special {
+  font-weight: 600;
+  margin: 40px 0 0 0; }
+
+ul {
+  margin-bottom: 20px; }
+
+ul, li {
+  list-style: disc;
+  padding-left: 20px; }
+  form ul, form li {
+    padding: 0;
+    list-style: disc; }
+
+li {
+  padding-left: 0; }
+  @media screen and (min-width: 1500px) {
+    li {
+      padding-left: 10px; } }
+
+form {
+  margin: 20px 0; }
+
+.form-line {
+  clear: both;
+  overflow: hidden;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 5px; }
+  @media screen and (min-width: 1500px) {
+    .form-line {
+      margin-bottom: 20px;
+      text-align: right; } }
+  .boxes .form-line {
+    text-align: left; }
+
+.bullets-title {
+  margin-top: 10px;
+  display: inline-block;
+  text-transform: uppercase; }
+
+.pos-field-qual {
+  margin-bottom: 20px;
+  margin-top: -5px; }
+  @media screen and (min-width: 1500px) {
+    .pos-field-qual {
+      margin-top: -10px; } }
+
+.form-line--submit, .boxes .form-line--submit {
+  margin: 0;
+  text-align: right; }
+  .form-line--submit .btn, .boxes .form-line--submit .btn {
+    margin-right: 0;
+    margin-top: 20px; }
+
+label, .wpcf7-list-item-label {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 0 5px; }
+  @media screen and (min-width: 1500px) {
+    label, .wpcf7-list-item-label {
+      padding: 10px 0 10px; } }
+  .boxes label, .boxes .wpcf7-list-item-label {
+    float: left;
+    clear: both;
+    margin-top: 5px;
+    margin-bottom: 10px; }
+
+fieldset {
+  padding: 10px;
+  border: 2px solid;
+  margin-top: 10px;
+  position: relative; }
+  fieldset .close__form.close__form {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1;
+    right: 10px; }
+
+legend {
+  font-weight: 700;
+  padding: 5px;
+  text-transform: uppercase; }
+
+.wpcf7-form-control-wrap, .div_text {
+  background-color: #fff;
+  padding: 2px;
+  padding-right: 12px;
+  padding: 2px;
+  display: inline-block;
+  float: right;
+  margin-left: 40px;
+  width: 100%; }
+  .wpcf7-form-control-wrap::after, .div_text::after {
+    border-style: solid;
+    border-width: 0 0 10px 6.89655px;
+    border-color: transparent transparent #5C2D91 transparent; }
+  .wpcf7-form-control-wrap::before, .div_text::before {
+    /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+    position: absolute;
+    top: auto;
+    right: 1px;
+    bottom: 2px;
+    left: auto;
+    border-style: solid;
+    border-width: 0 0 10px 6.89655px;
+    border-color: transparent transparent #fff transparent; }
+  .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select, .div_text > input, .div_text > textarea, .div_text > select {
+    background: #5C2D91; }
+  .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--para-mim .wpcf7-form-control-wrap::after, .box--para-mim .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #F58229 transparent; }
+    .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > input, .box--para-mim .div_text > textarea, .box--para-mim .div_text > select {
+      background: #F58229; }
+  .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--para-minha-familia .wpcf7-form-control-wrap::after, .box--para-minha-familia .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #0095DA transparent; }
+    .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > input, .box--para-minha-familia .div_text > textarea, .box--para-minha-familia .div_text > select {
+      background: #0095DA; }
+  .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--para-minha-empresa .wpcf7-form-control-wrap::after, .box--para-minha-empresa .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #942977 transparent; }
+    .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > input, .box--para-minha-empresa .div_text > textarea, .box--para-minha-empresa .div_text > select {
+      background: #942977; }
+  .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--para-minha-escola .wpcf7-form-control-wrap::after, .box--para-minha-escola .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #2A2A86 transparent; }
+    .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > input, .box--para-minha-escola .div_text > textarea, .box--para-minha-escola .div_text > select {
+      background: #2A2A86; }
+  .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--agende-sua-visita .wpcf7-form-control-wrap::after, .box--agende-sua-visita .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #C9243A transparent; }
+    .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > input, .box--agende-sua-visita .div_text > textarea, .box--agende-sua-visita .div_text > select {
+      background: #C9243A; }
+  .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .box--institucional .wpcf7-form-control-wrap::after, .box--institucional .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #5C2D91 transparent; }
+    .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > input, .box--institucional .div_text > textarea, .box--institucional .div_text > select {
+      background: #5C2D91; }
+  @media screen and (min-width: 1500px) {
+    .wpcf7-form-control-wrap, .div_text {
+      width: 58.33333%; } }
+  .boxes .wpcf7-form-control-wrap, .boxes .div_text {
+    margin-left: 0;
+    width: 100%;
+    float: left;
+    clear: both; }
+  .wpcf7-form-control-wrap > input, .box .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > select, .box .wpcf7-form-control-wrap > select, .div_text > input, .box .div_text > input, .div_text > select, .box .div_text > select {
+    padding: 0 10px;
+    height: 30px; }
+    @media screen and (min-width: 1500px) {
+      .wpcf7-form-control-wrap > input, .box .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > select, .box .wpcf7-form-control-wrap > select, .div_text > input, .box .div_text > input, .div_text > select, .box .div_text > select {
+        height: 42px; } }
+
+.wpcf7-form-control-wrap.boolean-input {
+  display: inline;
+  text-align: left;
+  background-color: transparent; }
+  .wpcf7-form-control-wrap.boolean-input::before, .wpcf7-form-control-wrap.boolean-input::after {
+    display: none; }
+  .boxes .wpcf7-form-control-wrap.boolean-input {
+    float: right;
+    text-align: left; }
+    .boxes .wpcf7-form-control-wrap.boolean-input input {
+      margin: 3px 40px 0 0;
+      clear: both;
+      float: left; }
+    .boxes .wpcf7-form-control-wrap.boolean-input .wpcf7-list-item-label {
+      clear: none;
+      padding: 0;
+      margin: 0; }
+  .wpcf7-form-control-wrap.boolean-input input {
+    margin: 0 40px 0 0; }
+  .wpcf7-form-control-wrap.boolean-input .wpcf7-list-item {
+    display: block;
+    margin: 0 0 6px; }
+  .wpcf7-form-control-wrap.boolean-input .wpcf7-list-item.last {
+    margin-bottom: 0; }
+
+.additional, .req {
+  display: inline;
+  font-size: 100%; }
+
+.req {
+  padding-left: 5px; }
+
+.placement-test.placement-test {
+  color: #A6CE39;
+  line-height: 40px; }
+
+.form-busca-empresa {
+  margin-bottom: 40px; }
+
+.busca-por-empresa .wpcf7-form-control-wrap {
+  width: 62.5%;
+  height: 40px;
+  float: left;
+  margin: 0; }
+  .busca-por-empresa .wpcf7-form-control-wrap input {
+    height: 100%; }
+.busca-por-empresa .btn {
+  width: 31.25%;
+  height: 40px;
+  float: right; }
+
+.form-busca-escola {
+  margin-bottom: 40px; }
+
+.busca-por-escola .wpcf7-form-control-wrap {
+  width: 62.5%;
+  height: 40px;
+  float: left;
+  margin: 0; }
+  .busca-por-escola .wpcf7-form-control-wrap input {
+    height: 100%; }
+.busca-por-escola .btn {
+  width: 31.25%;
+  height: 40px;
+  float: right; }
+
+.btn {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .btn::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #5C2D91 transparent; }
+  .box--para-mim .btn::after {
+    border-right-color: #F58229;
+    border-bottom-color: #F58229; }
+  .box--para-minha-familia .btn::after {
+    border-right-color: #0095DA;
+    border-bottom-color: #0095DA; }
+  .box--para-minha-empresa .btn::after {
+    border-right-color: #942977;
+    border-bottom-color: #942977; }
+  .box--para-minha-escola .btn::after {
+    border-right-color: #2A2A86;
+    border-bottom-color: #2A2A86; }
+  .box--agende-sua-visita .btn::after {
+    border-right-color: #C9243A;
+    border-bottom-color: #C9243A; }
+
+.btn--voltar {
+  margin-bottom: 20px;
+  background-color: #F58229;
+  float: left; }
+
+.btn--add {
+  margin-top: 10px;
+  background-color: #F58229;
+  float: right; }
+
+.bnt--agendamento {
+  width: 200px; }
+
+@media screen and (min-width: 1500px) {
+  .bnt--agendamento {
+    width: 215px; } }
+
+.your-subject {
+  display: none !important; }
+
+.busca-por-cep .wpcf7-form-control-wrap {
+  width: 75%;
+  height: 40px;
+  float: left;
+  margin: 0; }
+  .busca-por-cep .wpcf7-form-control-wrap input {
+    height: 100%; }
+.busca-por-cep .btn {
+  width: 18.75%;
+  height: 40px;
+  float: right; }
+
+.coursebox__select {
+  margin-bottom: 18px; }
+
+.box--para-mim .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-mim .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #F58229; }
+.box--para-minha-familia .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-familia .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #0095DA; }
+.box--para-minha-empresa .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-empresa .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #942977; }
+.box--para-minha-escola .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-escola .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #2A2A86; }
+.box--agende-sua-visita .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--agende-sua-visita .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #C9243A; }
+.box--institucional .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--institucional .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+  border-color: transparent transparent #5C2D91; }
+
+.wpcf7-validation-errors.wpcf7-validation-errors {
+  color: #fff;
+  border: none;
+  width: 100%;
+  background-color: #F58229;
+  padding: 10px;
+  padding-right: 30px; }
+  .wpcf7-validation-errors.wpcf7-validation-errors::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #172833 transparent; }
+
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+  color: #fff;
+  border: none;
+  width: 100%;
+  background-color: #007F49;
+  padding: 10px;
+  padding-right: 30px; }
+  .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #172833 transparent; }
+  .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+    position: relative;
+    margin-bottom: 100px; }
+    .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 10px;
+      color: #fff;
+      margin-top: 20px;
+      background-color: #007F49;
+      padding: 10px;
+      padding-right: 30px; }
+      .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-style: solid;
+        border-width: 0 0 20px 13.7931px;
+        border-color: transparent transparent #172833 transparent; }
+      .box--para-mim .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #F58229; }
+      .box--para-minha-familia .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #0095DA; }
+      .box--para-minha-empresa .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #942977; }
+      .box--para-minha-escola .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #2A2A86; }
+      .box--agende-sua-visita .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #C9243A; }
+      .box--institucional .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
+        border-color: transparent transparent #5C2D91; }
+
+.page-unidades .wpcf7-form-control-wrap.cep, .single-unidades .wpcf7-form-control-wrap.cep {
+  float: left;
+  margin-right: 20px; }
+.page-unidades .wpcf7-form-control-wrap.nome-empresa, .single-unidades .wpcf7-form-control-wrap.nome-empresa {
+  float: left;
+  margin-right: 20px; }
+
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(92, 45, 145, 0.5); }
+
+div.wpcf7 img.ajax-loader {
+  display: none; }
+
+.valores {
+  text-align: left;
+  margin-bottom: 10px; }
+
+.check-valores {
+  margin-bottom: 40px; }
+
+/* UI COMPONENTS */
+@-webkit-keyframes ball-scale {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+@keyframes ball-scale {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+.loading {
+  position: relative; }
+  .loading::before {
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+            animation: ball-scale 1s 0s ease-in-out infinite; }
+
+.slider img {
+  width: 100%; }
+.slider .slick-track {
+  position: absolute;
+  height: 100%; }
+.slider .slick-list {
+  padding-top: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+
+.slick-prev, .slick-next {
+  position: absolute;
+  bottom: 20px;
+  text-indent: -9999999px;
+  border: 0;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  margin-left: -30px;
+  z-index: 1; }
+  .slick-prev:focus, .slick-next:focus {
+    outline: none;
+    box-shadow: none; }
+
+.slick-prev {
+  background: url('../images/ico-arrow-L.png') 3px no-repeat;
+  -webkit-transform: translate(-100px, 0);
+      -ms-transform: translate(-100px, 0);
+          transform: translate(-100px, 0); }
+
+.slick-next {
+  background: url('../images/ico-arrow-R.png') 3px no-repeat;
+  -webkit-transform: translate(100px, 0);
+      -ms-transform: translate(100px, 0);
+          transform: translate(100px, 0); }
+
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  padding-right: 40px;
+  text-align: center;
+  z-index: 0; }
+  .slick-dots li {
+    padding: 0 10px;
+    margin: 0;
+    display: inline-block;
+    list-style: none;
+    vertical-align: bottom;
+    font-size: 0; }
+  .slick-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    text-indent: -9999999px;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    background: #bcbec0; }
+
+.slick-active button {
+  background: #00BBCE; }
+
+.header {
+  padding: 10px 20px; }
+  @media screen and (min-width: 1025px) {
+    .header {
+      padding: 20px 40px; } }
+  @media screen and (min-width: 1500px) {
+    .header {
+      padding: 40px 60px; } }
+
+.logo {
+  display: inline-block;
+  padding-top: 2.5px; }
+
+.logo__svg {
+  height: 30px; }
+  @media screen and (min-width: 768px) {
+    .logo__svg {
+      height: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .logo__svg {
+      height: 60px; } }
+
+.footer {
+  padding: 20px;
+  width: 100%;
+  overflow: hidden; }
+  @media screen and (min-width: 1025px) {
+    .footer {
+      padding: 20px 40px 5px; } }
+  @media screen and (min-width: 1500px) {
+    .footer {
+      padding: 40px 60px; } }
+
+.logo-cambridge {
+  float: left; }
+  @media screen and (min-width: 1025px) {
+    .logo-cambridge {
+      padding-top: 20px; } }
+  .logo-cambridge img {
+    display: block;
+    width: 70%;
+    margin: 0 auto; }
+    @media screen and (min-width: 768px) {
+      .logo-cambridge img {
+        margin: 0; } }
+    @media screen and (min-width: 1500px) {
+      .logo-cambridge img {
+        width: 90%; } }
+
+#click-menu#click-menu, #responsive-menu#responsive-menu {
+  position: fixed; }
+
+#responsive-menu#responsive-menu {
+  max-height: 100%;
+  overflow: auto; }
+
+.nav {
+  text-align: right;
+  float: right;
+  padding-top: 10px; }
+  @media screen and (min-width: 1500px) {
+    .nav {
+      padding-top: 20px; } }
+  .nav li {
+    display: inline; }
+    .nav li:first-child a {
+      margin-left: 0; }
+  .nav a {
+    color: #bcbec0;
+    text-transform: uppercase;
+    font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 2; }
+    @media screen and (min-width: 1025px) {
+      .nav a {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.71429;
+        margin-left: 60px; } }
+    @media screen and (min-width: 1500px) {
+      .nav a {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-left: 80px; } }
+
+.mobile-tel {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  text-align: center;
+  color: #bcbec0;
+  text-transform: uppercase;
+  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0); }
+  @media screen and (min-width: 768px) {
+    .mobile-tel {
+      display: none; } }
+
+.menu-item.click-to-call a {
+  position: relative;
+  display: inline-block;
+  width: 165px;
+  text-align: left;
+  padding-left: 30px; }
+  .menu-item.click-to-call a::before {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: #172833 url(../images/icon-fone.jpg) no-repeat center center;
+    content: '';
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .menu-item.click-to-call a::after {
+    content: 'ou clique e ligaremos \A para você';
+    display: inline-block;
+    position: absolute;
+    white-space: pre-wrap;
+    text-align: left;
+    left: 0;
+    padding-left: 30px;
+    top: 20px;
+    font-size: 8px;
+    font-size: 0.5rem;
+    line-height: 1.2; }
+    @media screen and (min-width: 1025px) {
+      .menu-item.click-to-call a::after {
+        top: 24px;
+        font-size: 10px;
+        font-size: 0.625rem;
+        line-height: 1.2; } }
+
+@media screen and (min-width: 1025px) {
+  .grid-tiles {
+    margin-left: 0;
+    list-style: none;
+    margin-bottom: 0; }
+  .grid-tiles > .grid-tiles {
+    margin-left: 0; }
+  .grid-tiles__item {
+    padding-left: 0; }
+  .grid-externo, .single .main, .page .main {
+    margin-left: -40px;
+    list-style: none;
+    margin-bottom: 0; }
+  .grid-externo > .grid-externo, .single .main > .grid-externo, .page .main > .grid-externo, .single .grid-externo > .main, .single .main > .main, .page .grid-externo > .main, .page .main > .main {
+    margin-left: 0; }
+  .grid-externo__item, .single .page-header, .page .page-header, .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid, .single .content-grid, .page .content-grid {
+    padding-left: 40px; }
+  .grid-interno {
+    margin-left: -20px;
+    list-style: none;
+    margin-bottom: 0; }
+  .grid-interno > .grid-interno {
+    margin-left: 0; }
+  .grid-interno__item, .infobox-grid {
+    padding-left: 20px; } }
+
+.body {
+  display: none; }
+
+.body.no-js {
+  display: block; }
+
+.main {
+  padding: 0 10px;
+  overflow: hidden;
+  width: 100%;
+  height: auto; }
+  @media screen and (min-width: 768px) {
+    .main {
+      padding: 0 20px; } }
+  @media screen and (min-width: 1025px) {
+    .main {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      padding: 0 0 0 40px; }
+      .no-flexbox .main {
+        display: table; }
+      .no-flexbox .home .main {
+        display: inline-block;
+        height: 360px; }
+      @media screen and (min-width: 1500px) {
+        .no-flexbox .home .main {
+          height: 560px; } } }
+  @media screen and (min-width: 1500px) {
+    .main {
+      padding: 0 0 0 60px; } }
+
+.content p, .infobox p {
+  margin-bottom: 20px; }
+
+/**********************************************
+ *	HOME
+ *	index.php
+ *********************************************/
+@media screen and (min-width: 768px) {
+  .flexfix {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+    .no-flexbox .flexfix {
+      display: table; }
+    .no-flexbox .home .flexfix {
+      display: inline-block;
+      height: 360px; }
+    @media screen and (min-width: 1500px) {
+      .no-flexbox .home .flexfix {
+        height: 560px; } } }
+@media screen and (min-width: 1025px) {
+  .flexfix {
+    width: 83.33333%;
+    margin: 0; } }
+
+.slider-grid {
+  width: 100%; }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .slider-grid {
+      width: 40%; } }
+  @media screen and (min-width: 1025px) {
+    .slider-grid {
+      width: 50%; } }
+  @media screen and (min-width: 1500px) {
+    .slider-grid {
+      width: 40%; } }
+
+.slider {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  height: inherit;
+  background-color: transparent;
+  padding: 0;
+  padding-right: 40px;
+  padding: 0; }
+  .slider::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.boxes-grid {
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .boxes-grid {
+      width: 60%;
+      position: relative; } }
+  @media screen and (min-width: 1025px) {
+    .boxes-grid {
+      width: 50%; } }
+  @media screen and (min-width: 1025px) {
+    .boxes-grid {
+      width: 60%; } }
+
+.grid-tiles {
+  width: 100%;
+  position: relative; }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid-tiles {
+      height: 100%;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1025px) {
+    .grid-tiles {
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch; }
+      .no-flexbox .grid-tiles {
+        display: table; }
+      .no-flexbox .home .grid-tiles {
+        display: inline-block;
+        height: 360px; }
+      @media screen and (min-width: 1500px) {
+        .no-flexbox .home .grid-tiles {
+          height: 560px; } } }
+
+.boxes {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 20px 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .boxes {
+      margin: 0;
+      height: 100%;
+      position: absolute; } }
+
+.boxes .box {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  float: left; }
+  @media screen and (min-width: 768px) {
+    .boxes .box {
+      position: absolute;
+      max-height: 50%;
+      min-height: 50%; } }
+
+.box--para-mim {
+  top: 0; }
+  @media screen and (min-width: 768px) {
+    .box--para-mim {
+      left: 0; } }
+
+.box--para-minha-familia {
+  top: 0; }
+  @media screen and (min-width: 768px) {
+    .box--para-minha-familia {
+      left: 50%; } }
+
+.box--para-minha-escola {
+  top: 50%; }
+  @media screen and (min-width: 768px) {
+    .box--para-minha-escola {
+      left: 0; } }
+
+.box--para-minha-empresa {
+  top: 50%; }
+  @media screen and (min-width: 768px) {
+    .box--para-minha-empresa {
+      left: 50%; } }
+
+.box--para-mim, .box--para-mim .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--para-mim::after, .box--para-mim .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--para-minha-familia, .box--para-minha-familia .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--para-minha-familia::after, .box--para-minha-familia .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--para-minha-escola, .box--para-minha-escola .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--para-minha-escola::after, .box--para-minha-escola .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--para-minha-empresa, .box--para-minha-empresa .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--para-minha-empresa::after, .box--para-minha-empresa .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--agende-sua-visita, .box--agende-sua-visita .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--agende-sua-visita::after, .box--agende-sua-visita .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--institucional, .box--institucional .box__header {
+  background-color: transparent;
+  padding: 20px;
+  padding-right: 60px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .box--institucional::after, .box--institucional .box__header::after {
+    border-style: solid;
+    border-width: 0 0 40px 27.58621px;
+    border-color: transparent transparent #172833 transparent; }
+
+.box--institucional {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 20px; }
+
+.agende-grid {
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .agende-grid {
+      width: 16.66667%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch; }
+      .no-flexbox .agende-grid {
+        display: table; }
+      .no-flexbox .home .agende-grid {
+        display: inline-block;
+        height: 360px; }
+      @media screen and (min-width: 1500px) {
+        .no-flexbox .home .agende-grid {
+          height: 560px; } } }
+
+.institucional-grid {
+  width: 100%; }
+  @media screen and (min-width: 1025px) {
+    .institucional-grid {
+      width: 0; } }
+
+.box {
+  padding: 0;
+  max-height: 100px; }
+  @media screen and (min-width: 1025px) {
+    .box {
+      padding-left: 20px;
+      max-height: 100%; } }
+
+.box__header {
+  width: 100%;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .boxes .box__header {
+      position: absolute;
+      max-height: 100%;
+      min-height: 100%;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1025px) {
+    .box__header {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      position: absolute;
+      max-height: 100%;
+      min-height: 100%;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      .no-flexbox .box__header {
+        display: table; }
+      .no-flexbox .home .box__header {
+        display: inline-block;
+        height: 360px; }
+      @media screen and (min-width: 1500px) {
+        .no-flexbox .home .box__header {
+          height: 560px; } } }
+  .box--para-mim .box__header {
+    background-image: url('../images/bg-para-mim.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .box--para-minha-familia .box__header {
+    background-image: url('../images/bg-para-minha-familia.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .box--para-minha-escola .box__header {
+    background-image: url('../images/bg-para-minha-escola.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .box--para-minha-empresa .box__header {
+    background-image: url('../images/bg-para-minha-empresa.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .box--agende-sua-visita .box__header {
+    background-image: url('../images/bg-agende-sua-visita.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .box--institucional .box__header {
+    background-image: url('../images/bg-institucional.jpg');
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+
+.box__link {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 10px 20px 10px 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .box__link {
+      position: absolute; } }
+
+.box--para-mim .box__anchor {
+  background-color: #942977; }
+
+.box--para-minha-familia .box__anchor {
+  background-color: #A6CE39; }
+
+.box--para-minha-escola .box__anchor {
+  background-color: #EF4066; }
+
+.box--para-minha-empresa .box__anchor {
+  background-color: #F58229; }
+
+.content, .box__aside {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .content, .box__aside {
+      width: 0;
+      visibility: hidden; } }
+
+.box__aside {
+  display: none;
+  padding: 20px 20px 40px; }
+
+.box__anchor {
+  width: 100%;
+  height: 64px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding: 10px; }
+  @media screen and (min-width: 1500px) {
+    .box__anchor {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 1.2; } }
+
+@media screen and (min-width: 768px) {
+  .s-para-mim .slider-grid {
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0; }
+  .s-para-mim .boxes-grid {
+    width: 100%;
+    height: 720px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .boxes-grid {
+    height: 420px; } }
+@media screen and (min-width: 1500px) {
+  .s-para-mim .boxes-grid {
+    height: 640px; } }
+.s-para-mim .boxes {
+  max-height: 100%;
+  min-height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .boxes {
+      max-height: 420px;
+      min-height: 420px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-mim .boxes {
+      max-height: 640px;
+      min-height: 640px; } }
+.s-para-mim .boxes .box--para-mim {
+  width: 100%;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-mim .boxes .box--para-mim {
+      margin-top: 0;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      z-index: 0;
+      min-height: 100%;
+      max-height: 100%; }
+      .s-para-mim .boxes .box--para-mim .box__header {
+        position: relative;
+        max-height: 100px;
+        min-height: 100px;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-mim .boxes .box--para-mim .content {
+        height: 520px;
+        overflow: hidden;
+        visibility: visible; }
+        .s-para-mim .boxes .box--para-mim .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .boxes .box--para-mim {
+      width: 80%;
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-mim .boxes .box--para-mim .box__header, .s-para-mim .boxes .box--para-mim .content, .s-para-mim .boxes .box--para-mim .box__aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-mim .boxes .box--para-mim .box__header {
+        width: 25%; }
+      .s-para-mim .boxes .box--para-mim .content {
+        width: 50%; }
+      .s-para-mim .boxes .box--para-mim .box__aside {
+        width: 25%;
+        visibility: visible; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-mim .boxes .box--para-mim {
+      max-height: 640px; }
+      .s-para-mim .boxes .box--para-mim .box__header, .s-para-mim .boxes .box--para-mim .content, .s-para-mim .boxes .box--para-mim .box__aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+.s-para-mim .box--para-minha-familia {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-mim .box--para-minha-familia {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .box--para-minha-familia {
+      width: 20%;
+      top: 0;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-mim .box--para-minha-familia .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-mim .box--para-minha-escola {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 33.33333%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-mim .box--para-minha-escola {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .box--para-minha-escola {
+      width: 20%;
+      top: 33.33333%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-mim .box--para-minha-escola .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-mim .box--para-minha-empresa {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 66.66667%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-mim .box--para-minha-empresa {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .box--para-minha-empresa {
+      width: 20%;
+      top: 66.66667%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-mim .box--para-minha-empresa .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+
+@media screen and (min-width: 768px) {
+  .s-para-minha-familia .slider-grid {
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0; }
+  .s-para-minha-familia .boxes-grid {
+    width: 100%;
+    height: 720px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .boxes-grid {
+    height: 420px; } }
+@media screen and (min-width: 1500px) {
+  .s-para-minha-familia .boxes-grid {
+    height: 640px; } }
+.s-para-minha-familia .boxes {
+  max-height: 100%;
+  min-height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .boxes {
+      max-height: 420px;
+      min-height: 420px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-familia .boxes {
+      max-height: 640px;
+      min-height: 640px; } }
+.s-para-minha-familia .box--para-mim {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-familia .box--para-mim {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .box--para-mim {
+      width: 20%;
+      top: 0;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-familia .box--para-mim .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-familia .boxes .box--para-minha-familia {
+  width: 100%;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-familia .boxes .box--para-minha-familia {
+      margin-top: 0;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      z-index: 0;
+      min-height: 100%;
+      max-height: 100%; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header {
+        position: relative;
+        max-height: 100px;
+        min-height: 100px;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .content {
+        height: 520px;
+        overflow: hidden;
+        visibility: visible; }
+        .s-para-minha-familia .boxes .box--para-minha-familia .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .boxes .box--para-minha-familia {
+      width: 80%;
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header, .s-para-minha-familia .boxes .box--para-minha-familia .content, .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header {
+        width: 25%; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .content {
+        width: 50%; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
+        width: 25%;
+        visibility: visible; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-familia .boxes .box--para-minha-familia {
+      max-height: 640px; }
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header, .s-para-minha-familia .boxes .box--para-minha-familia .content, .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+.s-para-minha-familia .box--para-minha-escola {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 33.33333%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-familia .box--para-minha-escola {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .box--para-minha-escola {
+      width: 20%;
+      top: 33.33333%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-familia .box--para-minha-escola .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-familia .box--para-minha-empresa {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 66.66667%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-familia .box--para-minha-empresa {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .box--para-minha-empresa {
+      width: 20%;
+      top: 66.66667%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-familia .box--para-minha-empresa .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+
+@media screen and (min-width: 768px) {
+  .s-para-minha-escola .slider-grid {
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0; }
+  .s-para-minha-escola .boxes-grid {
+    width: 100%;
+    height: 720px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .boxes-grid {
+    height: 420px; } }
+@media screen and (min-width: 1500px) {
+  .s-para-minha-escola .boxes-grid {
+    height: 640px; } }
+.s-para-minha-escola .boxes {
+  max-height: 100%;
+  min-height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .boxes {
+      max-height: 420px;
+      min-height: 420px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-escola .boxes {
+      max-height: 640px;
+      min-height: 640px; } }
+.s-para-minha-escola .box--para-mim {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-escola .box--para-mim {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .box--para-mim {
+      width: 20%;
+      top: 0;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-escola .box--para-mim .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-escola .box--para-minha-familia {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 33.33333%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-escola .box--para-minha-familia {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .box--para-minha-familia {
+      width: 20%;
+      top: 33.33333%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-escola .box--para-minha-familia .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-escola .boxes .box--para-minha-escola {
+  width: 100%;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-escola .boxes .box--para-minha-escola {
+      margin-top: 0;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      z-index: 0;
+      min-height: 100%;
+      max-height: 100%; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header {
+        position: relative;
+        max-height: 100px;
+        min-height: 100px;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .content {
+        height: 520px;
+        overflow: hidden;
+        visibility: visible; }
+        .s-para-minha-escola .boxes .box--para-minha-escola .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .boxes .box--para-minha-escola {
+      width: 80%;
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header, .s-para-minha-escola .boxes .box--para-minha-escola .content, .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header {
+        width: 25%; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .content {
+        width: 50%; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
+        width: 25%;
+        visibility: visible; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-escola .boxes .box--para-minha-escola {
+      max-height: 640px; }
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header, .s-para-minha-escola .boxes .box--para-minha-escola .content, .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+.s-para-minha-escola .box--para-minha-empresa {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 66.66667%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-escola .box--para-minha-empresa {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .box--para-minha-empresa {
+      width: 20%;
+      top: 66.66667%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-escola .box--para-minha-empresa .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+
+@media screen and (min-width: 768px) {
+  .s-para-minha-empresa .slider-grid {
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0; }
+  .s-para-minha-empresa .boxes-grid {
+    width: 100%;
+    height: 720px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .boxes-grid {
+    height: 420px; } }
+@media screen and (min-width: 1500px) {
+  .s-para-minha-empresa .boxes-grid {
+    height: 640px; } }
+.s-para-minha-empresa .boxes {
+  max-height: 100%;
+  min-height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .boxes {
+      max-height: 420px;
+      min-height: 420px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-empresa .boxes {
+      max-height: 640px;
+      min-height: 640px; } }
+.s-para-minha-empresa .box--para-mim {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-empresa .box--para-mim {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .box--para-mim {
+      width: 20%;
+      top: 0;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-empresa .box--para-mim .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-empresa .box--para-minha-familia {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 33.33333%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-empresa .box--para-minha-familia {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .box--para-minha-familia {
+      width: 20%;
+      top: 33.33333%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-empresa .box--para-minha-familia .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-empresa .box--para-minha-escola {
+  width: 33.33333%;
+  position: absolute;
+  top: 0;
+  left: 66.66667%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-empresa .box--para-minha-escola {
+      min-height: 100px;
+      max-height: 100px;
+      z-index: 1; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .box--para-minha-escola {
+      width: 20%;
+      top: 66.66667%;
+      left: 80%;
+      min-height: 33.33333%;
+      max-height: 33.33333%; } }
+  .s-para-minha-empresa .box--para-minha-escola .box__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1; }
+.s-para-minha-empresa .boxes .box--para-minha-empresa {
+  width: 100%;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 768px) {
+    .s-para-minha-empresa .boxes .box--para-minha-empresa {
+      margin-top: 0;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      z-index: 0;
+      min-height: 100%;
+      max-height: 100%; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header {
+        position: relative;
+        max-height: 100px;
+        min-height: 100px;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .content {
+        height: 520px;
+        overflow: hidden;
+        visibility: visible; }
+        .s-para-minha-empresa .boxes .box--para-minha-empresa .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .boxes .box--para-minha-empresa {
+      width: 80%;
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header, .s-para-minha-empresa .boxes .box--para-minha-empresa .content, .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header {
+        width: 25%; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .content {
+        width: 50%; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
+        width: 25%;
+        visibility: visible; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-empresa .boxes .box--para-minha-empresa {
+      max-height: 640px; }
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header, .s-para-minha-empresa .boxes .box--para-minha-empresa .content, .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+
+.s-para-mim .box--para-mim {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .box--para-mim .box__link {
+      position: static;
+      height: auto; }
+    .s-para-mim .box--para-mim .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-para-mim .box--para-mim .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-mim .box--para-mim .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-para-mim .box--para-mim .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-para-mim .box--para-mim .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-para-mim .box--para-mim .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-para-mim .box--para-mim .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-mim .box--para-mim {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-mim .box--para-mim .box__header, .s-para-mim .box--para-mim .content, .s-para-mim .box--para-mim .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-mim .box--para-mim {
+      max-height: 640px; }
+      .s-para-mim .box--para-mim .box__header, .s-para-mim .box--para-mim .content, .s-para-mim .box--para-mim .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .box--para-minha-familia .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .box--para-minha-escola .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .box--para-minha-empresa .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .box--agende-sua-visita .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-mim .box--institucional .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .box--para-mim .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+.s-para-minha-familia .box--para-minha-familia {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .box--para-minha-familia .box__link {
+      position: static;
+      height: auto; }
+    .s-para-minha-familia .box--para-minha-familia .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-para-minha-familia .box--para-minha-familia .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-familia .box--para-minha-familia .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-para-minha-familia .box--para-minha-familia .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-para-minha-familia .box--para-minha-familia .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-para-minha-familia .box--para-minha-familia .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-para-minha-familia .box--para-minha-familia .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-familia .box--para-minha-familia {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-familia .box--para-minha-familia .box__header, .s-para-minha-familia .box--para-minha-familia .content, .s-para-minha-familia .box--para-minha-familia .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-familia .box--para-minha-familia {
+      max-height: 640px; }
+      .s-para-minha-familia .box--para-minha-familia .box__header, .s-para-minha-familia .box--para-minha-familia .content, .s-para-minha-familia .box--para-minha-familia .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .box--para-minha-escola .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .box--para-minha-empresa .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .box--agende-sua-visita .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-familia .box--institucional .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .box--para-mim .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .box--para-minha-familia .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+.s-para-minha-escola .box--para-minha-escola {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .box--para-minha-escola .box__link {
+      position: static;
+      height: auto; }
+    .s-para-minha-escola .box--para-minha-escola .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-para-minha-escola .box--para-minha-escola .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-escola .box--para-minha-escola .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-para-minha-escola .box--para-minha-escola .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-para-minha-escola .box--para-minha-escola .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-para-minha-escola .box--para-minha-escola .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-para-minha-escola .box--para-minha-escola .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-escola .box--para-minha-escola {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-escola .box--para-minha-escola .box__header, .s-para-minha-escola .box--para-minha-escola .content, .s-para-minha-escola .box--para-minha-escola .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-escola .box--para-minha-escola {
+      max-height: 640px; }
+      .s-para-minha-escola .box--para-minha-escola .box__header, .s-para-minha-escola .box--para-minha-escola .content, .s-para-minha-escola .box--para-minha-escola .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .box--para-minha-empresa .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .box--agende-sua-visita .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-escola .box--institucional .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .box--para-mim .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .box--para-minha-familia .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .box--para-minha-escola .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+.s-para-minha-empresa .box--para-minha-empresa {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .box--para-minha-empresa .box__link {
+      position: static;
+      height: auto; }
+    .s-para-minha-empresa .box--para-minha-empresa .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-para-minha-empresa .box--para-minha-empresa .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-empresa .box--para-minha-empresa .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-para-minha-empresa .box--para-minha-empresa .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-para-minha-empresa .box--para-minha-empresa .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-para-minha-empresa .box--para-minha-empresa .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-para-minha-empresa .box--para-minha-empresa .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-para-minha-empresa .box--para-minha-empresa {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-para-minha-empresa .box--para-minha-empresa .box__header, .s-para-minha-empresa .box--para-minha-empresa .content, .s-para-minha-empresa .box--para-minha-empresa .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-para-minha-empresa .box--para-minha-empresa {
+      max-height: 640px; }
+      .s-para-minha-empresa .box--para-minha-empresa .box__header, .s-para-minha-empresa .box--para-minha-empresa .content, .s-para-minha-empresa .box--para-minha-empresa .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .box--agende-sua-visita .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-para-minha-empresa .box--institucional .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .box--para-mim .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .box--para-minha-familia .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .box--para-minha-escola .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .box--para-minha-empresa .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+.s-agende-sua-visita .box--agende-sua-visita {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-agende-sua-visita .box--agende-sua-visita .box__link {
+      position: static;
+      height: auto; }
+    .s-agende-sua-visita .box--agende-sua-visita .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-agende-sua-visita .box--agende-sua-visita .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-agende-sua-visita .box--agende-sua-visita .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-agende-sua-visita .box--agende-sua-visita .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-agende-sua-visita .box--agende-sua-visita .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-agende-sua-visita .box--agende-sua-visita .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-agende-sua-visita .box--agende-sua-visita .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-agende-sua-visita .box--agende-sua-visita {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-agende-sua-visita .box--agende-sua-visita .content, .s-agende-sua-visita .box--agende-sua-visita .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-agende-sua-visita .box--agende-sua-visita {
+      max-height: 640px; }
+      .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-agende-sua-visita .box--agende-sua-visita .content, .s-agende-sua-visita .box--agende-sua-visita .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .box--institucional .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+
+@media screen and (min-width: 1025px) {
+  .s-institucional .box--para-mim .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-institucional .box--para-minha-familia .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-institucional .box--para-minha-escola .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-institucional .box--para-minha-empresa .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+@media screen and (min-width: 1025px) {
+  .s-institucional .box--agende-sua-visita .content {
+    height: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; } }
+.s-institucional .box--institucional {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible; }
+  @media screen and (min-width: 1025px) {
+    .s-institucional .box--institucional .box__link {
+      position: static;
+      height: auto; }
+    .s-institucional .box--institucional .box__course {
+      display: block;
+      padding: 10px 20px 40px 10px;
+      position: absolute;
+      bottom: 0; }
+      .s-institucional .box--institucional .box__course p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .s-institucional .box--institucional .box__course {
+      min-height: 0;
+      max-height: 100%;
+      height: auto;
+      display: block; }
+      .s-institucional .box--institucional .box__course p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .s-institucional .box--institucional .content {
+    position: relative;
+    max-height: 100%;
+    padding: 20px 10px 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    visibility: visible; }
+    .s-institucional .box--institucional .content > .ajax-content {
+      max-height: 100%;
+      padding-right: 20px;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+      @media screen and (min-width: 1025px) {
+        .s-institucional .box--institucional .content > .ajax-content {
+          overflow: auto; } }
+  @media screen and (min-width: 1025px) {
+    .s-institucional .box--institucional {
+      top: 0;
+      left: 0;
+      padding: 0;
+      max-height: 420px; }
+      .s-institucional .box--institucional .box__header, .s-institucional .box--institucional .content, .s-institucional .box--institucional .page-aside {
+        height: 420px;
+        max-height: 420px;
+        min-height: 420px;
+        padding-left: 20px;
+        display: inline-block;
+        -webkit-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out; } }
+  @media screen and (min-width: 1500px) {
+    .s-institucional .box--institucional {
+      max-height: 640px; }
+      .s-institucional .box--institucional .box__header, .s-institucional .box--institucional .content, .s-institucional .box--institucional .page-aside {
+        height: 640px;
+        max-height: 640px;
+        min-height: 640px; } }
+
+@media screen and (min-width: 1025px) {
+  .s-agende-sua-visita .boxes-grid, .s-institucional .boxes-grid {
+    width: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .box--agende-sua-visita, .s-institucional .box--institucional {
+    height: 420px;
+    max-height: 420px;
+    min-height: 420px;
+    margin: 0; }
+    .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-institucional .box--institucional .box__header {
+      position: relative;
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+    .s-agende-sua-visita .box--agende-sua-visita .content, .s-institucional .box--institucional .content {
+      -webkit-transition: all 0.5s ease-in-out;
+              transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .flexfix {
+    width: 41.66667%;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .slider-grid {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden; }
+  .s-agende-sua-visita .boxes .box {
+    width: 50%;
+    height: 50%;
+    max-height: 50%;
+    min-height: 50%;
+    position: absolute;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .agende-grid {
+    width: 58.33333%;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .box--agende-sua-visita .box__header {
+    width: 28.57143%; }
+  .s-agende-sua-visita .box--agende-sua-visita .content {
+    width: 71.42857%; }
+  .s-agende-sua-visita .box__course .btn {
+    background-color: #F58229;
+    margin-bottom: 20px;
+    width: 100%; }
+  .s-institucional .flexfix {
+    width: 16.66667%;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-institucional .slider-grid {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden; }
+  .s-institucional .boxes .box {
+    width: 100%;
+    height: 25%;
+    max-height: 25%;
+    min-height: 25%;
+    position: absolute;
+    left: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+    .s-institucional .boxes .box:nth-child(1) {
+      top: 0; }
+    .s-institucional .boxes .box:nth-child(2) {
+      top: 25%; }
+    .s-institucional .boxes .box:nth-child(3) {
+      top: 50%; }
+    .s-institucional .boxes .box:nth-child(4) {
+      top: 75%; }
+  .s-institucional .agende-grid {
+    width: 16.66667%;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-institucional .institucional-grid {
+    width: 66.66667%;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .s-institucional .box--institucional .box__header {
+    width: 25%; }
+  .s-institucional .box--institucional .content {
+    width: 75%; } }
+
+@media screen and (min-width: 1500px) {
+  .s-agende-sua-visita .box--agende-sua-visita, .s-institucional .box--institucional {
+    height: 640px;
+    max-height: 640px;
+    min-height: 640px; } }
+
+.box--institucional {
+  max-height: 0;
+  min-height: 0;
+  opacity: 0;
+  visibility: hidden; }
+
+.page-aside {
+  width: 100%;
+  display: none; }
+  @media screen and (min-width: 1025px) {
+    .page-aside {
+      width: 33.33333%; } }
+  @media screen and (min-width: 1500px) {
+    .page-aside {
+      width: 25%; } }
+
+@media screen and (min-width: 1025px) {
+  .s-sobre-a-gente .box--institucional .content.content {
+    width: 43.75%; } }
+@media screen and (min-width: 1500px) {
+  .s-sobre-a-gente .box--institucional .content.content {
+    width: 50%; } }
+.s-sobre-a-gente .page-aside {
+  width: 100%;
+  display: inline-block;
+  padding: 20px 10px 40px 10px; }
+  @media screen and (min-width: 1025px) {
+    .s-sobre-a-gente .page-aside {
+      width: 31.25%; } }
+  @media screen and (min-width: 1500px) {
+    .s-sobre-a-gente .page-aside {
+      width: 25%; } }
+
+.btn--area-trabalhe {
+  margin-right: 20px; }
+
+/**********************************************
+ *	TEMPLATE INSTITUCIONAIS
+ *	page-institucionais.php
+ *********************************************/
+.single .main, .page .main {
+  padding: 0 20px; }
+  @media screen and (min-width: 1025px) {
+    .single .main, .page .main {
+      padding: 0 0 0 40px; } }
+  @media screen and (min-width: 1500px) {
+    .single .main, .page .main {
+      padding: 0 0 0 60px; } }
+.single .page-header, .page .page-header {
+  width: 100%; }
+  @media screen and (min-width: 1025px) {
+    .single .page-header, .page .page-header {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      width: 33.33333%; }
+      .no-flexbox .single .page-header, .no-flexbox .page .page-header {
+        display: inline-block;
+        height: 100%; }
+      .page-sobre-a-gente .single .page-header, .page-sobre-a-gente .page .page-header {
+        width: 25%; } }
+  @media screen and (min-width: 1500px) {
+    .single .page-header, .page .page-header {
+      width: 41.66667%; } }
+.single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid {
+  width: 100%; }
+  @media screen and (min-width: 1025px) {
+    .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid {
+      width: 41.66667%; } }
+.single .content-grid, .page .content-grid {
+  width: 100%; }
+  @media screen and (min-width: 1025px) {
+    .single .content-grid, .page .content-grid {
+      width: 66.66667%; } }
+  @media screen and (min-width: 1500px) {
+    .single .content-grid, .page .content-grid {
+      width: 58.33333%; } }
+  .single .content-grid .btn--voltar, .page .content-grid .btn--voltar {
+    display: none; }
+    @media screen and (min-width: 1025px) {
+      .single .content-grid .btn--voltar, .page .content-grid .btn--voltar {
+        display: inline-block;
+        margin-top: 40px; } }
+.single .content, .page .content {
+  width: 100%; }
+  @media screen and (min-width: 1025px) {
+    .single .content, .page .content {
+      max-height: 420px;
+      overflow-x: auto;
+      padding-right: 40px; } }
+  @media screen and (min-width: 1500px) {
+    .single .content, .page .content {
+      max-height: 680px; } }
+  .single .content a, .page .content a {
+    color: #F58229; }
+
+.timeline {
+  padding-bottom: 20px; }
+  @media screen and (min-width: 1025px) {
+    .timeline {
+      max-height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 0 40px 60px 5px; } }
+
+.btn--area-trabalhe {
+  margin-bottom: 20px; }
+
+/**********************************************
+ *	OBJECT INFOBOX
+ *	infobox.php
+ *********************************************/
+.infobox-grid {
+  width: 100%;
+  padding-right: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1025px) {
+    .infobox-grid {
+      width: 50%;
+      padding-right: 0; } }
+  @media screen and (min-width: 1500px) {
+    .infobox-grid {
+      width: 33.33333%; } }
+
+.infobox, .coursebox .coursebox__content {
+  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif;
+  background: #F58229;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+  min-height: 100px;
+  max-height: 100px;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+  background-color: #F58229;
+  padding: 10px;
+  padding-right: 30px;
+  display: inline-block;
+  overflow: hidden; }
+  @media screen and (min-width: 1025px) {
+    .infobox, .coursebox .coursebox__content {
+      min-height: 80px;
+      max-height: 80px; } }
+  .infobox::after, .coursebox .coursebox__content::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #5C2D91 transparent; }
+  .box--para-mim .infobox, .box--para-mim .coursebox .coursebox__content, .coursebox .box--para-mim .coursebox__content {
+    background-color: #C9243A;
+    padding: 10px;
+    padding-right: 30px;
+    padding: 10px; }
+    .box--para-mim .infobox::after, .box--para-mim .coursebox .coursebox__content::after, .coursebox .box--para-mim .coursebox__content::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #F58229 transparent; }
+  .box--para-minha-familia .infobox, .box--para-minha-familia .coursebox .coursebox__content, .coursebox .box--para-minha-familia .coursebox__content {
+    background-color: #5C2D91;
+    padding: 10px;
+    padding-right: 30px;
+    padding: 10px; }
+    .box--para-minha-familia .infobox::after, .box--para-minha-familia .coursebox .coursebox__content::after, .coursebox .box--para-minha-familia .coursebox__content::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #0095DA transparent; }
+  .box--para-minha-empresa .infobox, .box--para-minha-empresa .coursebox .coursebox__content, .coursebox .box--para-minha-empresa .coursebox__content {
+    background-color: #00BBCE;
+    padding: 10px;
+    padding-right: 30px;
+    padding: 10px; }
+    .box--para-minha-empresa .infobox::after, .box--para-minha-empresa .coursebox .coursebox__content::after, .coursebox .box--para-minha-empresa .coursebox__content::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #942977 transparent; }
+  .box--para-minha-escola .infobox, .box--para-minha-escola .coursebox .coursebox__content, .coursebox .box--para-minha-escola .coursebox__content {
+    background-color: #0095DA;
+    padding: 10px;
+    padding-right: 30px;
+    padding: 10px; }
+    .box--para-minha-escola .infobox::after, .box--para-minha-escola .coursebox .coursebox__content::after, .coursebox .box--para-minha-escola .coursebox__content::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #2A2A86 transparent; }
+  .infobox li, .coursebox .coursebox__content li {
+    margin-bottom: 10px; }
+
+/*.boxes .box .infobox-grid:nth-child(1) .infobox {
+	&::before {
+		content: "";
+		display: block;
+		@include size($bsu*2);
+		background: url('../images/ampulheta.png') no-repeat;
+		background-size: cover;
+	}
+}*/
+.infobox .ajax-content {
+  opacity: 0;
+  max-height: 0; }
+.infobox .acf-map {
+  display: none; }
+
+.infobox__title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-right: 25%;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.1; }
+  @media screen and (min-width: 768px) {
+    .infobox__title {
+      padding-right: 10px; } }
+  @media screen and (min-width: 1025px) {
+    .infobox__title {
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 1.1; } }
+  @media screen and (min-width: 1500px) {
+    .infobox__title {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 1.1; } }
+
+.infobox__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  @media screen and (min-width: 1500px) {
+    .infobox__content {
+      padding-right: 20px; } }
+
+.infobox--special {
+  max-height: 100%;
+  margin-top: 10px;
+  margin-bottom: 0;
+  cursor: default; }
+
+.infobox--open {
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .infobox--open .infobox {
+    max-height: 100%;
+    min-height: 100px;
+    padding-right: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    cursor: default; }
+  .infobox--open .infobox__content {
+    max-height: 100%;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+  .infobox--open .acf-map {
+    display: block; }
+  .infobox--open .ajax-content {
+    max-height: 5000px;
+    padding: 0;
+    padding-bottom: 10px;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out 0.5s;
+            transition: all 0.5s ease-in-out 0.5s; }
+
+li {
+  margin-bottom: 10px;
+  font-size: 14px; }
+
+/**********************************************
+ *	OBJECT TIMELINE
+ *	timeline.php
+ *********************************************/
+.timeline a {
+  color: #00BBCE; }
+
+.timeline__wrapper {
+  position: relative;
+  width: 100%;
+  float: left;
+  clear: left;
+  max-width: 260px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0); }
+  .timeline__wrapper::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    background: #fff; }
+  .timeline__wrapper::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    background: #fff; }
+  .timeline__wrapper:nth-child(odd)::after {
+    right: 50%; }
+  .timeline__wrapper:nth-child(even)::after {
+    left: 50%; }
+  .timeline__wrapper:last-child::after, .timeline__wrapper:last-child::before {
+    display: none; }
+  .timeline__wrapper:nth-child(odd) .tooltip {
+    left: 0; }
+    .timeline__wrapper:nth-child(odd) .tooltip::before {
+      left: 20px; }
+  .timeline__wrapper:nth-child(even) .tooltip {
+    right: -10px; }
+    .timeline__wrapper:nth-child(even) .tooltip::before {
+      right: 30px; }
+  .timeline__wrapper:last-child .tooltip {
+    left: auto;
+    right: auto;
+    background: #00BBCE; }
+    .timeline__wrapper:last-child .tooltip::before {
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+              transform: translate(-50%, 0);
+      border-top-color: #00BBCE; }
+
+.timeline__item {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  border: 2px solid #00BBCE;
+  border-radius: 100%;
+  text-align: center;
+  color: #00BBCE;
+  font-weight: 700;
+  -webkit-transition: background 0.25s ease-in-out, border 0.25s ease-in;
+          transition: background 0.25s ease-in-out, border 0.25s ease-in; }
+  .timeline__item:hover, .timeline__item.s-timeline__item--active {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: -10px;
+    top: -5px;
+    z-index: 1; }
+  .timeline__wrapper .timeline__item {
+    -webkit-transform: translate(0, 5px);
+        -ms-transform: translate(0, 5px);
+            transform: translate(0, 5px); }
+  .timeline__wrapper:nth-child(odd) .timeline__item {
+    float: left;
+    clear: both; }
+    .timeline__wrapper:nth-child(odd) .timeline__item:hover, .timeline__wrapper:nth-child(odd) .timeline__item.s-timeline__item--active {
+      -webkit-transform: translate(-5px, 0);
+          -ms-transform: translate(-5px, 0);
+              transform: translate(-5px, 0); }
+  .timeline__wrapper:nth-child(even) .timeline__item {
+    float: right; }
+    .timeline__wrapper:nth-child(even) .timeline__item:hover, .timeline__wrapper:nth-child(even) .timeline__item.s-timeline__item--active {
+      -webkit-transform: translate(5px, 0);
+          -ms-transform: translate(5px, 0);
+              transform: translate(5px, 0); }
+  .timeline__wrapper:last-child .timeline__item {
+    float: left;
+    clear: both;
+    margin-left: 50%;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+    .timeline__wrapper:last-child .timeline__item:hover, .timeline__wrapper:last-child .timeline__item.s-timeline__item--active {
+      -webkit-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+              transform: translate(-50%, 0); }
+  .timeline__item:hover, .timeline__item.s-timeline__item--active {
+    color: #fff;
+    background: #F58229;
+    border: 2px solid #F58229;
+    -webkit-transition: background 0.25s ease-in-out, border 0.25s ease-in;
+            transition: background 0.25s ease-in-out, border 0.25s ease-in; }
+  .timeline__wrapper:last-child .timeline__item {
+    background: #00BBCE;
+    border: #00BBCE;
+    color: #fff; }
+
+.tooltip {
+  margin: 0;
+  border-radius: 0;
+  color: #fff;
+  width: 100%;
+  background-color: #00BBCE;
+  padding: 20px;
+  padding-right: 40px;
+  padding: 10px 20px 20px 10px;
+  min-height: 60px;
+  position: absolute;
+  -webkit-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  margin-top: -40px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out; }
+  .tooltip::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #5C2D91 transparent; }
+  .tooltip::before {
+    display: block;
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: #00BBCE;
+    position: absolute;
+    bottom: -20px;
+    width: 0;
+    height: 0; }
+  .tooltip .ajax-content.ajax-content {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 700;
+    padding: 0;
+    overflow: hidden; }
+
+.s-tooltip--open {
+  margin-top: -20px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out; }
+
+.has-tooltip {
+  position: relative; }
+  .has-tooltip .tooltip {
+    width: 250px;
+    top: 100%;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
+    margin-top: 0;
+    overflow: hidden; }
+    .has-tooltip .tooltip p {
+      margin: 0; }
+    .has-tooltip .tooltip::before {
+      border-color: transparent;
+      border-bottom-color: #00BBCE;
+      bottom: auto;
+      top: -20px; }
+  .has-tooltip .s-tooltip--open {
+    margin-top: 20px;
+    overflow: visible; }
+
+/**********************************************
+ *	OBJECT UNIDADES
+ *	single-unidades.php
+ *********************************************/
+.units__desc {
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .units__desc {
+      width: 58.33333%; } }
+
+.units__map {
+  width: 100%;
+  height: 200px; }
+  @media screen and (min-width: 768px) {
+    .units__map {
+      width: 41.66667%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%; } }
+
+/**********************************************
+ *	OBJECT UNIDADES
+ *	single-unidades.php
+ *********************************************/
+.box-content {
+  float: left;
+  width: 100%; }
+
+.box-description {
+  float: left;
+  width: 60%;
+  height: 505px;
+  background: #F58229; }
+
+.scroll-description {
+  overflow-y: scroll;
+  max-height: 350px;
+  padding: 15px; }
+
+.box-map {
+  float: left;
+  width: 40%;
+  height: 505px;
+  background: #ffffff; }
+
+/*
+.box-icons{
+	float: left;	
+}
+.icon{
+	float: left;
+	width: 56px;
+	height: 56px;
+	margin-right: 10px;	
+	cursor: pointer;
+}
+	.icon-A{background:url('units-icons.png') 0px 0px no-repeat; }
+	.icon-B{background:url('units-icons.png')  -66px 0px no-repeat; }
+	.icon-C{background:url('units-icons.png') -131px 0px no-repeat; }
+	.icon-D{background:url('units-icons.png') -197px 0px no-repeat; }
+	.icon-E{background:url('units-icons.png') -261px 0px no-repeat; }
+
+
+/**********************************************
+ *	OBJECT MAPA
+ *	single-unidades.php
+ *********************************************/
+.acf-map {
+  width: 100%;
+  height: 100%; }
+
+/**********************************************
+ *	OBJECT CLICK TO CALL
+ *	header.php
+ *********************************************/
+.content__form {
+  float: left;
+  padding: 20px; }
+
+.close__form.close__form {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1; }
+
+.click-to-call {
+  color: #fff; }
+
+.click-to-call__form {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  top: 80px;
+  right: 60px;
+  opacity: 0;
+  min-width: 520px;
+  max-width: 640px;
+  width: 80%;
+  z-index: 10;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+  background: #EF4066; }
+  .click-to-call__form a {
+    color: #FFD400; }
+  @media screen and (min-width: 1025px) {
+    .click-to-call__form a[href^="tel:"] {
+      color: #fff;
+      cursor: text; } }
+  .click-to-call__form .wpcf7-form-control-wrap, .click-to-call__form .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .click-to-call__form .wpcf7-form-control-wrap::after, .click-to-call__form .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #EF4066 transparent; }
+    .click-to-call__form .wpcf7-form-control-wrap::before, .click-to-call__form .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .click-to-call__form .wpcf7-form-control-wrap > input, .click-to-call__form .wpcf7-form-control-wrap > textarea, .click-to-call__form .wpcf7-form-control-wrap > select, .click-to-call__form .div_text > input, .click-to-call__form .div_text > textarea, .click-to-call__form .div_text > select {
+      background: #EF4066; }
+  .click-to-call__form .btn {
+    background-color: #A6CE39;
+    padding: 10px;
+    padding-right: 30px;
+    color: #fff !important;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    float: right;
+    margin: 0; }
+    .click-to-call__form .btn::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #EF4066 transparent; }
+  .click-to-call__form .your-subject {
+    display: none; }
+  .click-to-call__form .wpcf7 {
+    margin-top: 20px; }
+  .click-to-call__form .wpcf7-validation-errors.wpcf7-validation-errors {
+    color: #fff;
+    border: none;
+    width: 100%;
+    background-color: #F58229;
+    padding: 10px;
+    padding-right: 30px; }
+    .click-to-call__form .wpcf7-validation-errors.wpcf7-validation-errors::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #EF4066 transparent; }
+  .click-to-call__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+    color: #fff;
+    border: none;
+    width: 100%;
+    background-color: #007F49;
+    padding: 10px;
+    padding-right: 30px; }
+    .click-to-call__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #EF4066 transparent; }
+
+.s-clicktocall__form--open {
+  visibility: visible;
+  max-height: 750px;
+  top: 120px;
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out; }
+
+/**********************************************
+ *	OBJECT COURSES SELECTION
+ *	courses-selection.php
+ *********************************************/
+.coursebox .coursebox__select {
+  margin-bottom: 0;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #F58229;
+  color: #F58229;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  height: 40px;
+  border-radius: 0; }
+  .box--para-mim .coursebox .coursebox__select {
+    border-color: #C9243A;
+    color: #C9243A; }
+  .box--para-minha-familia .coursebox .coursebox__select {
+    border-color: #5C2D91;
+    color: #5C2D91; }
+  .box--para-minha-empresa .coursebox .coursebox__select {
+    border-color: #00BBCE;
+    color: #00BBCE; }
+  .box--para-minha-escola .coursebox .coursebox__select {
+    border-color: #0095DA;
+    color: #0095DA; }
+  .box--agende-sua-visita .coursebox .coursebox__select {
+    border-color: #EF4066;
+    color: #EF4066; }
+.coursebox .coursebox__content {
+  max-height: 5000px;
+  min-height: 100px;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out; }
+  .coursebox .coursebox__content .ajax-content {
+    max-height: 5000px;
+    padding: 0;
+    padding-bottom: 10px;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out 0.5s;
+            transition: all 0.5s ease-in-out 0.5s; }
+  .coursebox .coursebox__content .part-subtitle {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.3; }
+
+.box--para-minha-familia .btn--agende {
+  background-color: #EF4066;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 20px; }
+  .box--para-minha-familia .btn--agende::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #0095DA transparent; }
+.box--para-minha-familia .face {
+  background: #A6CE39; }
+.box--para-minha-familia .google {
+  background: #942977; }
+
+.box--para-mim .btn--agende {
+  background-color: #EF4066;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 20px; }
+  .box--para-mim .btn--agende::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #F58229 transparent; }
+.box--para-mim .face {
+  background: #00BBCE; }
+.box--para-mim .google {
+  background: #5C2D91; }
+
+.box--para-minha-empresa .face {
+  background: #00BBCE; }
+.box--para-minha-empresa .google {
+  background: #5C2D91; }
+
+.box--para-minha-escola .face {
+  background: #F58229; }
+.box--para-minha-escola .google {
+  background: #C9243A; }
+
+.box__course {
+  display: none;
+  font-size: 12px;
+  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif; }
+  .box__course .part-subtitle {
+    font-size: 14px;
+    font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif; }
+  .box__course .btn--course {
+    display: block;
+    position: relative;
+    font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 36px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1.5; }
+    .box__course .btn--course .user-info {
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 1.5; }
+  .box__course .btns-login {
+    margin-top: 20px; }
+  .box__course .btn--logout {
+    padding-left: 0; }
+
+.ico-social {
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 24px;
+  height: 24px;
+  left: 0; }
+
+.results-box {
+  width: 100%;
+  padding: 0;
+  margin-top: 10px;
+  clear: both;
+  float: left; }
+  .results-box ul, .results-box li {
+    list-style: none;
+    padding: 0; }
+  .results-box li {
+    border-bottom: 1px solid #fff; }
+  .results-box li:last-child {
+    border-bottom: none; }
+  .results-box a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+    padding: 20px 10px;
+    -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out; }
+    .results-box a:hover {
+      background: #00BBCE;
+      padding: 20px;
+      -webkit-transition: all 0.25s ease-in-out;
+              transition: all 0.25s ease-in-out; }
+
+.register {
+  color: #fff; }
+
+.form__register {
+  visibility: hidden;
+  position: absolute;
+  padding: 20px;
+  overflow: hidden;
+  top: 80px;
+  right: 400px;
+  min-width: 520px;
+  max-width: 640px;
+  width: 80%;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+  background: #EF4066; }
+  .form__register a {
+    color: #FFD400; }
+  .form__register .wpcf7-form-control-wrap {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .form__register .wpcf7-form-control-wrap::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #EF4066 transparent; }
+    .form__register .wpcf7-form-control-wrap::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .form__register .wpcf7-form-control-wrap > input, .form__register .wpcf7-form-control-wrap > textarea, .form__register .wpcf7-form-control-wrap > select {
+      background: #EF4066; }
+  .form__register .btn {
+    background-color: #A6CE39;
+    padding: 10px;
+    padding-right: 30px;
+    color: #fff !important;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    float: right;
+    margin: 0; }
+    .form__register .btn::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #EF4066 transparent; }
+  .form__register .btn--voltar {
+    float: left;
+    font-size: 14px;
+    background-color: #F58229;
+    padding: 10px;
+    padding-right: 30px;
+    color: #fff !important;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700; }
+    .form__register .btn--voltar::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #EF4066 transparent; }
+  .form__register h2 {
+    margin: 0px 10px 50px 10px; }
+
+.s-register__form--open {
+  visibility: visible;
+  max-height: 750px;
+  top: 120px;
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out; }
+
+.btn-location {
+  float: left; }
+
+#wpmem_reg label, #wpmem_login label {
+  float: left;
+  clear: both; }
+#wpmem_reg .div_text, #wpmem_reg .button_div, #wpmem_login .div_text, #wpmem_login .button_div {
+  float: right;
+  margin-bottom: 18px; }
+#wpmem_reg .link-text, #wpmem_login .link-text {
+  clear: both; }
+#wpmem_reg .link-text a, #wpmem_login .link-text a {
+  color: #fff;
+  font-weight: normal; }
+#wpmem_reg .button_div, #wpmem_login .button_div {
+  clear: both;
+  background-color: form-btns;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  #wpmem_reg .button_div::after, #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent bg transparent; }
+  #wpmem_reg .button_div .buttons, #wpmem_login .button_div .buttons {
+    background: transparent;
+    border: none;
+    padding: 0; }
+.box--para-mim #wpmem_reg .button_div, .box--para-mim #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--para-mim #wpmem_reg .button_div::after, .box--para-mim #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #F58229 transparent; }
+.box--para-minha-familia #wpmem_reg .button_div, .box--para-minha-familia #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--para-minha-familia #wpmem_reg .button_div::after, .box--para-minha-familia #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #0095DA transparent; }
+.box--para-minha-empresa #wpmem_reg .button_div, .box--para-minha-empresa #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--para-minha-empresa #wpmem_reg .button_div::after, .box--para-minha-empresa #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #942977 transparent; }
+.box--para-minha-escola #wpmem_reg .button_div, .box--para-minha-escola #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--para-minha-escola #wpmem_reg .button_div::after, .box--para-minha-escola #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #2A2A86 transparent; }
+.box--agende-sua-visita #wpmem_reg .button_div, .box--agende-sua-visita #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--agende-sua-visita #wpmem_reg .button_div::after, .box--agende-sua-visita #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #C9243A transparent; }
+.box--institucional #wpmem_reg .button_div, .box--institucional #wpmem_login .button_div {
+  background-color: #A6CE39;
+  padding: 10px;
+  padding-right: 30px;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .box--institucional #wpmem_reg .button_div::after, .box--institucional #wpmem_login .button_div::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #5C2D91 transparent; }
+#wpmem_reg fieldset, #wpmem_login fieldset {
+  padding: 0;
+  border: none; }
+
+.form-bottom {
+  float: right; }
+
+.clear {
+  clear: both; }
+
+/* UI TRUMPS */
+/* UI OBJECTS */
+/* UI PLUGINS */

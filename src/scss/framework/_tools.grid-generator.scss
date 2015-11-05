@@ -1,0 +1,80 @@
+
+// calculates the gcd for the grid constructor
+@function gcd($gcd-numerator, $gcd-denominator) {
+
+    $y: $gcd-numerator;
+    $x: $gcd-denominator;
+
+    @while $y != 0 {
+        $z: $x % $y;
+        $x: $y;
+        $y: $z;
+    }
+    @if $x == 1 {
+        @return false;
+    } @else {
+        @return $gcd-numerator/$x + '-of-' + $gcd-denominator/$x;
+    }
+}
+
+// creates % widths based on fractional values
+// must always receive a fraction
+@function fraction($fraction) {
+  @return $fraction * 100%;
+}
+
+@mixin widths($fraction) {
+    width: fraction($fraction);
+}
+
+/* Generates the specified grid system, with proportions based sintax.
+*
+*  Usage:
+*  @include grid-generator([maximum number of columns], [grid namespace], [fixed size of the gutter]);
+*
+*  html:
+   <div class="[grid-namespace]">
+      <div class="[grid-namespace]-1-of-2">
+        [content]
+      </div><!--
+      --><div class="[grid-namespace]-1-of-2">
+        [content]
+      </div>
+  </div>
+*
+* The generatad classes follow the pattern '[grid-namespace]-x-of-y' for 'x/y' fractions
+*/
+
+@mixin grid-generator($columns, $grid-namespace: 'grid', $gutter: $base-spacing-unit ) {
+    .#{$grid-namespace} {
+        margin-left: -$gutter;
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    .#{$grid-namespace} > .#{$grid-namespace} {
+        margin-left:          0;
+    }
+
+        %#{$grid-namespace}__item,
+        .#{$grid-namespace}-whole {
+            display: inline-block;
+            width: 100%;
+            padding-left: $gutter;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+
+    @for $i from 1 through $columns {
+        @for $j from 1 through $i - 1 {
+            .#{$grid-namespace}-#{$j}-of-#{$i} {
+                @if gcd($j,$i) == false {
+                    @extend %#{$grid-namespace}__item;
+                    @include widths($j/$i);
+                } @else {
+                    @extend .#{$grid-namespace}-#{gcd($j,$i)};
+                }
+            }
+        }
+    }
+}

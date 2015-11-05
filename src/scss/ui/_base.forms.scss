@@ -1,0 +1,355 @@
+form {
+  margin: $bsu 0;
+}
+
+.form-line {
+  clear: both;
+  overflow: hidden;
+  list-style: none;
+  text-align: left;
+  margin-bottom: $bsu--small/2;
+  
+  @include media-query('wide') {
+    margin-bottom: $bsu;
+    text-align: right;
+  }
+  
+  .boxes & {
+    text-align: left;
+  }
+}
+  
+  .bullets-title {
+    margin-top: $bsu--small;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  .pos-field-qual {
+    margin-bottom: $bsu;
+    margin-top: -$bsu--small/2;
+    
+    @include media-query('wide') {
+      margin-top: -$bsu--small;
+    }
+  }
+  
+  .form-line--submit,
+  .boxes .form-line--submit {
+    margin: 0;
+    text-align: right;
+     
+    .btn {
+      margin-right: 0; 
+      margin-top: $bsu;
+    }
+  }
+
+  label,
+  .wpcf7-list-item-label {
+    @include font-size($h6-size, 1.2);
+    font-weight: $semibold;
+    font-family: $headings-font;
+    text-transform: uppercase;
+    display: inline-block;
+    color: $white;
+    padding: $bsu--small/2 0 $bsu--small/2; 
+    
+    @include media-query('wide') {
+      padding: $bsu--small 0 $bsu--small;
+    }
+    
+    .boxes & {
+      float: left;
+      clear: both;
+      margin-top: $bsu--small/2;
+      margin-bottom: $bsu--small;
+    }
+  }
+  
+
+fieldset {
+  padding: $bsu--small;
+  border: 2px solid;
+  margin-top: $bsu--small;
+  position: relative;
+  
+  .close__form.close__form {
+    @include font-size($base-font-size, 1);
+    right: $bsu--small;
+  }
+}
+
+legend {
+  font-weight: $bold;
+  padding: $bsu--small/2;
+  text-transform: uppercase;
+}
+
+
+.wpcf7-form-control-wrap,
+.div_text { 
+  @include input($white, $cl-purple, $bsu--small);
+  @extend %corte;
+  
+  .box--para-mim &            { @include input($white, $bg-para-mim, $bsu--small); }
+  .box--para-minha-familia &  { @include input($white, $bg-para-minha-familia, $bsu--small); }
+  .box--para-minha-empresa &  { @include input($white, $bg-para-minha-empresa, $bsu--small); }
+  .box--para-minha-escola &   { @include input($white, $bg-para-minha-escola, $bsu--small); }
+  .box--agende-sua-visita &   { @include input($white, $bg-agende-sua-visita, $bsu--small); }
+  .box--institucional &       { @include input($white, $bg-institucional, $bsu--small); }
+  
+  display: inline-block;
+  float: right;
+  margin-left: $bsu--large;
+  width: 100%;
+  
+  @include media-query('wide') {
+    @include widths(7/12);
+  }
+  
+  .boxes & {
+    margin-left: 0;
+    width: 100%;
+    float: left;
+    clear: both;
+  }
+  
+  > input,
+  > select {
+    
+    &,
+    .box & {
+      padding: 0 $bsu--small;
+      height: $baseline*5;
+      
+      @include media-query('wide') {
+        height: $baseline*7;
+      }
+    }
+  }
+}
+
+  .wpcf7-form-control-wrap.boolean-input {
+    display: inline;
+    text-align: left;
+    background-color: transparent;
+    
+    &::before,
+    &::after { display: none; }
+    
+    .boxes & {
+      float: right;
+      text-align: left;
+      
+      input { 
+        margin: 3px $bsu--large 0 0;
+        clear: both;
+        float: left;
+      }
+      
+      .wpcf7-list-item-label {
+        clear: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+      
+    input { margin: 0 $bsu--large 0 0; }
+    
+    .wpcf7-list-item {
+      display: block;
+      margin: 0 0 $baseline;
+    }
+      .wpcf7-list-item.last {
+        margin-bottom: 0;
+      }
+  }
+
+.additional, .req {
+  display: inline;
+  font-size: 100%;
+}
+
+
+.req { padding-left:5px; }
+
+.placement-test.placement-test { 
+  color: $cl-lt_green; 
+  line-height: $bsu*2;
+}
+
+.form-busca-empresa {
+  margin-bottom: $bsu*2;
+}
+
+.busca-por-empresa {
+  .wpcf7-form-control-wrap { 
+    @include widths(5/8);
+    height: $bsu--large;
+    float: left;
+    margin: 0;
+    
+    input { height: 100%; }
+  }
+  
+  .btn {
+    @include widths(2.5/8);
+    height: $bsu--large;
+    float: right;
+  }
+}
+
+.form-busca-escola { margin-bottom: $bsu*2; }
+
+.busca-por-escola {
+  .wpcf7-form-control-wrap { 
+    @include widths(5/8);
+    height: $bsu--large;
+    float: left;
+    margin: 0;
+    
+    input { height: 100%; }
+  }
+  
+  .btn {
+    @include widths(2.5/8);
+    height: $bsu--large;
+    float: right;
+  }
+}
+
+.btn {
+  @include btn($form-btns, $cl-purple);
+  @extend %corte;
+  
+  .box--para-mim &::after            { border-right-color: $bg-para-mim; border-bottom-color: $bg-para-mim; }
+  .box--para-minha-familia &::after  { border-right-color: $bg-para-minha-familia; border-bottom-color: $bg-para-minha-familia; }
+  .box--para-minha-empresa &::after  { border-right-color: $bg-para-minha-empresa; border-bottom-color: $bg-para-minha-empresa; }
+  .box--para-minha-escola &::after   { border-right-color: $bg-para-minha-escola; border-bottom-color: $bg-para-minha-escola; }
+  .box--agende-sua-visita &::after   { border-right-color: $bg-agende-sua-visita; border-bottom-color: $bg-agende-sua-visita; }
+}
+  
+  .btn--voltar {
+    margin-bottom: $bsu;
+    background-color: $back-btns;
+    float: left;
+  }
+  
+  .btn--add {
+    margin-top: $bsu--small;
+    background-color: $back-btns;
+    float: right;
+  }
+  
+  .bnt--agendamento { width: 200px; }
+  
+  @include media-query('wide') {
+    .bnt--agendamento { width: 215px; }
+  }
+
+.your-subject { display:none !important; }
+
+
+.busca-por-cep {
+  .wpcf7-form-control-wrap { 
+    @include widths(6/8);
+    height: $bsu--large;
+    float: left;
+    margin: 0;
+    
+    input { height: 100%; }
+  }
+  
+  .btn {
+    @include widths(1.5/8);
+    height: $bsu--large;
+    float: right;
+  }
+}
+
+.coursebox__select { margin-bottom: $baseline*3;}
+
+
+.wpcf7-validation-errors.wpcf7-validation-errors,
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+  .box--para-mim &::after           { border-color: transparent transparent $bg-para-mim; }
+  .box--para-minha-familia &::after { border-color: transparent transparent $bg-para-minha-familia; }
+  .box--para-minha-empresa &::after { border-color: transparent transparent $bg-para-minha-empresa; }
+  .box--para-minha-escola &::after  { border-color: transparent transparent $bg-para-minha-escola; }
+  .box--agende-sua-visita &::after  { border-color: transparent transparent $bg-agende-sua-visita; }
+  .box--institucional &::after      { border-color: transparent transparent $bg-institucional; } 
+}
+
+.wpcf7-validation-errors.wpcf7-validation-errors {
+  color: $white;
+  border: none;
+  width: 100%;
+  @include corte($cl-orange, $bg, $bsu, $bsu--small);
+  @extend %corte;
+}
+
+
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+  color: $white;
+  border: none;
+  width: 100%;
+  @include corte($cl-green, $bg, $bsu, $bsu--small);
+  @extend %corte;
+  
+  .curso-ideal & {
+    position: relative;
+    margin-bottom: $bsu*5;
+    
+    a {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: $bsu--small;
+      color: $white;
+      margin-top: $bsu;
+      @include corte($cl-green, $bg, $bsu, $bsu--small);
+      @extend %corte;
+      
+      .box--para-mim &::after           { border-color: transparent transparent $bg-para-mim; }
+      .box--para-minha-familia &::after { border-color: transparent transparent $bg-para-minha-familia; }
+      .box--para-minha-empresa &::after { border-color: transparent transparent $bg-para-minha-empresa; }
+      .box--para-minha-escola &::after  { border-color: transparent transparent $bg-para-minha-escola; }
+      .box--agende-sua-visita &::after  { border-color: transparent transparent $bg-agende-sua-visita; }
+      .box--institucional &::after      { border-color: transparent transparent $bg-institucional; }
+    }
+  }
+}
+
+.page-unidades,
+.single-unidades {
+  .wpcf7-form-control-wrap.cep {
+    float: left;
+    margin-right: $bsu;
+  }
+  .wpcf7-form-control-wrap.nome-empresa {
+    float: left;
+    margin-right: $bsu;
+  }
+}
+
+input,
+textarea, 
+select,
+button {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba($cl-purple, .5);
+  }
+}
+
+
+div.wpcf7 img.ajax-loader {
+  display: none;
+}
+
+.valores{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.check-valores{ margin-bottom: $bsu*2; }

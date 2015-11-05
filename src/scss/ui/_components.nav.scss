@@ -1,0 +1,90 @@
+.nav {
+  text-align: right;
+  float: right;
+  padding-top: $bsu--small;
+  
+  @include media-query('wide') {
+    padding-top: $bsu;
+  }
+  
+  li {
+    display: inline;
+    
+    &:first-child a { margin-left: 0; }
+  }
+  
+  a {
+    color: $neutral;
+    text-transform: uppercase;
+    font-family: $headings-font;
+    margin-left: $bsu--small;
+    font-weight: $bold;
+    @include font-size($milli-size);
+    
+    @include media-query('desk') {
+      @include font-size($h6-size);
+      margin-left: $bsu*3;
+    }
+    
+    @include media-query('wide') {
+      @include font-size($base-font-size);
+      margin-left: $bsu*4;
+    }
+  }
+}
+
+.mobile-tel {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  text-align: center;
+  color: $neutral;
+  text-transform: uppercase;
+  font-family: $headings-font;
+  margin: 0 auto;
+  font-weight: $bold;
+  @include font-size($h6-size);
+  
+  transform: translate(-50%, 0);
+  
+  @include media-query('lap-and-up') {
+    display: none;
+  }
+}
+
+.menu-item.click-to-call a {
+  position: relative;
+  display: inline-block;
+  width: 165px;
+  text-align: left;
+  padding-left: 30px;
+  
+  &::before {
+    @include size(24px);
+    display: inline-block;
+    background: $bg url(../images/icon-fone.jpg) no-repeat center center;
+    content: '';
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  &::after {
+    content: 'ou clique e ligaremos \A para você';
+    display: inline-block;
+    position: absolute;
+    white-space: pre-wrap;
+    text-align: left;
+    left: 0;
+    padding-left: 30px;
+    top: $bsu;
+    @include font-size($micro-size - 2, 1.2);
+    
+    @include media-query('desk') {
+      top: $bsu*1.2;
+      @include font-size($micro-size, 1.2);
+    }
+  }
+}

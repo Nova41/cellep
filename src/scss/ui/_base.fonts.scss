@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-light.eot');
+    src: url('../fonts/hurme-geometric-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-light.woff') format('woff'),
+         url('../fonts/hurme-geometric-light.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-light.svg#hurme-geometric') format('svg');
+    font-weight: $light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-regular.eot');
+    src: url('../fonts/hurme-geometric-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-regular.woff') format('woff'),
+         url('../fonts/hurme-geometric-regular.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-regular.svg#hurme-geometric') format('svg');
+    font-weight: $normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-bold.eot');
+    src: url('../fonts/hurme-geometric-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-bold.woff') format('woff'),
+         url('../fonts/hurme-geometric-bold.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-bold.svg#hurme-geometric') format('svg');
+    font-weight: $bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-black.eot');
+    src: url('../fonts/hurme-geometric-black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-black.woff') format('woff'),
+         url('../fonts/hurme-geometric-black.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-black.svg#hurme-geometric') format('svg');
+    font-weight: $black;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-semibold.eot');
+    src: url('../fonts/hurme-geometric-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-semibold.woff') format('woff'),
+         url('../fonts/hurme-geometric-semibold.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-semibold.svg#hurme-geometric') format('svg');
+    font-weight: $semibold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'hurme geometric';
+    src: url('../fonts/hurme-geometric-thin.eot');
+    src: url('../fonts/hurme-geometric-thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hurme-geometric-thin.woff') format('woff'),
+         url('../fonts/hurme-geometric-thin.ttf') format('truetype'),
+         url('../fonts/hurme-geometric-thin.svg#hurme-geometric') format('svg');
+    font-weight: $thin;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'roihu';
+    src: url('../fonts/roihu-bold.eot');
+    src: url('../fonts/roihu-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roihu-bold.woff') format('woff'),
+         url('../fonts/roihu-bold.ttf') format('truetype'),
+         url('../fonts/roihu-bold.svg#roihu-bold') format('svg');
+    font-weight: $bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'roihu';
+    src: url('../fonts/roihu-medium.eot');
+    src: url('../fonts/roihu-medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roihu-medium.woff') format('woff'),
+         url('../fonts/roihu-medium.ttf') format('truetype'),
+         url('../fonts/roihu-medium.svg#roihu-medium') format('svg');
+    font-weight: $medium;
+    font-style: normal;
+}

@@ -1,0 +1,17 @@
+.header {
+  padding: $bsu/2 $bsu;
+  
+  @include media-query('desk') { padding: $bsu $bsu*2; }
+  @include media-query('wide') { padding: $bsu*2 $bsu*3; }
+}
+
+.logo {
+  display: inline-block;
+  padding-top: $bsu--small/4;
+}
+  .logo__svg {
+    height: $bsu*1.5;
+    
+    @include media-query('lap-and-up') { height: $bsu*2; }
+    @include media-query('wide') { height: $bsu*3; }
+  }

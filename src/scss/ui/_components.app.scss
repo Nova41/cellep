@@ -1,0 +1,94 @@
+@keyframes ball-scale {
+  0% { transform: scale(0); }
+
+  100% {
+    transform: scale(1);
+    opacity: 0; 
+  }
+}
+
+.loading {
+  position: relative;
+  
+  &::before {
+    @include size($bsu--large);
+    margin-left: -$bsu;
+    margin-top: -$bsu;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    content: '';
+    position: absolute;
+    background-color: $white;
+    border-radius: 100%;
+    display: inline-block;
+    animation-fill-mode: both;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+  } 
+}
+
+.slider {
+  img { width: 100%; }
+  .slick-track { position: absolute; height: 100%; }
+  .slick-list { padding-top: 100%; transition: all $timing ease-in-out; }
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  bottom: $bsu;
+  text-indent: -9999999px;
+  border:0;
+  width:10px;
+  height:10px;
+  left: 50%;
+  margin-left: -$bsu*1.5;
+  z-index: 1;
+  
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.slick-prev {
+  background: url('../images/ico-arrow-L.png') 3px no-repeat;
+  transform: translate(-$bsu*5, 0);
+}
+.slick-next {
+  background: url('../images/ico-arrow-R.png') 3px no-repeat;
+  transform: translate($bsu*5, 0);
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  padding-right: $bsu--large;
+  text-align: center;
+  z-index: 0;
+  
+  li {
+    padding: 0 $bsu--small;
+    margin: 0;
+    display: inline-block;
+    list-style: none;
+    vertical-align: bottom;
+    font-size: 0;
+  }
+  
+  button {
+    @include size(10px);
+    padding: 0;
+    text-indent: -9999999px;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    background: $neutral;
+  }
+}
+
+  .slick-active button { background: $cl-lt_blue; }

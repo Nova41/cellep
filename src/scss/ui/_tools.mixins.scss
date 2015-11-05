@@ -1,0 +1,212 @@
+.grid__item {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+@mixin widths($fraction) {
+  width: $fraction * 100%;
+}
+
+@mixin grid-generator($columns, $grid-namespace, $gutter: $base-spacing-unit ) {
+  .#{$grid-namespace} {
+    margin-left: -$gutter;
+    list-style: none;
+    margin-bottom: 0;
+  }
+  
+  .#{$grid-namespace} > .#{$grid-namespace} { margin-left: 0; }
+  
+  .#{$grid-namespace}__item {
+    padding-left: $gutter;
+    @extend .grid__item;
+  }
+}
+
+
+
+@mixin timeline ($size, $plus) {
+	
+	@include size($size);
+	line-height: $size;
+	display: inline-block;
+	
+	&:hover,
+	&.s-timeline__item--active {
+  	@include size($size+$plus);
+  	line-height: $size+$plus;
+  	margin-bottom: $plus*-1;
+    top: ($plus/2)*-1;
+    z-index: 1;
+  }
+  
+  .timeline__wrapper & {
+    transform: translate(0, ($plus/2));
+  }
+  
+  .timeline__wrapper:nth-child(odd) & {
+    float: left;
+    clear: both;
+    
+    &:hover,
+    &.s-timeline__item--active { transform: translate(($plus/2)*-1, 0); }
+  }
+  
+  .timeline__wrapper:nth-child(even) & {
+    float: right;
+    
+    &:hover,
+    &.s-timeline__item--active { transform: translate(($plus/2), 0); }
+  }
+  
+  .timeline__wrapper:last-child & {
+    float: left;
+    clear: both;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    
+    &:hover,
+    &.s-timeline__item--active { transform: translate(-50%,0); }
+  }
+}
+
+
+@mixin clip-text($img-url, $fallback-color: $white) {
+  color: $fallback-color;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent),
+              url($img-url) repeat;
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+}
+
+@mixin flexbox() { 
+  display: flex;
+  .no-flexbox & { display: table; }
+  
+  .no-flexbox .home & { 
+  	display: inline-block;
+  	height: $bsu*18;
+  }
+	
+	@include media-query('wide') {
+	  .no-flexbox .home & {
+	  	height: $bsu*28;
+	  }
+	}
+}
+
+@mixin stretch() { 
+  align-items: stretch;
+}
+
+%corte,
+.corte {
+  display: inline-block;
+  outline: none;
+  position: relative;
+  
+  &::after {
+    display: block;
+    content: "";
+    @include size(0);
+    @include position(absolute, false -2px -2px false);
+  }
+}  
+
+@mixin corte($color:ui, $bg-color:$bg, $corte:$bsu--small, $padding:quarter($bsu)) {
+  background-color: $color;
+  padding: $padding;
+  padding-right: $corte + $padding;
+  
+  &::after {
+    border-style: solid;
+    border-width: 0 0 $corte $corte/1.45;
+    border-color: transparent transparent $bg-color transparent;
+  }
+}
+
+@mixin btn($color:form-btns, $bg-color:bg, $corte:$bsu, $padding:$bsu--small) {
+  @include corte($color, $bg-color, $corte, $padding);
+  color: $white !important;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $bold;
+}
+
+%input {
+  overflow: hidden;
+  
+  &::before {
+    display: block;
+    content: "";
+    @include size(0);
+  }
+  
+  > input,
+  > textarea,
+  > select {
+    @include size(100%);
+    border: 0;
+    outline: none;
+  }
+}
+
+@mixin input($color:$white, $bg-color:$bg, $corte:$bsu, $padding:2px) {
+  @include corte($color, $bg-color, $corte, $padding);
+  @extend %input;
+  padding: $padding;
+  
+  &::before {
+    /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+    @include position(absolute, auto ceil($padding/2) $padding auto);
+    
+    
+    border-style: solid;
+    border-width: 0 0 $corte $corte/1.45;
+    border-color: transparent transparent $color transparent;
+  }
+  
+  > input,
+  > textarea,
+  > select { background: $bg-color; }
+}
+
+@mixin home-height() {
+  max-height: $max_content;
+  min-height: $max_content;
+    
+  @include media-query('desk') {
+    max-height: $max_content-desk;
+    min-height: $max_content-desk;
+  }
+  
+  @include media-query('wide') {
+	  max-height: $max_content-wide;
+    min-height: $max_content-wide;
+	}
+}
+
+@mixin ipad-vh-fix($property, $ratio) {
+  
+  $portrait: ($ratio/100)*1024;
+  $landscape: ($ratio/100)*768;
+  
+  /** 
+   * iPad with portrait orientation.
+   */
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+    #{$property}: $portrait;
+  }
+   
+  /** 
+   * iPad with landscape orientation.
+   */
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+    #{$property}: $landscape;
+  }
+}

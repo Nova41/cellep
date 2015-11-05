@@ -1,0 +1,29 @@
+///*------------------------------------*\
+//    #SETTINGS-RESPONSIVE
+//\*------------------------------------*/
+
+// Hold our breakpoint aliases and conditions in a list.
+//
+// These can be invoked later on via the `media-query()` mixin found in
+// `_tools.responsive`.
+
+$breakpoints: (
+    "palm"          "screen and (max-width: 768px)",
+    "lap"           "screen and (min-width: 768px) and (max-width: 1024px)",
+    "lap-and-up"    "screen and (min-width: 768px)",
+    "portable"      "screen and (max-width: 1024px)",
+    "desk-only"     "screen and (min-width: 1025px) and (max-width: 1499px)",
+    "desk"          "screen and (min-width: 1025px)",
+    "wide"          "screen and (min-width: 1500px)",
+    "superwide"     "screen and (min-width: 1500px) and (max-height: 890px)",
+    "super"         "screen and (min-width: 1830px)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+) !default;
+
+
+
+
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some responsive settings.
+$responsive-settings: true;
