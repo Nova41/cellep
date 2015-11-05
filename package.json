@@ -1,13 +1,13 @@
 {
   "name": "fastshell",
   "title": "Fiercely quick and opinionated front-ends",
-  "author": "Hossein Karami",
+  "author": "Marcus Martini",
   "url": "https://HosseinKarami.github.io/fastshell",
   "version": "1.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/HosseinKarami/fastshell.git"
+    "url": "git@github.com:marcusvdm/cellep.git"
   },
   "devDependencies": {
     "gulp": "^3.8.10",
