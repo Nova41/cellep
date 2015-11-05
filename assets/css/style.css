@@ -1,27 +1,20 @@
 @charset "UTF-8";
-/*------------------------------------*\
-    $APP GENERAL SETTINGS
+/*------------------------------------*    $APP GENERAL SETTINGS
 \*------------------------------------*/
-/*------------------------------------*\
-    $BASE COLORS
+/*------------------------------------*    $BASE COLORS
 \*------------------------------------*/
-/*------------------------------------*\
-    $PALLETA
+/*------------------------------------*    $PALLETA
 \*------------------------------------*/
-/*------------------------------------*\
-    $SECTIONS
+/*------------------------------------*    $SECTIONS
 \*------------------------------------*/
-/*------------------------------------*\
-    $OVERRIDES
+/*------------------------------------*    $OVERRIDES
 \*------------------------------------*/
 /**
  * Place any variables that should override holy-grail.css’ defaults here.
  */
-/*------------------------------------*\
-    $CUSTOM
+/*------------------------------------*    $CUSTOM
 \*------------------------------------*/
-/*------------------------------------*\
-    $FRAMEWORK
+/*------------------------------------*    $FRAMEWORK
 \*------------------------------------*/
 /* FRAMEWORK SETTINGS */
 /*!
@@ -71,14 +64,29 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
   display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
@@ -96,7 +104,8 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-[hidden], template {
+[hidden],
+template {
   display: none; }
 
 /* Links
@@ -110,7 +119,8 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0; }
 
 /* Text-level semantics
@@ -124,7 +134,8 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 /**
@@ -157,7 +168,8 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -207,7 +219,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -223,7 +238,11 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -243,7 +262,8 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
+button,
+select {
   text-transform: none; }
 
 /**
@@ -253,7 +273,10 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -262,13 +285,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -286,7 +311,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -297,7 +323,8 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -316,7 +343,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -359,30 +387,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+td,
+th {
   padding: 0; }
 
-/*------------------------------------*\
-    #RESET
+/*------------------------------------*    #RESET
 \*------------------------------------*/
 /**
  * As well as using normalize.css, it is often advantageous to remove all
  * margins from certain elements.
  */
-body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, figure, table, th, td, caption, hr {
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+figure,
+table, th, td, caption,
+hr {
   margin: 0;
   padding: 0; }
 
 /**
  * Give a help cursor to elements that give extra info on `:hover`.
  */
-abbr[title], dfn[title] {
+abbr[title],
+dfn[title] {
   cursor: help; }
 
 /**
  * Remove underlines from potentially troublesome elements.
  */
-u, ins {
+u,
+ins {
   text-decoration: none; }
 
 /**
@@ -391,8 +428,7 @@ u, ins {
 ins {
   border-bottom: 1px solid; }
 
-/*------------------------------------*\
-    #BOX-SIZING
+/*------------------------------------*    #BOX-SIZING
 \*------------------------------------*/
 /**
  * Set the global `box-sizing` state to `border-box`.
@@ -407,8 +443,7 @@ html {
   box-sizing: inherit; }
 
 /* FRAMEWORK BASE */
-/*------------------------------------*\
-    $CODE
+/*------------------------------------*    $CODE
 \*------------------------------------*/
 /**
  * Use an explicit font stack to ensure browsers render correct `line-height`.
@@ -471,8 +506,7 @@ pre mark {
   white-space: pre;
   /* [4] */ }
 
-/*------------------------------------*\
-    $FORMS
+/*------------------------------------*    $FORMS
 \*------------------------------------*/
 /**
  *
@@ -492,7 +526,8 @@ fieldset {
    <input type=password class=text-input>
  *
  */
-.text-input, textarea {
+.text-input,
+textarea {
   /**
      * Style these via your theme stylesheet.
      */ }
@@ -549,7 +584,8 @@ fieldset {
    </li>
  *
  */
-label, .label {
+label,
+.label {
   display: block; }
 
 /**
@@ -584,7 +620,9 @@ label, .label {
 /*
      * Labels in check-lists
      */
-.check-label, .check-list label, .check-list .label {
+.check-label,
+.check-list label,
+.check-list .label {
   display: inline-block; }
 
 /**
@@ -623,11 +661,11 @@ label, .label {
   display: inline-block;
   visibility: hidden; }
 
-.text-input:active + .extra-help, .text-input:focus + .extra-help {
+.text-input:active + .extra-help,
+.text-input:focus + .extra-help {
   visibility: visible; }
 
-/*------------------------------------*\
-    $HEADINGS
+/*------------------------------------*    $HEADINGS
 \*------------------------------------*/
 /**
  * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
@@ -698,8 +736,7 @@ hgroup .hN {
   font-size: 3rem;
   line-height: 1; }
 
-/*------------------------------------*\
-    #IMAGES
+/*------------------------------------*    #IMAGES
 \*------------------------------------*/
 /**
  * 1. Fluid images for responsive purposes.
@@ -722,17 +759,19 @@ img {
  * 2. If a `width` and/or `height` attribute have been explicitly defined, let’s
  *    not make the image fluid.
  */
-.gm-style img, img[width], img[height] {
+.gm-style img,
+img[width],
+img[height] {
   /* [2] */
   max-width: none; }
 
-/*------------------------------------*\
-    $LISTS
+/*------------------------------------*    $LISTS
 \*------------------------------------*/
 /**
  * Remove vertical spacing from nested lists.
  */
-li > ul, li > ol {
+li > ul,
+li > ol {
   margin-bottom: 0; }
 
 /**
@@ -742,8 +781,7 @@ li > ul, li > ol {
 .numbered-list {
   list-style-type: decimal; }
 
-/*------------------------------------*\
-    #PAGE
+/*------------------------------------*    #PAGE
 \*------------------------------------*/
 /**
  * High-, page-level styling.
@@ -779,21 +817,20 @@ html {
   -webkit-font-smoothing: antialiased;
   /* [5] */ }
 
-/*------------------------------------*\
-    $PARAGRAPHS
+/*------------------------------------*    $PARAGRAPHS
 \*------------------------------------*/
 /**
  * The `.lede` class is used to make the introductory text (usually a paragraph)
  * of a document slightly larger.
  */
-.lede, .lead {
+.lede,
+.lead {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333; }
 
 /* FRAMEWORK OBJECTS */
-/*------------------------------------*\
-    #BOX
+/*------------------------------------*    #BOX
 \*------------------------------------*/
 /**
  * The box object simply boxes off content.
@@ -808,8 +845,7 @@ html {
   .box > :last-child {
     margin-bottom: 0; }
 
-/*------------------------------------*\
-    #MEDIA
+/*------------------------------------*    #MEDIA
 \*------------------------------------*/
 /**
  * Place any image- and text-like content side-by-side, as per:
@@ -827,11 +863,11 @@ html {
 .media__body {
   overflow: hidden;
   display: block; }
-  .media__body, .media__body > :last-child {
+  .media__body,
+  .media__body > :last-child {
     margin-bottom: 0; }
 
-/*------------------------------------*\
-    #LIST-INLINE
+/*------------------------------------*    #LIST-INLINE
 \*------------------------------------*/
 /**
  * The list-inline object simply displays a list of items in one line.
@@ -844,15 +880,16 @@ html {
     display: inline-block; }
 
 /* FRAMEWORK TRUMPS */
-/*------------------------------------*\
-    #CLEARFIX
+/*------------------------------------*    #CLEARFIX
 \*------------------------------------*/
 /**
  * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
  * over and over in your markup.
  */
-.clearfix:after, .box:after, .media:after {
+.clearfix:after,
+.box:after,
+.media:after {
   content: "";
   display: table;
   clear: both; }
@@ -863,47 +900,60 @@ html {
     color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important; }
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: underline; }
   a[href]:after {
     content: " (" attr(href) ")"; }
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
     content: ""; }
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
   thead {
     display: table-header-group; }
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3; }
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid; } }
 
-/*------------------------------------*\
-    $UI
+/*------------------------------------*    $UI
 \*------------------------------------*/
 /* UI TOOLS */
-.grid__item, .grid-tiles__item, .grid-externo__item, .single .page-header, .page .page-header, .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid, .single .content-grid, .page .content-grid, .grid-interno__item, .infobox-grid {
+.grid__item, .grid-tiles__item, .grid-externo__item, .single .page-header,
+.page .page-header, .single.page-sobre-a-gente .content-grid,
+.page.page-sobre-a-gente .content-grid, .single .content-grid,
+.page .content-grid, .grid-interno__item, .infobox-grid {
   display: inline-block;
   width: 100%;
   vertical-align: top;
   box-sizing: border-box; }
 
-.wpcf7-form-control-wrap, .div_text, .btn, .wpcf7-validation-errors, .wpcf7-mail-sent-ok, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a, .corte {
+.wpcf7-form-control-wrap,
+.div_text, .btn, .wpcf7-validation-errors, .wpcf7-mail-sent-ok, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a,
+.corte {
   display: inline-block;
   outline: none;
   position: relative; }
-  .wpcf7-form-control-wrap::after, .div_text::after, .btn::after, .wpcf7-validation-errors::after, .wpcf7-mail-sent-ok::after, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after, .corte::after {
+  .wpcf7-form-control-wrap::after,
+  .div_text::after, .btn::after, .wpcf7-validation-errors::after, .wpcf7-mail-sent-ok::after, .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after,
+  .corte::after {
     display: block;
     content: "";
     width: 0;
@@ -912,14 +962,24 @@ html {
     right: -2px;
     bottom: -2px; }
 
-.wpcf7-form-control-wrap, .div_text, .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text, .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text, .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text, .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text, .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text, .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text, .click-to-call__form .wpcf7-form-control-wrap, .click-to-call__form .div_text, .form__register .wpcf7-form-control-wrap {
+.wpcf7-form-control-wrap,
+.div_text, .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text, .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text, .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text, .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text, .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text, .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text, .click-to-call__form .wpcf7-form-control-wrap,
+.click-to-call__form .div_text, .form__register .wpcf7-form-control-wrap {
   overflow: hidden; }
-  .wpcf7-form-control-wrap::before, .div_text::before, .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before, .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before, .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before, .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before, .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before, .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before, .click-to-call__form .wpcf7-form-control-wrap::before, .click-to-call__form .div_text::before, .form__register .wpcf7-form-control-wrap::before {
+  .wpcf7-form-control-wrap::before,
+  .div_text::before, .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before, .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before, .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before, .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before, .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before, .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before, .click-to-call__form .wpcf7-form-control-wrap::before,
+  .click-to-call__form .div_text::before, .form__register .wpcf7-form-control-wrap::before {
     display: block;
     content: "";
     width: 0;
     height: 0; }
-  .wpcf7-form-control-wrap > input, .div_text > input, .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .div_text > input, .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .div_text > input, .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .div_text > input, .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .div_text > input, .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .div_text > input, .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .div_text > input, .click-to-call__form .wpcf7-form-control-wrap > input, .click-to-call__form .div_text > input, .form__register .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea, .div_text > textarea, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .div_text > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .div_text > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .div_text > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .div_text > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .div_text > textarea, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .div_text > textarea, .click-to-call__form .wpcf7-form-control-wrap > textarea, .click-to-call__form .div_text > textarea, .form__register .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select, .div_text > select, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > select, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > select, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > select, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > select, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > select, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > select, .click-to-call__form .wpcf7-form-control-wrap > select, .click-to-call__form .div_text > select, .form__register .wpcf7-form-control-wrap > select {
+  .wpcf7-form-control-wrap > input,
+  .div_text > input, .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .div_text > input, .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .div_text > input, .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .div_text > input, .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .div_text > input, .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .div_text > input, .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .div_text > input, .click-to-call__form .wpcf7-form-control-wrap > input,
+  .click-to-call__form .div_text > input, .form__register .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea,
+  .div_text > textarea, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .div_text > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .div_text > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .div_text > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .div_text > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .div_text > textarea, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .div_text > textarea, .click-to-call__form .wpcf7-form-control-wrap > textarea,
+  .click-to-call__form .div_text > textarea, .form__register .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select,
+  .div_text > select, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > select, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > select, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > select, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > select, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > select, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > select, .click-to-call__form .wpcf7-form-control-wrap > select,
+  .click-to-call__form .div_text > select, .form__register .wpcf7-form-control-wrap > select {
     width: 100%;
     height: 100%;
     border: 0;
@@ -962,7 +1022,10 @@ html {
 .page-aside::-webkit-scrollbar-thumb {
   background-color: #00BBCE; }
 
-.hidden, #wpmem_reg .req-text, #wpmem_reg legend, #wpmem_login .req-text, #wpmem_login legend {
+.hidden, #wpmem_reg .req-text,
+#wpmem_reg legend,
+#wpmem_login .req-text,
+#wpmem_login legend {
   display: none !important; }
 
 .preload * {
@@ -1029,67 +1092,68 @@ html {
 .s-institucional .box--institucional .box__header::after {
   border-bottom-color: #5C2D91 !important; }
 
-/*------------------------------------*\
-    $FONTS
+/*------------------------------------*    $FONTS
 \*------------------------------------*/
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-light.eot');
-  src: url('../fonts/hurme-geometric-light.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-light.woff') format('woff'), url('../fonts/hurme-geometric-light.ttf') format('truetype'), url('../fonts/hurme-geometric-light.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-light.eot");
+  src: url("../fonts/hurme-geometric-light.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-light.woff") format("woff"), url("../fonts/hurme-geometric-light.ttf") format("truetype"), url("../fonts/hurme-geometric-light.svg#hurme-geometric") format("svg");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-regular.eot');
-  src: url('../fonts/hurme-geometric-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-regular.woff') format('woff'), url('../fonts/hurme-geometric-regular.ttf') format('truetype'), url('../fonts/hurme-geometric-regular.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-regular.eot");
+  src: url("../fonts/hurme-geometric-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-regular.woff") format("woff"), url("../fonts/hurme-geometric-regular.ttf") format("truetype"), url("../fonts/hurme-geometric-regular.svg#hurme-geometric") format("svg");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-bold.eot');
-  src: url('../fonts/hurme-geometric-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-bold.woff') format('woff'), url('../fonts/hurme-geometric-bold.ttf') format('truetype'), url('../fonts/hurme-geometric-bold.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-bold.eot");
+  src: url("../fonts/hurme-geometric-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-bold.woff") format("woff"), url("../fonts/hurme-geometric-bold.ttf") format("truetype"), url("../fonts/hurme-geometric-bold.svg#hurme-geometric") format("svg");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-black.eot');
-  src: url('../fonts/hurme-geometric-black.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-black.woff') format('woff'), url('../fonts/hurme-geometric-black.ttf') format('truetype'), url('../fonts/hurme-geometric-black.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-black.eot");
+  src: url("../fonts/hurme-geometric-black.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-black.woff") format("woff"), url("../fonts/hurme-geometric-black.ttf") format("truetype"), url("../fonts/hurme-geometric-black.svg#hurme-geometric") format("svg");
   font-weight: 900;
   font-style: normal; }
 
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-semibold.eot');
-  src: url('../fonts/hurme-geometric-semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-semibold.woff') format('woff'), url('../fonts/hurme-geometric-semibold.ttf') format('truetype'), url('../fonts/hurme-geometric-semibold.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-semibold.eot");
+  src: url("../fonts/hurme-geometric-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-semibold.woff") format("woff"), url("../fonts/hurme-geometric-semibold.ttf") format("truetype"), url("../fonts/hurme-geometric-semibold.svg#hurme-geometric") format("svg");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: 'hurme geometric';
-  src: url('../fonts/hurme-geometric-thin.eot');
-  src: url('../fonts/hurme-geometric-thin.eot?#iefix') format('embedded-opentype'), url('../fonts/hurme-geometric-thin.woff') format('woff'), url('../fonts/hurme-geometric-thin.ttf') format('truetype'), url('../fonts/hurme-geometric-thin.svg#hurme-geometric') format('svg');
+  src: url("../fonts/hurme-geometric-thin.eot");
+  src: url("../fonts/hurme-geometric-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/hurme-geometric-thin.woff") format("woff"), url("../fonts/hurme-geometric-thin.ttf") format("truetype"), url("../fonts/hurme-geometric-thin.svg#hurme-geometric") format("svg");
   font-weight: 100;
   font-style: normal; }
 
 @font-face {
   font-family: 'roihu';
-  src: url('../fonts/roihu-bold.eot');
-  src: url('../fonts/roihu-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/roihu-bold.woff') format('woff'), url('../fonts/roihu-bold.ttf') format('truetype'), url('../fonts/roihu-bold.svg#roihu-bold') format('svg');
+  src: url("../fonts/roihu-bold.eot");
+  src: url("../fonts/roihu-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roihu-bold.woff") format("woff"), url("../fonts/roihu-bold.ttf") format("truetype"), url("../fonts/roihu-bold.svg#roihu-bold") format("svg");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'roihu';
-  src: url('../fonts/roihu-medium.eot');
-  src: url('../fonts/roihu-medium.eot?#iefix') format('embedded-opentype'), url('../fonts/roihu-medium.woff') format('woff'), url('../fonts/roihu-medium.ttf') format('truetype'), url('../fonts/roihu-medium.svg#roihu-medium') format('svg');
+  src: url("../fonts/roihu-medium.eot");
+  src: url("../fonts/roihu-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roihu-medium.woff") format("woff"), url("../fonts/roihu-medium.ttf") format("truetype"), url("../fonts/roihu-medium.svg#roihu-medium") format("svg");
   font-weight: 400;
   font-style: normal; }
 
-html, body, p {
-  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif;
+html,
+body,
+p {
+  font-family: "roihu", "Helvetica-neue", "Helvetica", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -1114,19 +1178,21 @@ a {
     color: #EF4066; }
   .box--institucional a {
     color: #F58229; }
-  .infobox a, .coursebox a {
+  .infobox a,
+  .coursebox a {
     color: #fff;
     border-bottom: 1px solid;
     font-weight: 600;
     display: inline-block;
     line-height: 1.5; }
     @media screen and (min-width: 1025px) {
-      .infobox a[href^="tel:"], .coursebox a[href^="tel:"] {
+      .infobox a[href^="tel:"],
+      .coursebox a[href^="tel:"] {
         cursor: text;
         border: none; } }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  font-family: "hurme geometric", "Helvetica-neue", "Helvetica", sans-serif;
   text-transform: uppercase;
   color: #fff;
   line-height: 1.2;
@@ -1142,7 +1208,8 @@ h3 {
 .infobox__title {
   margin-top: 0; }
 
-.box__title, .page-title {
+.box__title,
+.page-title {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -1151,23 +1218,29 @@ h3 {
   font-size: 1.5rem;
   line-height: 1; }
   @media screen and (min-width: 1025px) {
-    .box__title, .page-title {
+    .box__title,
+    .page-title {
       line-height: .85; } }
   @media screen and (min-width: 1500px) {
-    .box__title, .page-title {
+    .box__title,
+    .page-title {
       font-size: 32px;
       font-size: 2rem;
       line-height: 0.85; } }
-  .box__title span, .page-title span {
+  .box__title span,
+  .page-title span {
     font-weight: 300;
     display: block; }
     @media screen and (min-width: 1500px) {
-      .box__title span, .page-title span {
+      .box__title span,
+      .page-title span {
         font-weight: 100; } }
 
-.part-title, .part-subtitle {
+.part-title,
+.part-subtitle {
   margin-top: 20px; }
-  .part-title:first-child, .part-subtitle:first-child {
+  .part-title:first-child,
+  .part-subtitle:first-child {
     margin-top: 0; }
 
 .part-title {
@@ -1198,7 +1271,6 @@ h3 {
     .page-title {
       margin-bottom: 0;
       padding-right: 10px;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch; }
@@ -1212,7 +1284,8 @@ h3 {
     padding-bottom: 40px;
     margin-bottom: 40px; }
 
-.part-title, .title-units {
+.part-title,
+.title-units {
   margin-bottom: 20px; }
 
 .content .special {
@@ -1263,27 +1336,32 @@ form {
     .pos-field-qual {
       margin-top: -10px; } }
 
-.form-line--submit, .boxes .form-line--submit {
+.form-line--submit,
+.boxes .form-line--submit {
   margin: 0;
   text-align: right; }
-  .form-line--submit .btn, .boxes .form-line--submit .btn {
+  .form-line--submit .btn,
+  .boxes .form-line--submit .btn {
     margin-right: 0;
     margin-top: 20px; }
 
-label, .wpcf7-list-item-label {
+label,
+.wpcf7-list-item-label {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.2;
   font-weight: 600;
-  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  font-family: "hurme geometric", "Helvetica-neue", "Helvetica", sans-serif;
   text-transform: uppercase;
   display: inline-block;
   color: #fff;
   padding: 5px 0 5px; }
   @media screen and (min-width: 1500px) {
-    label, .wpcf7-list-item-label {
+    label,
+    .wpcf7-list-item-label {
       padding: 10px 0 10px; } }
-  .boxes label, .boxes .wpcf7-list-item-label {
+  .boxes label, .boxes
+  .wpcf7-list-item-label {
     float: left;
     clear: both;
     margin-top: 5px;
@@ -1305,7 +1383,8 @@ legend {
   padding: 5px;
   text-transform: uppercase; }
 
-.wpcf7-form-control-wrap, .div_text {
+.wpcf7-form-control-wrap,
+.div_text {
   background-color: #fff;
   padding: 2px;
   padding-right: 12px;
@@ -1314,11 +1393,13 @@ legend {
   float: right;
   margin-left: 40px;
   width: 100%; }
-  .wpcf7-form-control-wrap::after, .div_text::after {
+  .wpcf7-form-control-wrap::after,
+  .div_text::after {
     border-style: solid;
     border-width: 0 0 10px 6.89655px;
     border-color: transparent transparent #5C2D91 transparent; }
-  .wpcf7-form-control-wrap::before, .div_text::before {
+  .wpcf7-form-control-wrap::before,
+  .div_text::before {
     /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1330,18 +1411,26 @@ legend {
     border-style: solid;
     border-width: 0 0 10px 6.89655px;
     border-color: transparent transparent #fff transparent; }
-  .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select, .div_text > input, .div_text > textarea, .div_text > select {
+  .wpcf7-form-control-wrap > input,
+  .wpcf7-form-control-wrap > textarea,
+  .wpcf7-form-control-wrap > select,
+  .div_text > input,
+  .div_text > textarea,
+  .div_text > select {
     background: #5C2D91; }
-  .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text {
+  .box--para-mim .wpcf7-form-control-wrap, .box--para-mim
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--para-mim .wpcf7-form-control-wrap::after, .box--para-mim .div_text::after {
+    .box--para-mim .wpcf7-form-control-wrap::after, .box--para-mim
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #F58229 transparent; }
-    .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before {
+    .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1353,18 +1442,28 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > input, .box--para-mim .div_text > textarea, .box--para-mim .div_text > select {
+    .box--para-mim .wpcf7-form-control-wrap > input,
+    .box--para-mim .wpcf7-form-control-wrap > textarea,
+    .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim
+    .div_text > input,
+    .box--para-mim
+    .div_text > textarea,
+    .box--para-mim
+    .div_text > select {
       background: #F58229; }
-  .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text {
+  .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--para-minha-familia .wpcf7-form-control-wrap::after, .box--para-minha-familia .div_text::after {
+    .box--para-minha-familia .wpcf7-form-control-wrap::after, .box--para-minha-familia
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #0095DA transparent; }
-    .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before {
+    .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1376,18 +1475,28 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > input, .box--para-minha-familia .div_text > textarea, .box--para-minha-familia .div_text > select {
+    .box--para-minha-familia .wpcf7-form-control-wrap > input,
+    .box--para-minha-familia .wpcf7-form-control-wrap > textarea,
+    .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia
+    .div_text > input,
+    .box--para-minha-familia
+    .div_text > textarea,
+    .box--para-minha-familia
+    .div_text > select {
       background: #0095DA; }
-  .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text {
+  .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--para-minha-empresa .wpcf7-form-control-wrap::after, .box--para-minha-empresa .div_text::after {
+    .box--para-minha-empresa .wpcf7-form-control-wrap::after, .box--para-minha-empresa
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #942977 transparent; }
-    .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before {
+    .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1399,18 +1508,28 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > input, .box--para-minha-empresa .div_text > textarea, .box--para-minha-empresa .div_text > select {
+    .box--para-minha-empresa .wpcf7-form-control-wrap > input,
+    .box--para-minha-empresa .wpcf7-form-control-wrap > textarea,
+    .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa
+    .div_text > input,
+    .box--para-minha-empresa
+    .div_text > textarea,
+    .box--para-minha-empresa
+    .div_text > select {
       background: #942977; }
-  .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text {
+  .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--para-minha-escola .wpcf7-form-control-wrap::after, .box--para-minha-escola .div_text::after {
+    .box--para-minha-escola .wpcf7-form-control-wrap::after, .box--para-minha-escola
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #2A2A86 transparent; }
-    .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before {
+    .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1422,18 +1541,28 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > input, .box--para-minha-escola .div_text > textarea, .box--para-minha-escola .div_text > select {
+    .box--para-minha-escola .wpcf7-form-control-wrap > input,
+    .box--para-minha-escola .wpcf7-form-control-wrap > textarea,
+    .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola
+    .div_text > input,
+    .box--para-minha-escola
+    .div_text > textarea,
+    .box--para-minha-escola
+    .div_text > select {
       background: #2A2A86; }
-  .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text {
+  .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--agende-sua-visita .wpcf7-form-control-wrap::after, .box--agende-sua-visita .div_text::after {
+    .box--agende-sua-visita .wpcf7-form-control-wrap::after, .box--agende-sua-visita
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #C9243A transparent; }
-    .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before {
+    .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1445,18 +1574,28 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > input, .box--agende-sua-visita .div_text > textarea, .box--agende-sua-visita .div_text > select {
+    .box--agende-sua-visita .wpcf7-form-control-wrap > input,
+    .box--agende-sua-visita .wpcf7-form-control-wrap > textarea,
+    .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita
+    .div_text > input,
+    .box--agende-sua-visita
+    .div_text > textarea,
+    .box--agende-sua-visita
+    .div_text > select {
       background: #C9243A; }
-  .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text {
+  .box--institucional .wpcf7-form-control-wrap, .box--institucional
+  .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .box--institucional .wpcf7-form-control-wrap::after, .box--institucional .div_text::after {
+    .box--institucional .wpcf7-form-control-wrap::after, .box--institucional
+    .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #5C2D91 transparent; }
-    .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before {
+    .box--institucional .wpcf7-form-control-wrap::before, .box--institucional
+    .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -1468,21 +1607,50 @@ legend {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > input, .box--institucional .div_text > textarea, .box--institucional .div_text > select {
+    .box--institucional .wpcf7-form-control-wrap > input,
+    .box--institucional .wpcf7-form-control-wrap > textarea,
+    .box--institucional .wpcf7-form-control-wrap > select, .box--institucional
+    .div_text > input,
+    .box--institucional
+    .div_text > textarea,
+    .box--institucional
+    .div_text > select {
       background: #5C2D91; }
   @media screen and (min-width: 1500px) {
-    .wpcf7-form-control-wrap, .div_text {
+    .wpcf7-form-control-wrap,
+    .div_text {
       width: 58.33333%; } }
-  .boxes .wpcf7-form-control-wrap, .boxes .div_text {
+  .boxes .wpcf7-form-control-wrap, .boxes
+  .div_text {
     margin-left: 0;
     width: 100%;
     float: left;
     clear: both; }
-  .wpcf7-form-control-wrap > input, .box .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > select, .box .wpcf7-form-control-wrap > select, .div_text > input, .box .div_text > input, .div_text > select, .box .div_text > select {
+  .wpcf7-form-control-wrap > input,
+  .box .wpcf7-form-control-wrap > input,
+  .wpcf7-form-control-wrap > select,
+  .box
+  .wpcf7-form-control-wrap > select,
+  .div_text > input,
+  .box
+  .div_text > input,
+  .div_text > select,
+  .box
+  .div_text > select {
     padding: 0 10px;
     height: 30px; }
     @media screen and (min-width: 1500px) {
-      .wpcf7-form-control-wrap > input, .box .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > select, .box .wpcf7-form-control-wrap > select, .div_text > input, .box .div_text > input, .div_text > select, .box .div_text > select {
+      .wpcf7-form-control-wrap > input,
+      .box .wpcf7-form-control-wrap > input,
+      .wpcf7-form-control-wrap > select,
+      .box
+      .wpcf7-form-control-wrap > select,
+      .div_text > input,
+      .box
+      .div_text > input,
+      .div_text > select,
+      .box
+      .div_text > select {
         height: 42px; } }
 
 .wpcf7-form-control-wrap.boolean-input {
@@ -1531,6 +1699,7 @@ legend {
   margin: 0; }
   .busca-por-empresa .wpcf7-form-control-wrap input {
     height: 100%; }
+
 .busca-por-empresa .btn {
   width: 31.25%;
   height: 40px;
@@ -1546,6 +1715,7 @@ legend {
   margin: 0; }
   .busca-por-escola .wpcf7-form-control-wrap input {
     height: 100%; }
+
 .busca-por-escola .btn {
   width: 31.25%;
   height: 40px;
@@ -1607,6 +1777,7 @@ legend {
   margin: 0; }
   .busca-por-cep .wpcf7-form-control-wrap input {
     height: 100%; }
+
 .busca-por-cep .btn {
   width: 18.75%;
   height: 40px;
@@ -1615,17 +1786,28 @@ legend {
 .coursebox__select {
   margin-bottom: 18px; }
 
-.box--para-mim .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-mim .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+.box--para-mim .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-mim
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #F58229; }
-.box--para-minha-familia .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-familia .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+
+.box--para-minha-familia .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-familia
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #0095DA; }
-.box--para-minha-empresa .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-empresa .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+
+.box--para-minha-empresa .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-empresa
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #942977; }
-.box--para-minha-escola .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-escola .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+
+.box--para-minha-escola .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--para-minha-escola
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #2A2A86; }
-.box--agende-sua-visita .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--agende-sua-visita .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+
+.box--agende-sua-visita .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--agende-sua-visita
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #C9243A; }
-.box--institucional .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--institucional .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+
+.box--institucional .wpcf7-validation-errors.wpcf7-validation-errors::after, .box--institucional
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
   border-color: transparent transparent #5C2D91; }
 
 .wpcf7-validation-errors.wpcf7-validation-errors {
@@ -1681,14 +1863,20 @@ legend {
       .box--institucional .curso-ideal .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok a::after {
         border-color: transparent transparent #5C2D91; }
 
-.page-unidades .wpcf7-form-control-wrap.cep, .single-unidades .wpcf7-form-control-wrap.cep {
-  float: left;
-  margin-right: 20px; }
-.page-unidades .wpcf7-form-control-wrap.nome-empresa, .single-unidades .wpcf7-form-control-wrap.nome-empresa {
+.page-unidades .wpcf7-form-control-wrap.cep,
+.single-unidades .wpcf7-form-control-wrap.cep {
   float: left;
   margin-right: 20px; }
 
-input:focus, textarea:focus, select:focus, button:focus {
+.page-unidades .wpcf7-form-control-wrap.nome-empresa,
+.single-unidades .wpcf7-form-control-wrap.nome-empresa {
+  float: left;
+  margin-right: 20px; }
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(92, 45, 145, 0.5); }
 
@@ -1707,7 +1895,6 @@ div.wpcf7 img.ajax-loader {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0); }
-
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -1716,7 +1903,6 @@ div.wpcf7 img.ajax-loader {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0); }
-
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -1744,15 +1930,17 @@ div.wpcf7 img.ajax-loader {
 
 .slider img {
   width: 100%; }
+
 .slider .slick-track {
   position: absolute;
   height: 100%; }
+
 .slider .slick-list {
   padding-top: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   position: absolute;
   bottom: 20px;
   text-indent: -9999999px;
@@ -1762,18 +1950,19 @@ div.wpcf7 img.ajax-loader {
   left: 50%;
   margin-left: -30px;
   z-index: 1; }
-  .slick-prev:focus, .slick-next:focus {
+  .slick-prev:focus,
+  .slick-next:focus {
     outline: none;
     box-shadow: none; }
 
 .slick-prev {
-  background: url('../images/ico-arrow-L.png') 3px no-repeat;
+  background: url("../images/ico-arrow-L.png") 3px no-repeat;
   -webkit-transform: translate(-100px, 0);
       -ms-transform: translate(-100px, 0);
           transform: translate(-100px, 0); }
 
 .slick-next {
-  background: url('../images/ico-arrow-R.png') 3px no-repeat;
+  background: url("../images/ico-arrow-R.png") 3px no-repeat;
   -webkit-transform: translate(100px, 0);
       -ms-transform: translate(100px, 0);
           transform: translate(100px, 0); }
@@ -1857,7 +2046,8 @@ div.wpcf7 img.ajax-loader {
       .logo-cambridge img {
         width: 90%; } }
 
-#click-menu#click-menu, #responsive-menu#responsive-menu {
+#click-menu#click-menu,
+#responsive-menu#responsive-menu {
   position: fixed; }
 
 #responsive-menu#responsive-menu {
@@ -1878,7 +2068,7 @@ div.wpcf7 img.ajax-loader {
   .nav a {
     color: #bcbec0;
     text-transform: uppercase;
-    font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+    font-family: "hurme geometric", "Helvetica-neue", "Helvetica", sans-serif;
     margin-left: 10px;
     font-weight: 700;
     font-size: 12px;
@@ -1905,7 +2095,7 @@ div.wpcf7 img.ajax-loader {
   text-align: center;
   color: #bcbec0;
   text-transform: uppercase;
-  font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+  font-family: "hurme geometric", "Helvetica-neue", "Helvetica", sans-serif;
   margin: 0 auto;
   font-weight: 700;
   font-size: 14px;
@@ -1962,13 +2152,20 @@ div.wpcf7 img.ajax-loader {
     margin-left: 0; }
   .grid-tiles__item {
     padding-left: 0; }
-  .grid-externo, .single .main, .page .main {
+  .grid-externo, .single .main,
+  .page .main {
     margin-left: -40px;
     list-style: none;
     margin-bottom: 0; }
-  .grid-externo > .grid-externo, .single .main > .grid-externo, .page .main > .grid-externo, .single .grid-externo > .main, .single .main > .main, .page .grid-externo > .main, .page .main > .main {
+  .grid-externo > .grid-externo, .single .main > .grid-externo,
+  .page .main > .grid-externo, .single .grid-externo > .main, .single .main > .main,
+  .page .grid-externo > .main,
+  .page .main > .main {
     margin-left: 0; }
-  .grid-externo__item, .single .page-header, .page .page-header, .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid, .single .content-grid, .page .content-grid {
+  .grid-externo__item, .single .page-header,
+  .page .page-header, .single.page-sobre-a-gente .content-grid,
+  .page.page-sobre-a-gente .content-grid, .single .content-grid,
+  .page .content-grid {
     padding-left: 40px; }
   .grid-interno {
     margin-left: -20px;
@@ -1995,11 +2192,9 @@ div.wpcf7 img.ajax-loader {
       padding: 0 20px; } }
   @media screen and (min-width: 1025px) {
     .main {
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch;
@@ -2008,15 +2203,16 @@ div.wpcf7 img.ajax-loader {
         display: table; }
       .no-flexbox .home .main {
         display: inline-block;
-        height: 360px; }
-      @media screen and (min-width: 1500px) {
-        .no-flexbox .home .main {
-          height: 560px; } } }
+        height: 360px; } }
+  @media screen and (min-width: 1025px) and (min-width: 1500px) {
+    .no-flexbox .home .main {
+      height: 560px; } }
   @media screen and (min-width: 1500px) {
     .main {
       padding: 0 0 0 60px; } }
 
-.content p, .infobox p {
+.content p,
+.infobox p {
   margin-bottom: 20px; }
 
 /**********************************************
@@ -2025,26 +2221,24 @@ div.wpcf7 img.ajax-loader {
  *********************************************/
 @media screen and (min-width: 768px) {
   .flexfix {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: stretch;
     -webkit-align-items: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
     width: 100%;
     margin-bottom: 20px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
     .no-flexbox .flexfix {
       display: table; }
     .no-flexbox .home .flexfix {
       display: inline-block;
-      height: 360px; }
-    @media screen and (min-width: 1500px) {
-      .no-flexbox .home .flexfix {
-        height: 560px; } } }
+      height: 360px; } }
+  @media screen and (min-width: 768px) and (min-width: 1500px) {
+    .no-flexbox .home .flexfix {
+      height: 560px; } }
+
 @media screen and (min-width: 1025px) {
   .flexfix {
     width: 83.33333%;
@@ -2063,7 +2257,6 @@ div.wpcf7 img.ajax-loader {
       width: 40%; } }
 
 .slider {
-  -webkit-box-align: stretch;
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -2080,8 +2273,7 @@ div.wpcf7 img.ajax-loader {
 
 .boxes-grid {
   width: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .boxes-grid {
       width: 60%;
@@ -2099,16 +2291,13 @@ div.wpcf7 img.ajax-loader {
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     .grid-tiles {
       height: 100%;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; } }
+      transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1025px) {
     .grid-tiles {
       height: 100%;
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch; }
@@ -2116,10 +2305,10 @@ div.wpcf7 img.ajax-loader {
         display: table; }
       .no-flexbox .home .grid-tiles {
         display: inline-block;
-        height: 360px; }
-      @media screen and (min-width: 1500px) {
-        .no-flexbox .home .grid-tiles {
-          height: 560px; } } }
+        height: 360px; } }
+  @media screen and (min-width: 1025px) and (min-width: 1500px) {
+    .no-flexbox .home .grid-tiles {
+      height: 560px; } }
 
 .boxes {
   width: 100%;
@@ -2127,8 +2316,7 @@ div.wpcf7 img.ajax-loader {
   position: relative;
   margin: 20px 0;
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .boxes {
       margin: 0;
@@ -2175,8 +2363,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--para-mim::after, .box--para-mim .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2187,8 +2374,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--para-minha-familia::after, .box--para-minha-familia .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2199,8 +2385,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--para-minha-escola::after, .box--para-minha-escola .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2211,8 +2396,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--para-minha-empresa::after, .box--para-minha-empresa .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2223,8 +2407,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--agende-sua-visita::after, .box--agende-sua-visita .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2235,8 +2418,7 @@ div.wpcf7 img.ajax-loader {
   padding: 20px;
   padding-right: 60px;
   padding: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .box--institucional::after, .box--institucional .box__header::after {
     border-style: solid;
     border-width: 0 0 40px 27.58621px;
@@ -2250,16 +2432,13 @@ div.wpcf7 img.ajax-loader {
 
 .agende-grid {
   width: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .agende-grid {
       width: 16.66667%;
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch; }
@@ -2267,10 +2446,10 @@ div.wpcf7 img.ajax-loader {
         display: table; }
       .no-flexbox .home .agende-grid {
         display: inline-block;
-        height: 360px; }
-      @media screen and (min-width: 1500px) {
-        .no-flexbox .home .agende-grid {
-          height: 560px; } } }
+        height: 360px; } }
+  @media screen and (min-width: 1025px) and (min-width: 1500px) {
+    .no-flexbox .home .agende-grid {
+      height: 560px; } }
 
 .institucional-grid {
   width: 100%; }
@@ -2293,70 +2472,58 @@ div.wpcf7 img.ajax-loader {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .boxes .box__header {
       position: absolute;
       max-height: 100%;
       min-height: 100%;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; } }
+      transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1025px) {
     .box__header {
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch;
       position: absolute;
       max-height: 100%;
       min-height: 100%;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       .no-flexbox .box__header {
         display: table; }
       .no-flexbox .home .box__header {
         display: inline-block;
-        height: 360px; }
-      @media screen and (min-width: 1500px) {
-        .no-flexbox .home .box__header {
-          height: 560px; } } }
+        height: 360px; } }
+  @media screen and (min-width: 1025px) and (min-width: 1500px) {
+    .no-flexbox .home .box__header {
+      height: 560px; } }
   .box--para-mim .box__header {
-    background-image: url('../images/bg-para-mim.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-para-mim.jpg");
+    transition: all 0.5s ease-in-out; }
   .box--para-minha-familia .box__header {
-    background-image: url('../images/bg-para-minha-familia.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-para-minha-familia.jpg");
+    transition: all 0.5s ease-in-out; }
   .box--para-minha-escola .box__header {
-    background-image: url('../images/bg-para-minha-escola.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-para-minha-escola.jpg");
+    transition: all 0.5s ease-in-out; }
   .box--para-minha-empresa .box__header {
-    background-image: url('../images/bg-para-minha-empresa.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-para-minha-empresa.jpg");
+    transition: all 0.5s ease-in-out; }
   .box--agende-sua-visita .box__header {
-    background-image: url('../images/bg-agende-sua-visita.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-agende-sua-visita.jpg");
+    transition: all 0.5s ease-in-out; }
   .box--institucional .box__header {
-    background-image: url('../images/bg-institucional.jpg');
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    background-image: url("../images/bg-institucional.jpg");
+    transition: all 0.5s ease-in-out; }
 
 .box__link {
   width: 100%;
   height: 100%;
   display: inline-block;
   padding: 10px 20px 10px 10px;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .box__link {
       position: absolute; } }
@@ -2373,14 +2540,15 @@ div.wpcf7 img.ajax-loader {
 .box--para-minha-empresa .box__anchor {
   background-color: #F58229; }
 
-.content, .box__aside {
+.content,
+.box__aside {
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
-    .content, .box__aside {
+    .content,
+    .box__aside {
       width: 0;
       visibility: hidden; } }
 
@@ -2411,19 +2579,20 @@ div.wpcf7 img.ajax-loader {
   .s-para-mim .boxes-grid {
     width: 100%;
     height: 720px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .boxes-grid {
     height: 420px; } }
+
 @media screen and (min-width: 1500px) {
   .s-para-mim .boxes-grid {
     height: 640px; } }
+
 .s-para-mim .boxes {
   max-height: 100%;
   min-height: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .s-para-mim .boxes {
       max-height: 420px;
@@ -2432,13 +2601,13 @@ div.wpcf7 img.ajax-loader {
     .s-para-mim .boxes {
       max-height: 640px;
       min-height: 640px; } }
+
 .s-para-mim .boxes .box--para-mim {
   width: 100%;
   margin-top: 100px;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-mim .boxes .box--para-mim {
       margin-top: 0;
@@ -2451,8 +2620,7 @@ div.wpcf7 img.ajax-loader {
         position: relative;
         max-height: 100px;
         min-height: 100px;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-mim .boxes .box--para-mim .content {
         height: 520px;
         overflow: hidden;
@@ -2466,14 +2634,15 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-mim .boxes .box--para-mim .box__header, .s-para-mim .boxes .box--para-mim .content, .s-para-mim .boxes .box--para-mim .box__aside {
+      .s-para-mim .boxes .box--para-mim .box__header,
+      .s-para-mim .boxes .box--para-mim .content,
+      .s-para-mim .boxes .box--para-mim .box__aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-mim .boxes .box--para-mim .box__header {
         width: 25%; }
       .s-para-mim .boxes .box--para-mim .content {
@@ -2484,17 +2653,19 @@ div.wpcf7 img.ajax-loader {
   @media screen and (min-width: 1500px) {
     .s-para-mim .boxes .box--para-mim {
       max-height: 640px; }
-      .s-para-mim .boxes .box--para-mim .box__header, .s-para-mim .boxes .box--para-mim .content, .s-para-mim .boxes .box--para-mim .box__aside {
+      .s-para-mim .boxes .box--para-mim .box__header,
+      .s-para-mim .boxes .box--para-mim .content,
+      .s-para-mim .boxes .box--para-mim .box__aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 .s-para-mim .box--para-minha-familia {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-mim .box--para-minha-familia {
       min-height: 100px;
@@ -2511,13 +2682,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-mim .box--para-minha-escola {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 33.33333%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-mim .box--para-minha-escola {
       min-height: 100px;
@@ -2534,13 +2705,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-mim .box--para-minha-empresa {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 66.66667%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-mim .box--para-minha-empresa {
       min-height: 100px;
@@ -2567,19 +2738,20 @@ div.wpcf7 img.ajax-loader {
   .s-para-minha-familia .boxes-grid {
     width: 100%;
     height: 720px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .boxes-grid {
     height: 420px; } }
+
 @media screen and (min-width: 1500px) {
   .s-para-minha-familia .boxes-grid {
     height: 640px; } }
+
 .s-para-minha-familia .boxes {
   max-height: 100%;
   min-height: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .s-para-minha-familia .boxes {
       max-height: 420px;
@@ -2588,13 +2760,13 @@ div.wpcf7 img.ajax-loader {
     .s-para-minha-familia .boxes {
       max-height: 640px;
       min-height: 640px; } }
+
 .s-para-minha-familia .box--para-mim {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-familia .box--para-mim {
       min-height: 100px;
@@ -2611,13 +2783,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-familia .boxes .box--para-minha-familia {
   width: 100%;
   margin-top: 100px;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-familia .boxes .box--para-minha-familia {
       margin-top: 0;
@@ -2630,8 +2802,7 @@ div.wpcf7 img.ajax-loader {
         position: relative;
         max-height: 100px;
         min-height: 100px;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-familia .boxes .box--para-minha-familia .content {
         height: 520px;
         overflow: hidden;
@@ -2645,14 +2816,15 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-familia .boxes .box--para-minha-familia .box__header, .s-para-minha-familia .boxes .box--para-minha-familia .content, .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header,
+      .s-para-minha-familia .boxes .box--para-minha-familia .content,
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-familia .boxes .box--para-minha-familia .box__header {
         width: 25%; }
       .s-para-minha-familia .boxes .box--para-minha-familia .content {
@@ -2663,17 +2835,19 @@ div.wpcf7 img.ajax-loader {
   @media screen and (min-width: 1500px) {
     .s-para-minha-familia .boxes .box--para-minha-familia {
       max-height: 640px; }
-      .s-para-minha-familia .boxes .box--para-minha-familia .box__header, .s-para-minha-familia .boxes .box--para-minha-familia .content, .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__header,
+      .s-para-minha-familia .boxes .box--para-minha-familia .content,
+      .s-para-minha-familia .boxes .box--para-minha-familia .box__aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 .s-para-minha-familia .box--para-minha-escola {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 33.33333%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-familia .box--para-minha-escola {
       min-height: 100px;
@@ -2690,13 +2864,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-familia .box--para-minha-empresa {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 66.66667%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-familia .box--para-minha-empresa {
       min-height: 100px;
@@ -2723,19 +2897,20 @@ div.wpcf7 img.ajax-loader {
   .s-para-minha-escola .boxes-grid {
     width: 100%;
     height: 720px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .boxes-grid {
     height: 420px; } }
+
 @media screen and (min-width: 1500px) {
   .s-para-minha-escola .boxes-grid {
     height: 640px; } }
+
 .s-para-minha-escola .boxes {
   max-height: 100%;
   min-height: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .s-para-minha-escola .boxes {
       max-height: 420px;
@@ -2744,13 +2919,13 @@ div.wpcf7 img.ajax-loader {
     .s-para-minha-escola .boxes {
       max-height: 640px;
       min-height: 640px; } }
+
 .s-para-minha-escola .box--para-mim {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-escola .box--para-mim {
       min-height: 100px;
@@ -2767,13 +2942,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-escola .box--para-minha-familia {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 33.33333%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-escola .box--para-minha-familia {
       min-height: 100px;
@@ -2790,13 +2965,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-escola .boxes .box--para-minha-escola {
   width: 100%;
   margin-top: 100px;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-escola .boxes .box--para-minha-escola {
       margin-top: 0;
@@ -2809,8 +2984,7 @@ div.wpcf7 img.ajax-loader {
         position: relative;
         max-height: 100px;
         min-height: 100px;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-escola .boxes .box--para-minha-escola .content {
         height: 520px;
         overflow: hidden;
@@ -2824,14 +2998,15 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-escola .boxes .box--para-minha-escola .box__header, .s-para-minha-escola .boxes .box--para-minha-escola .content, .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header,
+      .s-para-minha-escola .boxes .box--para-minha-escola .content,
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-escola .boxes .box--para-minha-escola .box__header {
         width: 25%; }
       .s-para-minha-escola .boxes .box--para-minha-escola .content {
@@ -2842,17 +3017,19 @@ div.wpcf7 img.ajax-loader {
   @media screen and (min-width: 1500px) {
     .s-para-minha-escola .boxes .box--para-minha-escola {
       max-height: 640px; }
-      .s-para-minha-escola .boxes .box--para-minha-escola .box__header, .s-para-minha-escola .boxes .box--para-minha-escola .content, .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__header,
+      .s-para-minha-escola .boxes .box--para-minha-escola .content,
+      .s-para-minha-escola .boxes .box--para-minha-escola .box__aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 .s-para-minha-escola .box--para-minha-empresa {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 66.66667%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-escola .box--para-minha-empresa {
       min-height: 100px;
@@ -2879,19 +3056,20 @@ div.wpcf7 img.ajax-loader {
   .s-para-minha-empresa .boxes-grid {
     width: 100%;
     height: 720px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .boxes-grid {
     height: 420px; } }
+
 @media screen and (min-width: 1500px) {
   .s-para-minha-empresa .boxes-grid {
     height: 640px; } }
+
 .s-para-minha-empresa .boxes {
   max-height: 100%;
   min-height: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .s-para-minha-empresa .boxes {
       max-height: 420px;
@@ -2900,13 +3078,13 @@ div.wpcf7 img.ajax-loader {
     .s-para-minha-empresa .boxes {
       max-height: 640px;
       min-height: 640px; } }
+
 .s-para-minha-empresa .box--para-mim {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-empresa .box--para-mim {
       min-height: 100px;
@@ -2923,13 +3101,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-empresa .box--para-minha-familia {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 33.33333%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-empresa .box--para-minha-familia {
       min-height: 100px;
@@ -2946,13 +3124,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-empresa .box--para-minha-escola {
   width: 33.33333%;
   position: absolute;
   top: 0;
   left: 66.66667%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-empresa .box--para-minha-escola {
       min-height: 100px;
@@ -2969,13 +3147,13 @@ div.wpcf7 img.ajax-loader {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1; }
+
 .s-para-minha-empresa .boxes .box--para-minha-empresa {
   width: 100%;
   margin-top: 100px;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 768px) {
     .s-para-minha-empresa .boxes .box--para-minha-empresa {
       margin-top: 0;
@@ -2988,8 +3166,7 @@ div.wpcf7 img.ajax-loader {
         position: relative;
         max-height: 100px;
         min-height: 100px;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-empresa .boxes .box--para-minha-empresa .content {
         height: 520px;
         overflow: hidden;
@@ -3003,14 +3180,15 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header, .s-para-minha-empresa .boxes .box--para-minha-empresa .content, .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header,
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .content,
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; }
+        transition: all 0.5s ease-in-out; }
       .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header {
         width: 25%; }
       .s-para-minha-empresa .boxes .box--para-minha-empresa .content {
@@ -3021,7 +3199,9 @@ div.wpcf7 img.ajax-loader {
   @media screen and (min-width: 1500px) {
     .s-para-minha-empresa .boxes .box--para-minha-empresa {
       max-height: 640px; }
-      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header, .s-para-minha-empresa .boxes .box--para-minha-empresa .content, .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__header,
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .content,
+      .s-para-minha-empresa .boxes .box--para-minha-empresa .box__aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
@@ -3059,14 +3239,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-para-mim .box--para-mim .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-para-mim .box--para-mim .content > .ajax-content {
           overflow: auto; } }
@@ -3076,21 +3254,25 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-mim .box--para-mim .box__header, .s-para-mim .box--para-mim .content, .s-para-mim .box--para-mim .page-aside {
+      .s-para-mim .box--para-mim .box__header,
+      .s-para-mim .box--para-mim .content,
+      .s-para-mim .box--para-mim .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-para-mim .box--para-mim {
       max-height: 640px; }
-      .s-para-mim .box--para-mim .box__header, .s-para-mim .box--para-mim .content, .s-para-mim .box--para-mim .page-aside {
+      .s-para-mim .box--para-mim .box__header,
+      .s-para-mim .box--para-mim .content,
+      .s-para-mim .box--para-mim .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .box--para-minha-familia .content {
     height: 0;
@@ -3098,8 +3280,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .box--para-minha-escola .content {
     height: 0;
@@ -3107,8 +3289,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .box--para-minha-empresa .content {
     height: 0;
@@ -3116,8 +3298,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .box--agende-sua-visita .content {
     height: 0;
@@ -3125,8 +3307,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-mim .box--institucional .content {
     height: 0;
@@ -3134,8 +3316,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
 
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .box--para-mim .content {
@@ -3144,8 +3325,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 .s-para-minha-familia .box--para-minha-familia {
   max-height: 100%;
   opacity: 1;
@@ -3179,14 +3360,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-para-minha-familia .box--para-minha-familia .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-para-minha-familia .box--para-minha-familia .content > .ajax-content {
           overflow: auto; } }
@@ -3196,21 +3375,25 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-familia .box--para-minha-familia .box__header, .s-para-minha-familia .box--para-minha-familia .content, .s-para-minha-familia .box--para-minha-familia .page-aside {
+      .s-para-minha-familia .box--para-minha-familia .box__header,
+      .s-para-minha-familia .box--para-minha-familia .content,
+      .s-para-minha-familia .box--para-minha-familia .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-para-minha-familia .box--para-minha-familia {
       max-height: 640px; }
-      .s-para-minha-familia .box--para-minha-familia .box__header, .s-para-minha-familia .box--para-minha-familia .content, .s-para-minha-familia .box--para-minha-familia .page-aside {
+      .s-para-minha-familia .box--para-minha-familia .box__header,
+      .s-para-minha-familia .box--para-minha-familia .content,
+      .s-para-minha-familia .box--para-minha-familia .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .box--para-minha-escola .content {
     height: 0;
@@ -3218,8 +3401,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .box--para-minha-empresa .content {
     height: 0;
@@ -3227,8 +3410,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .box--agende-sua-visita .content {
     height: 0;
@@ -3236,8 +3419,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-familia .box--institucional .content {
     height: 0;
@@ -3245,8 +3428,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
 
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .box--para-mim .content {
@@ -3255,8 +3437,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .box--para-minha-familia .content {
     height: 0;
@@ -3264,8 +3446,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 .s-para-minha-escola .box--para-minha-escola {
   max-height: 100%;
   opacity: 1;
@@ -3299,14 +3481,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-para-minha-escola .box--para-minha-escola .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-para-minha-escola .box--para-minha-escola .content > .ajax-content {
           overflow: auto; } }
@@ -3316,21 +3496,25 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-escola .box--para-minha-escola .box__header, .s-para-minha-escola .box--para-minha-escola .content, .s-para-minha-escola .box--para-minha-escola .page-aside {
+      .s-para-minha-escola .box--para-minha-escola .box__header,
+      .s-para-minha-escola .box--para-minha-escola .content,
+      .s-para-minha-escola .box--para-minha-escola .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-para-minha-escola .box--para-minha-escola {
       max-height: 640px; }
-      .s-para-minha-escola .box--para-minha-escola .box__header, .s-para-minha-escola .box--para-minha-escola .content, .s-para-minha-escola .box--para-minha-escola .page-aside {
+      .s-para-minha-escola .box--para-minha-escola .box__header,
+      .s-para-minha-escola .box--para-minha-escola .content,
+      .s-para-minha-escola .box--para-minha-escola .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .box--para-minha-empresa .content {
     height: 0;
@@ -3338,8 +3522,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .box--agende-sua-visita .content {
     height: 0;
@@ -3347,8 +3531,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-escola .box--institucional .content {
     height: 0;
@@ -3356,8 +3540,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
 
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .box--para-mim .content {
@@ -3366,8 +3549,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .box--para-minha-familia .content {
     height: 0;
@@ -3375,8 +3558,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .box--para-minha-escola .content {
     height: 0;
@@ -3384,8 +3567,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 .s-para-minha-empresa .box--para-minha-empresa {
   max-height: 100%;
   opacity: 1;
@@ -3419,14 +3602,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-para-minha-empresa .box--para-minha-empresa .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-para-minha-empresa .box--para-minha-empresa .content > .ajax-content {
           overflow: auto; } }
@@ -3436,21 +3617,25 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-para-minha-empresa .box--para-minha-empresa .box__header, .s-para-minha-empresa .box--para-minha-empresa .content, .s-para-minha-empresa .box--para-minha-empresa .page-aside {
+      .s-para-minha-empresa .box--para-minha-empresa .box__header,
+      .s-para-minha-empresa .box--para-minha-empresa .content,
+      .s-para-minha-empresa .box--para-minha-empresa .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-para-minha-empresa .box--para-minha-empresa {
       max-height: 640px; }
-      .s-para-minha-empresa .box--para-minha-empresa .box__header, .s-para-minha-empresa .box--para-minha-empresa .content, .s-para-minha-empresa .box--para-minha-empresa .page-aside {
+      .s-para-minha-empresa .box--para-minha-empresa .box__header,
+      .s-para-minha-empresa .box--para-minha-empresa .content,
+      .s-para-minha-empresa .box--para-minha-empresa .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .box--agende-sua-visita .content {
     height: 0;
@@ -3458,8 +3643,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-para-minha-empresa .box--institucional .content {
     height: 0;
@@ -3467,8 +3652,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
 
 @media screen and (min-width: 1025px) {
   .s-agende-sua-visita .box--para-mim .content {
@@ -3477,8 +3661,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-agende-sua-visita .box--para-minha-familia .content {
     height: 0;
@@ -3486,8 +3670,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-agende-sua-visita .box--para-minha-escola .content {
     height: 0;
@@ -3495,8 +3679,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-agende-sua-visita .box--para-minha-empresa .content {
     height: 0;
@@ -3504,8 +3688,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 .s-agende-sua-visita .box--agende-sua-visita {
   max-height: 100%;
   opacity: 1;
@@ -3539,14 +3723,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-agende-sua-visita .box--agende-sua-visita .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-agende-sua-visita .box--agende-sua-visita .content > .ajax-content {
           overflow: auto; } }
@@ -3556,21 +3738,25 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-agende-sua-visita .box--agende-sua-visita .content, .s-agende-sua-visita .box--agende-sua-visita .page-aside {
+      .s-agende-sua-visita .box--agende-sua-visita .box__header,
+      .s-agende-sua-visita .box--agende-sua-visita .content,
+      .s-agende-sua-visita .box--agende-sua-visita .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-agende-sua-visita .box--agende-sua-visita {
       max-height: 640px; }
-      .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-agende-sua-visita .box--agende-sua-visita .content, .s-agende-sua-visita .box--agende-sua-visita .page-aside {
+      .s-agende-sua-visita .box--agende-sua-visita .box__header,
+      .s-agende-sua-visita .box--agende-sua-visita .content,
+      .s-agende-sua-visita .box--agende-sua-visita .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
+
 @media screen and (min-width: 1025px) {
   .s-agende-sua-visita .box--institucional .content {
     height: 0;
@@ -3578,8 +3764,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
 
 @media screen and (min-width: 1025px) {
   .s-institucional .box--para-mim .content {
@@ -3588,8 +3773,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-institucional .box--para-minha-familia .content {
     height: 0;
@@ -3597,8 +3782,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-institucional .box--para-minha-escola .content {
     height: 0;
@@ -3606,8 +3791,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-institucional .box--para-minha-empresa .content {
     height: 0;
@@ -3615,8 +3800,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 @media screen and (min-width: 1025px) {
   .s-institucional .box--agende-sua-visita .content {
     height: 0;
@@ -3624,8 +3809,8 @@ div.wpcf7 img.ajax-loader {
     min-height: 0;
     overflow: hidden;
     display: inline-block;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out; } }
+
 .s-institucional .box--institucional {
   max-height: 100%;
   opacity: 1;
@@ -3659,14 +3844,12 @@ div.wpcf7 img.ajax-loader {
     max-height: 100%;
     padding: 20px 10px 40px 10px;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     visibility: visible; }
     .s-institucional .box--institucional .content > .ajax-content {
       max-height: 100%;
       padding-right: 20px;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       @media screen and (min-width: 1025px) {
         .s-institucional .box--institucional .content > .ajax-content {
           overflow: auto; } }
@@ -3676,43 +3859,46 @@ div.wpcf7 img.ajax-loader {
       left: 0;
       padding: 0;
       max-height: 420px; }
-      .s-institucional .box--institucional .box__header, .s-institucional .box--institucional .content, .s-institucional .box--institucional .page-aside {
+      .s-institucional .box--institucional .box__header,
+      .s-institucional .box--institucional .content,
+      .s-institucional .box--institucional .page-aside {
         height: 420px;
         max-height: 420px;
         min-height: 420px;
         padding-left: 20px;
         display: inline-block;
-        -webkit-transition: all 0.5s ease-in-out;
-                transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out; } }
   @media screen and (min-width: 1500px) {
     .s-institucional .box--institucional {
       max-height: 640px; }
-      .s-institucional .box--institucional .box__header, .s-institucional .box--institucional .content, .s-institucional .box--institucional .page-aside {
+      .s-institucional .box--institucional .box__header,
+      .s-institucional .box--institucional .content,
+      .s-institucional .box--institucional .page-aside {
         height: 640px;
         max-height: 640px;
         min-height: 640px; } }
 
 @media screen and (min-width: 1025px) {
-  .s-agende-sua-visita .boxes-grid, .s-institucional .boxes-grid {
+  .s-agende-sua-visita .boxes-grid,
+  .s-institucional .boxes-grid {
     width: 100%;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
-  .s-agende-sua-visita .box--agende-sua-visita, .s-institucional .box--institucional {
+    transition: all 0.5s ease-in-out; }
+  .s-agende-sua-visita .box--agende-sua-visita,
+  .s-institucional .box--institucional {
     height: 420px;
     max-height: 420px;
     min-height: 420px;
     margin: 0; }
-    .s-agende-sua-visita .box--agende-sua-visita .box__header, .s-institucional .box--institucional .box__header {
+    .s-agende-sua-visita .box--agende-sua-visita .box__header,
+    .s-institucional .box--institucional .box__header {
       position: relative;
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
-    .s-agende-sua-visita .box--agende-sua-visita .content, .s-institucional .box--institucional .content {
-      -webkit-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
+    .s-agende-sua-visita .box--agende-sua-visita .content,
+    .s-institucional .box--institucional .content {
+      transition: all 0.5s ease-in-out; }
   .s-agende-sua-visita .flexfix {
     width: 41.66667%;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-agende-sua-visita .slider-grid {
     width: 0;
     overflow: hidden;
@@ -3724,13 +3910,11 @@ div.wpcf7 img.ajax-loader {
     max-height: 50%;
     min-height: 50%;
     position: absolute;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-agende-sua-visita .agende-grid {
     width: 58.33333%;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-agende-sua-visita .box--agende-sua-visita .box__header {
     width: 28.57143%; }
   .s-agende-sua-visita .box--agende-sua-visita .content {
@@ -3741,8 +3925,7 @@ div.wpcf7 img.ajax-loader {
     width: 100%; }
   .s-institucional .flexfix {
     width: 16.66667%;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-institucional .slider-grid {
     width: 0;
     overflow: hidden;
@@ -3755,8 +3938,7 @@ div.wpcf7 img.ajax-loader {
     min-height: 25%;
     position: absolute;
     left: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
     .s-institucional .boxes .box:nth-child(1) {
       top: 0; }
     .s-institucional .boxes .box:nth-child(2) {
@@ -3768,20 +3950,19 @@ div.wpcf7 img.ajax-loader {
   .s-institucional .agende-grid {
     width: 16.66667%;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-institucional .institucional-grid {
     width: 66.66667%;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .s-institucional .box--institucional .box__header {
     width: 25%; }
   .s-institucional .box--institucional .content {
     width: 75%; } }
 
 @media screen and (min-width: 1500px) {
-  .s-agende-sua-visita .box--agende-sua-visita, .s-institucional .box--institucional {
+  .s-agende-sua-visita .box--agende-sua-visita,
+  .s-institucional .box--institucional {
     height: 640px;
     max-height: 640px;
     min-height: 640px; } }
@@ -3805,9 +3986,11 @@ div.wpcf7 img.ajax-loader {
 @media screen and (min-width: 1025px) {
   .s-sobre-a-gente .box--institucional .content.content {
     width: 43.75%; } }
+
 @media screen and (min-width: 1500px) {
   .s-sobre-a-gente .box--institucional .content.content {
     width: 50%; } }
+
 .s-sobre-a-gente .page-aside {
   width: 100%;
   display: inline-block;
@@ -3826,65 +4009,86 @@ div.wpcf7 img.ajax-loader {
  *	TEMPLATE INSTITUCIONAIS
  *	page-institucionais.php
  *********************************************/
-.single .main, .page .main {
+.single .main,
+.page .main {
   padding: 0 20px; }
   @media screen and (min-width: 1025px) {
-    .single .main, .page .main {
+    .single .main,
+    .page .main {
       padding: 0 0 0 40px; } }
   @media screen and (min-width: 1500px) {
-    .single .main, .page .main {
+    .single .main,
+    .page .main {
       padding: 0 0 0 60px; } }
-.single .page-header, .page .page-header {
+
+.single .page-header,
+.page .page-header {
   width: 100%; }
   @media screen and (min-width: 1025px) {
-    .single .page-header, .page .page-header {
-      display: -webkit-box;
+    .single .page-header,
+    .page .page-header {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
               align-items: stretch;
       width: 33.33333%; }
-      .no-flexbox .single .page-header, .no-flexbox .page .page-header {
+      .no-flexbox .single .page-header, .no-flexbox
+      .page .page-header {
         display: inline-block;
         height: 100%; }
-      .page-sobre-a-gente .single .page-header, .page-sobre-a-gente .page .page-header {
+      .page-sobre-a-gente .single .page-header, .page-sobre-a-gente
+      .page .page-header {
         width: 25%; } }
   @media screen and (min-width: 1500px) {
-    .single .page-header, .page .page-header {
+    .single .page-header,
+    .page .page-header {
       width: 41.66667%; } }
-.single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid {
+
+.single.page-sobre-a-gente .content-grid,
+.page.page-sobre-a-gente .content-grid {
   width: 100%; }
   @media screen and (min-width: 1025px) {
-    .single.page-sobre-a-gente .content-grid, .page.page-sobre-a-gente .content-grid {
+    .single.page-sobre-a-gente .content-grid,
+    .page.page-sobre-a-gente .content-grid {
       width: 41.66667%; } }
-.single .content-grid, .page .content-grid {
+
+.single .content-grid,
+.page .content-grid {
   width: 100%; }
   @media screen and (min-width: 1025px) {
-    .single .content-grid, .page .content-grid {
+    .single .content-grid,
+    .page .content-grid {
       width: 66.66667%; } }
   @media screen and (min-width: 1500px) {
-    .single .content-grid, .page .content-grid {
+    .single .content-grid,
+    .page .content-grid {
       width: 58.33333%; } }
-  .single .content-grid .btn--voltar, .page .content-grid .btn--voltar {
+  .single .content-grid .btn--voltar,
+  .page .content-grid .btn--voltar {
     display: none; }
     @media screen and (min-width: 1025px) {
-      .single .content-grid .btn--voltar, .page .content-grid .btn--voltar {
+      .single .content-grid .btn--voltar,
+      .page .content-grid .btn--voltar {
         display: inline-block;
         margin-top: 40px; } }
-.single .content, .page .content {
+
+.single .content,
+.page .content {
   width: 100%; }
   @media screen and (min-width: 1025px) {
-    .single .content, .page .content {
+    .single .content,
+    .page .content {
       max-height: 420px;
       overflow-x: auto;
       padding-right: 40px; } }
   @media screen and (min-width: 1500px) {
-    .single .content, .page .content {
+    .single .content,
+    .page .content {
       max-height: 680px; } }
-  .single .content a, .page .content a {
+  .single .content a,
+  .page .content a {
     color: #F58229; }
 
 .timeline {
@@ -3906,8 +4110,7 @@ div.wpcf7 img.ajax-loader {
 .infobox-grid {
   width: 100%;
   padding-right: 20px;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1025px) {
     .infobox-grid {
       width: 50%;
@@ -3917,7 +4120,7 @@ div.wpcf7 img.ajax-loader {
       width: 33.33333%; } }
 
 .infobox, .coursebox .coursebox__content {
-  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif;
+  font-family: "roihu", "Helvetica-neue", "Helvetica", sans-serif;
   background: #F58229;
   color: #fff;
   margin-bottom: 20px;
@@ -3925,8 +4128,7 @@ div.wpcf7 img.ajax-loader {
   cursor: pointer;
   min-height: 100px;
   max-height: 100px;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-color: #F58229;
   padding: 10px;
   padding-right: 30px;
@@ -3991,6 +4193,7 @@ div.wpcf7 img.ajax-loader {
 .infobox .ajax-content {
   opacity: 0;
   max-height: 0; }
+
 .infobox .acf-map {
   display: none; }
 
@@ -4019,8 +4222,7 @@ div.wpcf7 img.ajax-loader {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media screen and (min-width: 1500px) {
     .infobox__content {
       padding-right: 20px; } }
@@ -4033,20 +4235,17 @@ div.wpcf7 img.ajax-loader {
 
 .infobox--open {
   width: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .infobox--open .infobox {
     max-height: 100%;
     min-height: 100px;
     padding-right: 10px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     cursor: default; }
   .infobox--open .infobox__content {
     max-height: 100%;
     opacity: 1;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .infobox--open .acf-map {
     display: block; }
   .infobox--open .ajax-content {
@@ -4054,8 +4253,7 @@ div.wpcf7 img.ajax-loader {
     padding: 0;
     padding-bottom: 10px;
     opacity: 1;
-    -webkit-transition: all 0.5s ease-in-out 0.5s;
-            transition: all 0.5s ease-in-out 0.5s; }
+    transition: all 0.5s ease-in-out 0.5s; }
 
 li {
   margin-bottom: 10px;
@@ -4131,8 +4329,7 @@ li {
   text-align: center;
   color: #00BBCE;
   font-weight: 700;
-  -webkit-transition: background 0.25s ease-in-out, border 0.25s ease-in;
-          transition: background 0.25s ease-in-out, border 0.25s ease-in; }
+  transition: background 0.25s ease-in-out, border 0.25s ease-in; }
   .timeline__item:hover, .timeline__item.s-timeline__item--active {
     width: 70px;
     height: 70px;
@@ -4172,8 +4369,7 @@ li {
     color: #fff;
     background: #F58229;
     border: 2px solid #F58229;
-    -webkit-transition: background 0.25s ease-in-out, border 0.25s ease-in;
-            transition: background 0.25s ease-in-out, border 0.25s ease-in; }
+    transition: background 0.25s ease-in-out, border 0.25s ease-in; }
   .timeline__wrapper:last-child .timeline__item {
     background: #00BBCE;
     border: #00BBCE;
@@ -4196,8 +4392,7 @@ li {
   margin-top: -40px;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out; }
   .tooltip::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
@@ -4223,8 +4418,7 @@ li {
   margin-top: -20px;
   opacity: 1;
   visibility: visible;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out; }
 
 .has-tooltip {
   position: relative; }
@@ -4351,8 +4545,7 @@ li {
   max-width: 640px;
   width: 80%;
   z-index: 10;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   background: #EF4066; }
   .click-to-call__form a {
     color: #FFD400; }
@@ -4360,16 +4553,19 @@ li {
     .click-to-call__form a[href^="tel:"] {
       color: #fff;
       cursor: text; } }
-  .click-to-call__form .wpcf7-form-control-wrap, .click-to-call__form .div_text {
+  .click-to-call__form .wpcf7-form-control-wrap,
+  .click-to-call__form .div_text {
     background-color: #fff;
     padding: 2px;
     padding-right: 12px;
     padding: 2px; }
-    .click-to-call__form .wpcf7-form-control-wrap::after, .click-to-call__form .div_text::after {
+    .click-to-call__form .wpcf7-form-control-wrap::after,
+    .click-to-call__form .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #EF4066 transparent; }
-    .click-to-call__form .wpcf7-form-control-wrap::before, .click-to-call__form .div_text::before {
+    .click-to-call__form .wpcf7-form-control-wrap::before,
+    .click-to-call__form .div_text::before {
       /*border: $corte/2 solid transparent;
     border-right-color: $color;
     border-bottom-color: $color;*/
@@ -4381,7 +4577,12 @@ li {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .click-to-call__form .wpcf7-form-control-wrap > input, .click-to-call__form .wpcf7-form-control-wrap > textarea, .click-to-call__form .wpcf7-form-control-wrap > select, .click-to-call__form .div_text > input, .click-to-call__form .div_text > textarea, .click-to-call__form .div_text > select {
+    .click-to-call__form .wpcf7-form-control-wrap > input,
+    .click-to-call__form .wpcf7-form-control-wrap > textarea,
+    .click-to-call__form .wpcf7-form-control-wrap > select,
+    .click-to-call__form .div_text > input,
+    .click-to-call__form .div_text > textarea,
+    .click-to-call__form .div_text > select {
       background: #EF4066; }
   .click-to-call__form .btn {
     background-color: #A6CE39;
@@ -4430,8 +4631,7 @@ li {
   max-height: 750px;
   top: 120px;
   opacity: 1;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out; }
 
 /**********************************************
  *	OBJECT COURSES SELECTION
@@ -4463,19 +4663,18 @@ li {
   .box--agende-sua-visita .coursebox .coursebox__select {
     border-color: #EF4066;
     color: #EF4066; }
+
 .coursebox .coursebox__content {
   max-height: 5000px;
   min-height: 100px;
   width: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .coursebox .coursebox__content .ajax-content {
     max-height: 5000px;
     padding: 0;
     padding-bottom: 10px;
     opacity: 1;
-    -webkit-transition: all 0.5s ease-in-out 0.5s;
-            transition: all 0.5s ease-in-out 0.5s; }
+    transition: all 0.5s ease-in-out 0.5s; }
   .coursebox .coursebox__content .part-subtitle {
     font-size: 24px;
     font-size: 1.5rem;
@@ -4496,8 +4695,10 @@ li {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #0095DA transparent; }
+
 .box--para-minha-familia .face {
   background: #A6CE39; }
+
 .box--para-minha-familia .google {
   background: #942977; }
 
@@ -4516,32 +4717,36 @@ li {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #F58229 transparent; }
+
 .box--para-mim .face {
   background: #00BBCE; }
+
 .box--para-mim .google {
   background: #5C2D91; }
 
 .box--para-minha-empresa .face {
   background: #00BBCE; }
+
 .box--para-minha-empresa .google {
   background: #5C2D91; }
 
 .box--para-minha-escola .face {
   background: #F58229; }
+
 .box--para-minha-escola .google {
   background: #C9243A; }
 
 .box__course {
   display: none;
   font-size: 12px;
-  font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif; }
+  font-family: "roihu", "Helvetica-neue", "Helvetica", sans-serif; }
   .box__course .part-subtitle {
     font-size: 14px;
-    font-family: 'roihu', 'Helvetica-neue', 'Helvetica', sans-serif; }
+    font-family: "roihu", "Helvetica-neue", "Helvetica", sans-serif; }
   .box__course .btn--course {
     display: block;
     position: relative;
-    font-family: 'hurme geometric', 'Helvetica-neue', 'Helvetica', sans-serif;
+    font-family: "hurme geometric", "Helvetica-neue", "Helvetica", sans-serif;
     font-weight: 700;
     color: #fff;
     padding-left: 36px;
@@ -4587,13 +4792,11 @@ li {
     display: block;
     color: #fff;
     padding: 20px 10px;
-    -webkit-transition: all 0.25s ease-in-out;
-            transition: all 0.25s ease-in-out; }
+    transition: all 0.25s ease-in-out; }
     .results-box a:hover {
       background: #00BBCE;
       padding: 20px;
-      -webkit-transition: all 0.25s ease-in-out;
-              transition: all 0.25s ease-in-out; }
+      transition: all 0.25s ease-in-out; }
 
 .register {
   color: #fff; }
@@ -4610,8 +4813,7 @@ li {
   width: 80%;
   z-index: 10;
   opacity: 0;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   background: #EF4066; }
   .form__register a {
     color: #FFD400; }
@@ -4636,7 +4838,9 @@ li {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
       border-color: transparent transparent #fff transparent; }
-    .form__register .wpcf7-form-control-wrap > input, .form__register .wpcf7-form-control-wrap > textarea, .form__register .wpcf7-form-control-wrap > select {
+    .form__register .wpcf7-form-control-wrap > input,
+    .form__register .wpcf7-form-control-wrap > textarea,
+    .form__register .wpcf7-form-control-wrap > select {
       background: #EF4066; }
   .form__register .btn {
     background-color: #A6CE39;
@@ -4676,24 +4880,34 @@ li {
   max-height: 750px;
   top: 120px;
   opacity: 1;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out; }
 
 .btn-location {
   float: left; }
 
-#wpmem_reg label, #wpmem_login label {
+#wpmem_reg label,
+#wpmem_login label {
   float: left;
   clear: both; }
-#wpmem_reg .div_text, #wpmem_reg .button_div, #wpmem_login .div_text, #wpmem_login .button_div {
+
+#wpmem_reg .div_text,
+#wpmem_reg .button_div,
+#wpmem_login .div_text,
+#wpmem_login .button_div {
   float: right;
   margin-bottom: 18px; }
-#wpmem_reg .link-text, #wpmem_login .link-text {
+
+#wpmem_reg .link-text,
+#wpmem_login .link-text {
   clear: both; }
-#wpmem_reg .link-text a, #wpmem_login .link-text a {
+
+#wpmem_reg .link-text a,
+#wpmem_login .link-text a {
   color: #fff;
   font-weight: normal; }
-#wpmem_reg .button_div, #wpmem_login .button_div {
+
+#wpmem_reg .button_div,
+#wpmem_login .button_div {
   clear: both;
   background-color: form-btns;
   padding: 10px;
@@ -4703,15 +4917,19 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  #wpmem_reg .button_div::after, #wpmem_login .button_div::after {
+  #wpmem_reg .button_div::after,
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent bg transparent; }
-  #wpmem_reg .button_div .buttons, #wpmem_login .button_div .buttons {
+  #wpmem_reg .button_div .buttons,
+  #wpmem_login .button_div .buttons {
     background: transparent;
     border: none;
     padding: 0; }
-.box--para-mim #wpmem_reg .button_div, .box--para-mim #wpmem_login .button_div {
+
+.box--para-mim #wpmem_reg .button_div, .box--para-mim
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4720,11 +4938,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--para-mim #wpmem_reg .button_div::after, .box--para-mim #wpmem_login .button_div::after {
+  .box--para-mim #wpmem_reg .button_div::after, .box--para-mim
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #F58229 transparent; }
-.box--para-minha-familia #wpmem_reg .button_div, .box--para-minha-familia #wpmem_login .button_div {
+
+.box--para-minha-familia #wpmem_reg .button_div, .box--para-minha-familia
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4733,11 +4954,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--para-minha-familia #wpmem_reg .button_div::after, .box--para-minha-familia #wpmem_login .button_div::after {
+  .box--para-minha-familia #wpmem_reg .button_div::after, .box--para-minha-familia
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #0095DA transparent; }
-.box--para-minha-empresa #wpmem_reg .button_div, .box--para-minha-empresa #wpmem_login .button_div {
+
+.box--para-minha-empresa #wpmem_reg .button_div, .box--para-minha-empresa
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4746,11 +4970,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--para-minha-empresa #wpmem_reg .button_div::after, .box--para-minha-empresa #wpmem_login .button_div::after {
+  .box--para-minha-empresa #wpmem_reg .button_div::after, .box--para-minha-empresa
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #942977 transparent; }
-.box--para-minha-escola #wpmem_reg .button_div, .box--para-minha-escola #wpmem_login .button_div {
+
+.box--para-minha-escola #wpmem_reg .button_div, .box--para-minha-escola
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4759,11 +4986,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--para-minha-escola #wpmem_reg .button_div::after, .box--para-minha-escola #wpmem_login .button_div::after {
+  .box--para-minha-escola #wpmem_reg .button_div::after, .box--para-minha-escola
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #2A2A86 transparent; }
-.box--agende-sua-visita #wpmem_reg .button_div, .box--agende-sua-visita #wpmem_login .button_div {
+
+.box--agende-sua-visita #wpmem_reg .button_div, .box--agende-sua-visita
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4772,11 +5002,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--agende-sua-visita #wpmem_reg .button_div::after, .box--agende-sua-visita #wpmem_login .button_div::after {
+  .box--agende-sua-visita #wpmem_reg .button_div::after, .box--agende-sua-visita
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #C9243A transparent; }
-.box--institucional #wpmem_reg .button_div, .box--institucional #wpmem_login .button_div {
+
+.box--institucional #wpmem_reg .button_div, .box--institucional
+#wpmem_login .button_div {
   background-color: #A6CE39;
   padding: 10px;
   padding-right: 30px;
@@ -4785,11 +5018,14 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700; }
-  .box--institucional #wpmem_reg .button_div::after, .box--institucional #wpmem_login .button_div::after {
+  .box--institucional #wpmem_reg .button_div::after, .box--institucional
+  #wpmem_login .button_div::after {
     border-style: solid;
     border-width: 0 0 20px 13.7931px;
     border-color: transparent transparent #5C2D91 transparent; }
-#wpmem_reg fieldset, #wpmem_login fieldset {
+
+#wpmem_reg fieldset,
+#wpmem_login fieldset {
   padding: 0;
   border: none; }
 

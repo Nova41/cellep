@@ -1,12 +1,11 @@
-/*
- Theme Name: fastshell
- Description: Versão 2015 para o site da Cel.Lep
- Author: Henrique Erzinger
- Author URI: http://www.herzinger.com.br/
- Version: 1.0.0
- Copyright 2015. MIT licensed.
-*/
-
+/*!
+ * fastshell
+ * Fiercely quick and opinionated front-ends
+ * https://HosseinKarami.github.io/fastshell
+ * @author Marcus Martini
+ * @version 1.0.3
+ * Copyright 2015. MIT licensed.
+ */
 (function ($, window, document) {
 
   'use strict';
