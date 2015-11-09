@@ -803,7 +803,15 @@
     pos++;
     
     $('legend', $clone).html('Filho ' + pos);
+    $('.data-nascimento', $clone).attr('name', 'data-nascimento' + pos).attr('id', 'data-nascimento' + pos);
+    $('.idioma', $clone).attr('name', 'idioma' + pos).attr('id', 'idioma' + pos);
+    $('.contato-outro-idioma', $clone).attr('name', 'contato-outro-idioma' + pos).attr('id', 'contato-outro-idioma' + pos);
+    $('.qual-escola', $clone).attr('name', 'qual-escola' + pos).attr('id', 'qual-escola' + pos);
+    $('.quanto-tempo', $clone).attr('name', 'quanto-tempo' + pos).attr('id', 'quanto-tempo' + pos);
+    $('.nome-colegio', $clone).attr('name', 'nome-colegio' + pos).attr('id', 'nome-colegio' + pos);
+    $('.periodo-estudo', $clone).attr('name', 'periodo-estudo' + pos).attr('id', 'periodo-estudo' + pos);
     
+    masks();
     e.preventDefault();
   });
       
