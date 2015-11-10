@@ -4633,6 +4633,32 @@ li {
   opacity: 1;
   transition: all 0.25s ease-in-out; }
 
+.div_text {
+  background-color: #fff;
+  padding: 2px;
+  padding-right: 12px;
+  padding: 2px; }
+  .div_text::after {
+    border-style: solid;
+    border-width: 0 0 10px 6.89655px;
+    border-color: transparent transparent #EF4066 transparent; }
+  .div_text::before {
+    /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+    position: absolute;
+    top: auto;
+    right: 1px;
+    bottom: 2px;
+    left: auto;
+    border-style: solid;
+    border-width: 0 0 10px 6.89655px;
+    border-color: transparent transparent #fff transparent; }
+  .div_text > input,
+  .div_text > textarea,
+  .div_text > select {
+    background: #EF4066; }
+
 /**********************************************
  *	OBJECT COURSES SELECTION
  *	courses-selection.php
@@ -4805,7 +4831,7 @@ li {
   visibility: hidden;
   position: absolute;
   padding: 20px;
-  overflow: hidden;
+  overflow: auto;
   top: 80px;
   right: 400px;
   min-width: 520px;
@@ -4877,7 +4903,7 @@ li {
 
 .s-register__form--open {
   visibility: visible;
-  max-height: 750px;
+  max-height: 500px;
   top: 120px;
   opacity: 1;
   transition: all 0.25s ease-in-out; }

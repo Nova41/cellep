@@ -1311,7 +1311,7 @@
 		  @include corte($cl-green, $bg-floats, $bsu, $bsu--small);
 		}
 	}
-
+	
 		.s-clicktocall__form--open {
 			visibility: visible;
 			max-height: 750px;
@@ -1320,6 +1320,9 @@
 			transition: all $timing/2 ease-in-out;
 		}
 		
+		.div_text { 
+			@include input($white, $bg-floats, $bsu--small);
+		}
 		
 		
 /**********************************************
@@ -1495,7 +1498,7 @@
 		visibility: hidden;
 		position: absolute;
 		padding: $bsu;
-		overflow: hidden;
+		overflow: auto;
 		top: $bsu*4;
 		right: $bsu*20;
 		min-width: $bsu*26;
@@ -1530,7 +1533,7 @@
 	
 		.s-register__form--open {
 			visibility: visible;
-			max-height: 750px;
+			max-height: 500px;
 			top: $bsu*6;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
