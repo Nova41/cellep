@@ -829,10 +829,11 @@
     }, 800);
   });
   
-  // $('.main').on('click', '.wpcf7-submit', function() {
-  //   $(this).closest('.ajax-content').scrollTo('.wpcf7-response-output', 800);
-  //   console.log('bla');
-  // });
+  //$('.main').on('click', '.wpcf7-submit', function(e) {
+     
+     //console.log('bla');
+      //e.preventDefault();
+  //});
   
-    
+  
 })(jQuery, window, document);
