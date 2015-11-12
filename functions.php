@@ -23,19 +23,6 @@ include_once('classes/registration.php');
 add_theme_support('menus');
 
 
-// ************ Force Display Name as Full Name ************ //
-
-//Sets the user's display name (always) to first name last name, when it's avail.
-function force_full_name($user_id) {
-  $data = get_userdata($user_id);
-  wp_update_user( array (
-    'ID' => $user_id, 
-    'display_name' => "$data->first_name $data->last_name"
-  ));
-}
-add_action( 'user_register', 'force_full_name' );
-
-
 // ************** Filter the_title for break ************** //
 
 function remove_menus(){
@@ -343,6 +330,157 @@ add_action('init', function(){
     exit;
 	}
 });
+
+
+
+// ******************* User Register ****************** //
+$fields = array();
+$errors = new WP_Error();
+add_action('init', cr($fields, $errors));
+
+function cr(&$fields, &$errors) {
+  
+  // Check args and replace if necessary
+  if (!is_array($fields))     $fields = array();
+  if (!is_wp_error($errors))  $errors = new WP_Error;
+  
+  // Check for form submit
+  if (isset($_POST['action']) && $_POST['action'] === 'user_register') {
+    
+    // Get fields from submitted form
+    $fields = cr_get_fields();
+    
+    // Validate fields and produce errors
+    if (cr_validate($fields, $errors)) {
+      
+      // Santitize fields
+      cr_sanitize($fields);
+      
+      // If successful, register user
+      $basedata = array(
+        'display_name'         => $fields['display_name'],
+        'nickname'             => $fields['nickname'],
+        'first_name'           => $fields['display_name'],
+        'user_login'           => $fields['user_login'],
+        'user_email'           => $fields['user_email'],
+        'user_pass'            => $fields['user_pass'],
+        'show_admin_bar_front' => $fields['show_admin_bar_front']
+      );
+      
+      $user_id = wp_insert_user($basedata);
+      update_user_meta($user_id, 'phone1', $fields['telefone']);
+      update_user_meta($user_id, 'zip', $fields['cep']);
+      update_user_meta($user_id, 'addr1', $fields['endereco']);
+      update_user_meta($user_id, 'nascimento', $fields['nascimento']);
+      
+      $creds = array();
+    	$creds['user_login'] = $fields['user_email'];
+    	$creds['user_password'] = $fields['user_pass'];
+    	$creds['remember'] = true;
+    	$user = wp_signon( $creds, false );
+    	if ( is_wp_error($user) ) {
+    		echo $user->get_error_message();
+    	} else {
+    	  // Clear field data
+        $fields = array(); 
+    		
+    		header('Location: ' . site_url('/'));
+        exit;
+    	}
+    }
+  }
+}
+
+function cr_sanitize(&$fields) {
+  $fields['display_name']    = isset($fields['display_name'])      ? sanitize_text_field($fields['display_name']) : '';
+  $fields['nickname']        = isset($fields['nickname'])          ? sanitize_text_field($fields['nickname']) : '';
+  $fields['user_login']      = isset($fields['user_login'])        ? sanitize_email($fields['user_login']) : '';
+  $fields['user_email']      = isset($fields['user_email'])        ? sanitize_email($fields['user_email']) : '';
+  $fields['user_pass']       = isset($fields['user_pass'])         ? esc_attr($fields['user_pass']) : '';
+  $fields['telefone']        = isset($fields['telefone'])          ? sanitize_text_field($fields['telefone']) : '';
+  $fields['cep']             = isset($fields['cep'])               ? sanitize_text_field($fields['cep']) : '';
+  $fields['endereco']        = isset($fields['endereco'])          ? sanitize_text_field($fields['endereco']) : '';
+  $fields['nascimento']      = isset($fields['nascimento'])        ? sanitize_text_field($fields['nascimento']) : '';
+}
+
+function cr_get_fields() {
+  return array(
+    'display_name'    => isset($_POST['nome'])            ? $_POST['nome'] : '',
+    'nickname'        => isset($_POST['nome'])            ? $_POST['nome'] : '',
+    'user_login'      => isset($_POST['email'])           ? $_POST['email'] : '',
+    'user_email'      => isset($_POST['email'])           ? $_POST['email'] : '',
+    'user_pass'       => isset($_POST['senha'])           ? $_POST['senha'] : '',
+    'telefone'        => isset($_POST['telefone'])        ? $_POST['telefone'] : '',
+    'cep'             => isset($_POST['cep'])             ? $_POST['cep'] : '',
+    'endereco'        => isset($_POST['endereco'])        ? $_POST['endereco'] : '',
+    'nascimento'      => isset($_POST['nascimento'])      ? $_POST['nascimento'] : '',
+    'show_admin_bar_front' => 'false'
+  );
+}
+
+function cr_validate(&$fields, &$errors) {
+  
+  // Make sure there is a proper wp error obj
+  // If not, make one
+  if (!is_wp_error($errors))  $errors = new WP_Error;
+  
+  // Validate form data
+  if (empty($fields['display_name']) || empty($fields['user_email']) || empty($fields['user_pass'])) {
+    $errors->add('field', 'Os campos nome, email e senha são obrigatórios');
+  }
+
+  if (strlen($fields['user_pass']) < 5) {
+    $errors->add('user_pass', 'A senha deve ter mais de 5 dígitos');
+  }
+
+  if (!is_email($fields['user_email'])) {
+    $errors->add('email_invalid', 'O email digitado não é válido');
+  }
+
+  if (email_exists($fields['user_email'])) {
+    $errors->add('email', 'O email digitado já está em uso');
+  }
+  
+  // If errors were produced, fail
+  if (count($errors->get_error_messages()) > 0) {
+    return false;
+  }
+  
+  // Else, success!
+  return true;
+}
+
+
+
+///////////////
+// SHORTCODE //
+///////////////
+
+// The callback function for the [cr] shortcode
+function cr_cb() {
+  // Buffer output
+  ob_start();
+  
+  // Custom registration, go!
+  
+  ?>
+  <form name="form-cadastro" class="form-cadastro" action="" method="POST">
+    <input name="action" type="hidden" value="user_register" />
+    <li class="form-line"><label for="nome">Nome*</label><span class="wpcf7-form-control-wrap"><input name="nome" type="text" value="<?php echo (isset($_POST['display_name']) ? $_POST['display_name'] : '') ?>" size="40" required/></span>
+    <li class="form-line"><label for="email">Email*</label><span class="wpcf7-form-control-wrap"><input name="email" type="email" value="<?php echo (isset($_POST['user_email']) ? $_POST['user_email'] : '') ?>" size="40" required placeholder="email@email.com"/></span>
+    <li class="form-line"><label for="senha">Senha*</label><span class="wpcf7-form-control-wrap"><input name="senha" type="password" value="<?php echo (isset($_POST['user_pass']) ? $_POST['user_pass'] : '') ?>" size="40" required/></span>
+    <li class="form-line"><label for="telefone">Telefone*</label><span class="wpcf7-form-control-wrap"><input name="telefone" class="telefone" value="<?php echo (isset($_POST['telefone']) ? $_POST['telefone'] : '') ?>" size="40" required placeholder="__ ____.____"/></span>
+    <li class="form-line"><label for="cep">CEP</label><span class="wpcf7-form-control-wrap"><input name="cep" type="text" value="<?php echo (isset($_POST['cep']) ? $_POST['cep'] : '') ?>" class="cep" size="40" placeholder="_____-___"/></span>
+    <li class="form-line"><label for="endereco">Endereço</label><span class="wpcf7-form-control-wrap"><input name="endereco" type="text" class="endereco" value="<?php echo (isset($_POST['endereco']) ? $_POST['endereco'] : '') ?>" size="40"/></span>
+    <li class="form-line"><label for="nascimento">Data de nascimento</label><span class="wpcf7-form-control-wrap"><input name="nascimento" type="text" class="data-nascimento" value="<?php echo (isset($_POST['nascimento']) ? $_POST['nascimento'] : '') ?>" size="40" placeholder="__/__/____"/></span>
+    <li class="form-line"><button type="submit" class="wpcf7-form-control btn">Enviar</button>
+  </form>
+  <?php
+  
+  // Return buffer
+  return ob_get_clean();
+}
+add_shortcode('cr', 'cr_cb');
 
 
 

@@ -1499,7 +1499,7 @@
 		position: absolute;
 		padding: $bsu;
 		overflow: auto;
-		top: $bsu*4;
+		top: $bsu*2;
 		right: $bsu*20;
 		min-width: $bsu*26;
 		max-width: $bsu*32;
@@ -1533,8 +1533,8 @@
 	
 		.s-register__form--open {
 			visibility: visible;
-			max-height: 500px;
-			top: $bsu*6;
+			max-height: 550px;
+			top: $bsu*4;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
 		}

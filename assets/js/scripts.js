@@ -725,9 +725,11 @@
     
     $('.form__register').append('<div class="register"></div>')
       .addClass('loading').load('cadastro .ajax-content', function() {
-			  $(this).removeClass('loading');
-			  masks();
+			$(this).removeClass('loading');
+			masks();
 	  });
+    //$('.form__register').addClass('loading').load('/wp-content/themes/cellep/form-cadastro.php');
+    masks();
     
     e.preventDefault();
   });

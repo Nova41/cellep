@@ -4832,7 +4832,7 @@ li {
   position: absolute;
   padding: 20px;
   overflow: auto;
-  top: 80px;
+  top: 40px;
   right: 400px;
   min-width: 520px;
   max-width: 640px;
@@ -4903,8 +4903,8 @@ li {
 
 .s-register__form--open {
   visibility: visible;
-  max-height: 500px;
-  top: 120px;
+  max-height: 550px;
+  top: 80px;
   opacity: 1;
   transition: all 0.25s ease-in-out; }
 
