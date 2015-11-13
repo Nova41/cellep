@@ -312,6 +312,139 @@ add_filter('authenticate', function($user, $email, $password){
 
 // ******************* User Login ****************** //
 
+function get_token_url($isLink = false) {
+  // Informe o id da app
+  $appId = '279745355533';
+  // Senha da app
+  $appSecret = '6fb0e1a88845839421bd476c46a10a49';
+  // Url informada no campo "Site URL" 
+  $redirectUri = site_url('/');
+  // Obtém o código da query string
+  $code = $_GET['code'];
+  
+  $scopes = array(
+    'email',
+    'user_birthday'
+  );
+  
+  if (!$isLink) {
+    $returnUrl =  'https://graph.facebook.com/oauth/access_token?'.
+                  'client_id='.$appId.
+                  '&redirect_uri='.urlencode($redirectUri).
+                  '&client_secret='.$appSecret.
+                  '&code='.$code;
+  } else if ($isLink === 'redirect'){
+    $returnUrl =  $redirectUri;
+  } else {
+    $returnUrl =  'https://www.facebook.com/dialog/oauth?'.
+                  'client_id='.$appId.
+                  '&display=popup'.
+                  '&scope='.join(',', $scopes).
+                  '&redirect_uri='.urlencode($redirectUri);
+  }
+  
+  return $returnUrl;
+};
+
+/**
+ * Programmatically logs a user in
+ * 
+ * @param string $username
+ * @return bool True if the login was successful; false if it wasn't
+ */
+function programmatic_login($username) {
+  $user = get_user_by('login', $username);
+
+  // Redirect URL //
+  if ( !is_wp_error( $user ) )
+  {
+    wp_clear_auth_cookie();
+    wp_set_current_user ( $user->ID );
+    wp_set_auth_cookie  ( $user->ID );
+
+    $redirect_to = get_token_url('redirect');
+    wp_safe_redirect($redirect_to);
+    exit();
+  }
+}
+
+
+add_action('init', function(){
+  
+  // Verifica o tipo de requisição e se tem a variável 'code' na url
+  if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['code'])) {
+    
+    $token_url = get_token_url();
+    
+    // Requisita token de acesso
+    $response = @file_get_contents($token_url);
+    
+    if($response) {
+      $params = null;
+      parse_str($response, $params);
+    
+      // Se veio o token de acesso
+      if(isset($params['access_token']) && $params['access_token']) {
+      $graph_url = "https://graph.facebook.com/me?access_token=" 
+      .$params['access_token'];
+    
+        // Obtém dados através do token de acesso
+        $user = json_decode(file_get_contents($graph_url));
+        
+        // Se obteve os dados necessários
+        if(isset($user->email) && $user->email){
+    
+          /*
+          * Autenticação feita com sucesso.
+          * Loga usuário na sessão. Substitua as linhas abaixo pelo seu código de registro de usuários logados
+          */
+          $_SESSION['user_data']['email']         = $user->email;
+          $_SESSION['user_data']['id']            = $user->id;
+          $_SESSION['user_data']['first_name']    = $user->first_name;
+          $_SESSION['user_data']['last_name']     = $user->last_name;
+          $_SESSION['user_data']['name']          = $user->name;
+          $_SESSION['user_data']['link']          = $user->link;
+          
+          $wp_user = get_user_by('email', $_SESSION['user_data']['email']);
+          
+          $basedata = array(
+            'first_name'           => $_SESSION['user_data']['first_name'],
+            'last_name'            => $_SESSION['user_data']['last_name'],
+            'show_admin_bar_front' => 'false'
+          );
+          
+          if(!$wp_user) { // New user
+            $basedata['user_pass']      = $_SESSION['user_data']['id'];
+            $basedata['display_name']   = $_SESSION['user_data']['name'];
+            $basedata['nickname']       = $_SESSION['user_data']['name'];
+            $basedata['user_email']     = $_SESSION['user_data']['email'];
+            $basedata['user_login']     = $_SESSION['user_data']['email'];
+            $wp_user = wp_insert_user($basedata);
+            
+            echo 'new user id: '.$wp_user;
+          } else { // Existing user
+            $basedata['ID'] = $wp_user->ID;
+            $wp_user = wp_update_user($basedata);
+          }
+          
+          update_user_meta($wp_user, 'facebook', $_SESSION['user_data']['link']);
+          
+          // User Login
+          $user_data = get_userdata($wp_user);
+          $logged = programmatic_login($user_data->user_login);
+        }
+      } else {
+        $_SESSION['fb_login_error'] = 'Falha ao logar no Facebook';
+      }
+    } else {
+      $_SESSION['fb_login_error'] = 'Falha ao logar no Facebook';
+    }
+  } else if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['error'])){
+    $_SESSION['fb_login_error'] = 'Permissão não concedida';
+  }
+  
+});
+  
 add_action('init', function(){
   
   // not the login request
