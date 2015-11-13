@@ -10,6 +10,7 @@
         echo $user_login;
       ?>
       <strong><?php echo $_SESSION['user_data']['name'] ?></strong>
+      <strong><?php echo $_SESSION['user_data']['email'] ?></strong>
     </span>
     <a href="<?php echo wp_logout_url(home_url()); ?>" class="btn--course btn--logout">Logout</a>
   <?php } ?>
@@ -17,5 +18,5 @@
   <?php if(isset($_SESSION['fb_login_error']) && $_SESSION['fb_login_error']): ?>
           <p class="message"><?php echo $_SESSION['fb_login_error'] ?></p>
   <?php unset($_SESSION['fb_login_error']); endif; ?>
- 
+  
 </div>
