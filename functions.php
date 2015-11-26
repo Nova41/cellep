@@ -639,7 +639,7 @@ add_action( 'wp_enqueue_scripts', 'plugin_scripts' );
 function site_scripts() {
   wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/components/modernizr/modernizr.js', false, true );
   wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), false, true );
-  wp_enqueue_script( 'conversao', get_template_directory_uri() . '/assets/js/conversao.js', array('jquery'), false, true );
+  //wp_enqueue_script( 'conversao', get_template_directory_uri() . '/assets/js/conversao.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'site_scripts' );
 
