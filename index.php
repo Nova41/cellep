@@ -20,8 +20,9 @@
           switch ($type) {
             case 'Imagem':
               $image = get_field('imagem');
-              $link = get_field('link');
-              echo '<a href="'.$link.'"><img src="'.$image['url'].'"></a>';
+              //$link = get_field('link');
+              //echo '<a href="'.$link.'"><img src="'.$image['url'].'"></a>';
+              echo '<img src="'.$image['url'].'">';
               break;
             case 'Youtube':
               $video = get_field('youtube');

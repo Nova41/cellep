@@ -1139,7 +1139,7 @@
 	position: relative;
 	
 	.tooltip {
-		width: 250px;
+	width: 250px;
     top: 100%;
     transform: translate(0);
     margin-top: 0;
@@ -1148,7 +1148,7 @@
     p { margin: 0; }
     
     &::before {
-			border-color: transparent;
+		border-color: transparent;
 	    border-bottom-color: $cl-lt_blue;
 	    bottom: auto;
 	    top: -$bsu;
