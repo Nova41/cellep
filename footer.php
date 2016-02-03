@@ -54,7 +54,15 @@
     In your html page, add the snippet and call
     goog_report_conversion when someone clicks on the
     chosen link or button. -->
+    
     <script type="text/javascript">
+    /*global chama_func_email*/
+    chama_func_email = function() {
+      //alert();
+      jQuery('.tag_email_read').load('/wp-content/themes/cellep/assets/js/functions/read_file.php');
+      jQuery('.tag_email_read_email').load('/wp-content/themes/cellep/assets/js/functions/read_file_email.php');
+      jQuery('.tag_email_write').load('/wp-content/themes/cellep/assets/js/functions/write_file_email.php');
+    }
     /*global goog_snippet_vars*/
     /*global goog_report_conversion*/
       /* <![CDATA[ */
@@ -79,11 +87,15 @@
       if (typeof(conv_handler) == 'function') {
         conv_handler(opt);
       }
+      chama_func_email();
     }
     /* ]]> */
     </script>
     <script type="text/javascript"
       src="//www.googleadservices.com/pagead/conversion_async.js">
     </script>
+    <div class="tag_email_read"></div>
+    <div class="tag_email_read_email"></div>
+    <div class="tag_email_write"></div>
 	</body>
 </html>

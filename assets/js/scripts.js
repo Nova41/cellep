@@ -4,7 +4,7 @@
  * https://HosseinKarami.github.io/fastshell
  * @author Marcus Martini
  * @version 1.0.3
- * Copyright 2015. MIT licensed.
+ * Copyright 2016. MIT licensed.
  */
 (function ($, window, document) {
 
