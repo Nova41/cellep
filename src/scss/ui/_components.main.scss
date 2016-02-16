@@ -1245,12 +1245,14 @@
  *	header.php
  *********************************************/
 
-	.content__form {
+	.content__form,
+	.content-camp__form{
 		float: left;
 		padding: 20px;
 	}
  
-	.close__form.close__form {
+	.close__form.close__form,
+	.close-camp__form.close-camp__form{
 		position: absolute;
 		right: $bsu;
 		top: $bsu;
@@ -1258,11 +1260,12 @@
 		@include font-size($milli-size, 1);
 	}
  
-	.click-to-call{
+	.click-to-call,
+	.click-to-call-camp{
 		color: $white;
 	}
  
-	.click-to-call__form {
+	.click-to-call__form{
 		visibility: hidden;
 		position: absolute;
 		overflow: hidden;
@@ -1312,7 +1315,58 @@
 		}
 	}
 	
-		.s-clicktocall__form--open {
+	.click-to-call-camp__form{
+		visibility: hidden;
+		position: absolute;
+		overflow: hidden;
+		top: $bsu*4;
+		right: 0;
+		opacity: 0;
+		min-width: $bsu*16;
+		max-width: $bsu*40.7;
+		height: 497px;
+		width: 100%;
+		z-index: 10;
+		transition: all $timing/2 ease-in-out;
+		@include corte($cl-yellow, $bg, $bsu, $bsu--small);
+		
+		a { color: $cl-purple; }
+		@include media-query('desk') {
+			a[href^="tel:"] {
+				color: $white; 
+				cursor: text;
+			}
+		}
+		
+		.wpcf7-form-control-wrap,
+		.div_text { 
+			@include input($white, $cl-yellow, $bsu--small);
+		}
+		
+		.btn { 
+			@include btn($form-btns, $cl-yellow); 
+			float: right;
+			margin: 0;
+		}
+		.your-subject { display: none;}
+		.wpcf7 { margin-top: $bsu; }
+		
+		.wpcf7-validation-errors.wpcf7-validation-errors {
+		  color: $white;
+		  border: none;
+		  width: 100%;
+		  @include corte($cl-orange, $cl-yellow, $bsu, $bsu--small);
+		}
+		
+		.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok{
+		  color: $white;
+		  border: none;
+		  width: 100%;
+		  @include corte($cl-green, $cl-yellow, $bsu, $bsu--small);
+		}
+	}
+	
+		.s-clicktocall__form--open,		{
 			visibility: visible;
 			max-height: 750px;
 			top: $bsu*6;
@@ -1320,8 +1374,16 @@
 			transition: all $timing/2 ease-in-out;
 		}
 		
+		.s-clicktocall-camp__form--open{
+			visibility: visible;
+			max-height: 497px;
+			top: $bsu*4.45;
+			opacity: 1;
+			transition: all $timing/2 ease-in-out;
+		}
+		
 		.div_text { 
-			@include input($white, $bg-floats, $bsu--small);
+			@include input($white, $cl-yellow, $bsu--small);
 		}
 		
 		

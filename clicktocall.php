@@ -8,3 +8,7 @@
     <a href="#" class="click-to-call close__form">X</a>
   <div class="content__form"><strong><h5><?php echo $title; ?></h5></strong><br /><?php echo $content; ?></div>
 </div>
+<div class="click-to-call-camp__form">
+    <a href="#" class="click-to-call-camp close-camp__form">X</a>
+  <div class="content-camp__form"><strong><h5><?php echo $title; ?></h5></strong><br /><?php echo $content; ?></div>
+</div>

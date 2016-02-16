@@ -964,22 +964,27 @@ html {
 
 .wpcf7-form-control-wrap,
 .div_text, .box--para-mim .wpcf7-form-control-wrap, .box--para-mim .div_text, .box--para-minha-familia .wpcf7-form-control-wrap, .box--para-minha-familia .div_text, .box--para-minha-empresa .wpcf7-form-control-wrap, .box--para-minha-empresa .div_text, .box--para-minha-escola .wpcf7-form-control-wrap, .box--para-minha-escola .div_text, .box--agende-sua-visita .wpcf7-form-control-wrap, .box--agende-sua-visita .div_text, .box--institucional .wpcf7-form-control-wrap, .box--institucional .div_text, .click-to-call__form .wpcf7-form-control-wrap,
-.click-to-call__form .div_text, .form__register .wpcf7-form-control-wrap {
+.click-to-call__form .div_text, .click-to-call-camp__form .wpcf7-form-control-wrap,
+.click-to-call-camp__form .div_text, .form__register .wpcf7-form-control-wrap {
   overflow: hidden; }
   .wpcf7-form-control-wrap::before,
   .div_text::before, .box--para-mim .wpcf7-form-control-wrap::before, .box--para-mim .div_text::before, .box--para-minha-familia .wpcf7-form-control-wrap::before, .box--para-minha-familia .div_text::before, .box--para-minha-empresa .wpcf7-form-control-wrap::before, .box--para-minha-empresa .div_text::before, .box--para-minha-escola .wpcf7-form-control-wrap::before, .box--para-minha-escola .div_text::before, .box--agende-sua-visita .wpcf7-form-control-wrap::before, .box--agende-sua-visita .div_text::before, .box--institucional .wpcf7-form-control-wrap::before, .box--institucional .div_text::before, .click-to-call__form .wpcf7-form-control-wrap::before,
-  .click-to-call__form .div_text::before, .form__register .wpcf7-form-control-wrap::before {
+  .click-to-call__form .div_text::before, .click-to-call-camp__form .wpcf7-form-control-wrap::before,
+  .click-to-call-camp__form .div_text::before, .form__register .wpcf7-form-control-wrap::before {
     display: block;
     content: "";
     width: 0;
     height: 0; }
   .wpcf7-form-control-wrap > input,
   .div_text > input, .box--para-mim .wpcf7-form-control-wrap > input, .box--para-mim .div_text > input, .box--para-minha-familia .wpcf7-form-control-wrap > input, .box--para-minha-familia .div_text > input, .box--para-minha-empresa .wpcf7-form-control-wrap > input, .box--para-minha-empresa .div_text > input, .box--para-minha-escola .wpcf7-form-control-wrap > input, .box--para-minha-escola .div_text > input, .box--agende-sua-visita .wpcf7-form-control-wrap > input, .box--agende-sua-visita .div_text > input, .box--institucional .wpcf7-form-control-wrap > input, .box--institucional .div_text > input, .click-to-call__form .wpcf7-form-control-wrap > input,
-  .click-to-call__form .div_text > input, .form__register .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea,
+  .click-to-call__form .div_text > input, .click-to-call-camp__form .wpcf7-form-control-wrap > input,
+  .click-to-call-camp__form .div_text > input, .form__register .wpcf7-form-control-wrap > input, .wpcf7-form-control-wrap > textarea,
   .div_text > textarea, .box--para-mim .wpcf7-form-control-wrap > textarea, .box--para-mim .div_text > textarea, .box--para-minha-familia .wpcf7-form-control-wrap > textarea, .box--para-minha-familia .div_text > textarea, .box--para-minha-empresa .wpcf7-form-control-wrap > textarea, .box--para-minha-empresa .div_text > textarea, .box--para-minha-escola .wpcf7-form-control-wrap > textarea, .box--para-minha-escola .div_text > textarea, .box--agende-sua-visita .wpcf7-form-control-wrap > textarea, .box--agende-sua-visita .div_text > textarea, .box--institucional .wpcf7-form-control-wrap > textarea, .box--institucional .div_text > textarea, .click-to-call__form .wpcf7-form-control-wrap > textarea,
-  .click-to-call__form .div_text > textarea, .form__register .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select,
+  .click-to-call__form .div_text > textarea, .click-to-call-camp__form .wpcf7-form-control-wrap > textarea,
+  .click-to-call-camp__form .div_text > textarea, .form__register .wpcf7-form-control-wrap > textarea, .wpcf7-form-control-wrap > select,
   .div_text > select, .box--para-mim .wpcf7-form-control-wrap > select, .box--para-mim .div_text > select, .box--para-minha-familia .wpcf7-form-control-wrap > select, .box--para-minha-familia .div_text > select, .box--para-minha-empresa .wpcf7-form-control-wrap > select, .box--para-minha-empresa .div_text > select, .box--para-minha-escola .wpcf7-form-control-wrap > select, .box--para-minha-escola .div_text > select, .box--agende-sua-visita .wpcf7-form-control-wrap > select, .box--agende-sua-visita .div_text > select, .box--institucional .wpcf7-form-control-wrap > select, .box--institucional .div_text > select, .click-to-call__form .wpcf7-form-control-wrap > select,
-  .click-to-call__form .div_text > select, .form__register .wpcf7-form-control-wrap > select {
+  .click-to-call__form .div_text > select, .click-to-call-camp__form .wpcf7-form-control-wrap > select,
+  .click-to-call-camp__form .div_text > select, .form__register .wpcf7-form-control-wrap > select {
     width: 100%;
     height: 100%;
     border: 0;
@@ -4518,11 +4523,13 @@ li {
  *	OBJECT CLICK TO CALL
  *	header.php
  *********************************************/
-.content__form {
+.content__form,
+.content-camp__form {
   float: left;
   padding: 20px; }
 
-.close__form.close__form {
+.close__form.close__form,
+.close-camp__form.close-camp__form {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -4531,7 +4538,8 @@ li {
   font-size: 0.75rem;
   line-height: 1; }
 
-.click-to-call {
+.click-to-call,
+.click-to-call-camp {
   color: #fff; }
 
 .click-to-call__form {
@@ -4626,10 +4634,116 @@ li {
       border-width: 0 0 20px 13.7931px;
       border-color: transparent transparent #EF4066 transparent; }
 
+.click-to-call-camp__form {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  top: 80px;
+  right: 0;
+  opacity: 0;
+  min-width: 320px;
+  max-width: 814px;
+  height: 497px;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.25s ease-in-out;
+  background-color: #FFD400;
+  padding: 10px;
+  padding-right: 30px; }
+  .click-to-call-camp__form::after {
+    border-style: solid;
+    border-width: 0 0 20px 13.7931px;
+    border-color: transparent transparent #172833 transparent; }
+  .click-to-call-camp__form a {
+    color: #5C2D91; }
+  @media screen and (min-width: 1025px) {
+    .click-to-call-camp__form a[href^="tel:"] {
+      color: #fff;
+      cursor: text; } }
+  .click-to-call-camp__form .wpcf7-form-control-wrap,
+  .click-to-call-camp__form .div_text {
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 12px;
+    padding: 2px; }
+    .click-to-call-camp__form .wpcf7-form-control-wrap::after,
+    .click-to-call-camp__form .div_text::after {
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #FFD400 transparent; }
+    .click-to-call-camp__form .wpcf7-form-control-wrap::before,
+    .click-to-call-camp__form .div_text::before {
+      /*border: $corte/2 solid transparent;
+    border-right-color: $color;
+    border-bottom-color: $color;*/
+      position: absolute;
+      top: auto;
+      right: 1px;
+      bottom: 2px;
+      left: auto;
+      border-style: solid;
+      border-width: 0 0 10px 6.89655px;
+      border-color: transparent transparent #fff transparent; }
+    .click-to-call-camp__form .wpcf7-form-control-wrap > input,
+    .click-to-call-camp__form .wpcf7-form-control-wrap > textarea,
+    .click-to-call-camp__form .wpcf7-form-control-wrap > select,
+    .click-to-call-camp__form .div_text > input,
+    .click-to-call-camp__form .div_text > textarea,
+    .click-to-call-camp__form .div_text > select {
+      background: #FFD400; }
+  .click-to-call-camp__form .btn {
+    background-color: #A6CE39;
+    padding: 10px;
+    padding-right: 30px;
+    color: #fff !important;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    float: right;
+    margin: 0; }
+    .click-to-call-camp__form .btn::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #FFD400 transparent; }
+  .click-to-call-camp__form .your-subject {
+    display: none; }
+  .click-to-call-camp__form .wpcf7 {
+    margin-top: 20px; }
+  .click-to-call-camp__form .wpcf7-validation-errors.wpcf7-validation-errors {
+    color: #fff;
+    border: none;
+    width: 100%;
+    background-color: #F58229;
+    padding: 10px;
+    padding-right: 30px; }
+    .click-to-call-camp__form .wpcf7-validation-errors.wpcf7-validation-errors::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #FFD400 transparent; }
+  .click-to-call-camp__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+    color: #fff;
+    border: none;
+    width: 100%;
+    background-color: #007F49;
+    padding: 10px;
+    padding-right: 30px; }
+    .click-to-call-camp__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
+      border-style: solid;
+      border-width: 0 0 20px 13.7931px;
+      border-color: transparent transparent #FFD400 transparent; }
+
 .s-clicktocall__form--open {
   visibility: visible;
   max-height: 750px;
   top: 120px;
+  opacity: 1;
+  transition: all 0.25s ease-in-out; }
+
+.s-clicktocall-camp__form--open {
+  visibility: visible;
+  max-height: 497px;
+  top: 89px;
   opacity: 1;
   transition: all 0.25s ease-in-out; }
 
@@ -4641,7 +4755,7 @@ li {
   .div_text::after {
     border-style: solid;
     border-width: 0 0 10px 6.89655px;
-    border-color: transparent transparent #EF4066 transparent; }
+    border-color: transparent transparent #FFD400 transparent; }
   .div_text::before {
     /*border: $corte/2 solid transparent;
     border-right-color: $color;
@@ -4657,7 +4771,7 @@ li {
   .div_text > input,
   .div_text > textarea,
   .div_text > select {
-    background: #EF4066; }
+    background: #FFD400; }
 
 /**********************************************
  *	OBJECT COURSES SELECTION
