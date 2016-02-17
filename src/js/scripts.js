@@ -493,7 +493,6 @@
 
 	$('.click-to-call').on('click', function(e){
 		$('.click-to-call__form').toggleClass('s-clicktocall__form--open');
-		
 		e.preventDefault();
 	});
 	

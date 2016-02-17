@@ -1319,16 +1319,13 @@
 		visibility: hidden;
 		position: absolute;
 		overflow: hidden;
-		top: $bsu*4;
-		right: 0;
+		max-width: $bsu*32;
 		opacity: 0;
-		min-width: $bsu*16;
-		max-width: $bsu*40.7;
-		height: 497px;
 		width: 100%;
 		z-index: 10;
 		transition: all $timing/2 ease-in-out;
-		@include corte($cl-yellow, $bg, $bsu, $bsu--small);
+		background-color: $cl-yellow;
+		/*@include corte($cl-yellow, $bg, $bsu*2, $bsu--small);*/
 		
 		a { color: $cl-purple; }
 		@include media-query('desk') {
@@ -1337,6 +1334,7 @@
 				cursor: text;
 			}
 		}
+		
 		
 		.wpcf7-form-control-wrap,
 		.div_text { 
@@ -1369,21 +1367,37 @@
 		.s-clicktocall__form--open,		{
 			visibility: visible;
 			max-height: 750px;
-			top: $bsu*6;
+			top: $bsu*10;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
 		}
 		
 		.s-clicktocall-camp__form--open{
 			visibility: visible;
-			max-height: 497px;
-			top: $bsu*4.45;
+			top: 50%;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
 		}
 		
 		.div_text { 
 			@include input($white, $cl-yellow, $bsu--small);
+		}
+		
+		@media screen and (max-width: 640px) {
+			.click-to-call-camp__form{
+				top: 45%;
+				left: 0;
+				margin-left: 0px;
+				margin-top: -200px;
+			}
+		}
+		@media screen and (min-width: 641px) {
+			.click-to-call-camp__form{
+				left: 50%;
+				top: 45%;
+				margin-left: -320px;
+				margin-top: -200px;
+			}
 		}
 		
 		
