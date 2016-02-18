@@ -1319,15 +1319,15 @@
 		visibility: hidden;
 		position: absolute;
 		overflow: hidden;
-		max-width: $bsu*32;
+		max-width: $bsu*40;
 		opacity: 0;
 		width: 100%;
 		z-index: 10;
 		transition: all $timing/2 ease-in-out;
-		background-color: $cl-yellow;
+		background-color: $cl-purple;
 		/*@include corte($cl-yellow, $bg, $bsu*2, $bsu--small);*/
 		
-		a { color: $cl-purple; }
+		a { color: $cl-lt_green; }
 		@include media-query('desk') {
 			a[href^="tel:"] {
 				color: $white; 
@@ -1338,11 +1338,11 @@
 		
 		.wpcf7-form-control-wrap,
 		.div_text { 
-			@include input($white, $cl-yellow, $bsu--small);
+			@include input($white, $cl-purple, $bsu--small);
 		}
 		
 		.btn { 
-			@include btn($form-btns, $cl-yellow); 
+			@include btn($form-btns, $cl-purple); 
 			float: right;
 			margin: 0;
 		}
@@ -1353,21 +1353,21 @@
 		  color: $white;
 		  border: none;
 		  width: 100%;
-		  @include corte($cl-orange, $cl-yellow, $bsu, $bsu--small);
+		  @include corte($cl-orange, $cl-purple, $bsu, $bsu--small);
 		}
 		
 		.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok{
 		  color: $white;
 		  border: none;
 		  width: 100%;
-		  @include corte($cl-green, $cl-yellow, $bsu, $bsu--small);
+		  @include corte($cl-green, $cl-purple, $bsu, $bsu--small);
 		}
 	}
 	
 		.s-clicktocall__form--open,		{
 			visibility: visible;
 			max-height: 750px;
-			top: $bsu*10;
+			top: $bsu*6;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
 		}
@@ -1380,10 +1380,10 @@
 		}
 		
 		.div_text { 
-			@include input($white, $cl-yellow, $bsu--small);
+			@include input($white, $cl-purple, $bsu--small);
 		}
 		
-		@media screen and (max-width: 640px) {
+		@media screen and (max-width: 768px) {
 			.click-to-call-camp__form{
 				top: 45%;
 				left: 0;
@@ -1391,11 +1391,11 @@
 				margin-top: -200px;
 			}
 		}
-		@media screen and (min-width: 641px) {
+		@media screen and (min-width: 769px) {
 			.click-to-call-camp__form{
 				left: 50%;
 				top: 45%;
-				margin-left: -320px;
+				margin-left: -400px;
 				margin-top: -200px;
 			}
 		}

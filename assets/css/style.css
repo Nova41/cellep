@@ -4638,15 +4638,15 @@ li {
   visibility: hidden;
   position: absolute;
   overflow: hidden;
-  max-width: 640px;
+  max-width: 800px;
   opacity: 0;
   width: 100%;
   z-index: 10;
   transition: all 0.25s ease-in-out;
-  background-color: #FFD400;
+  background-color: #5C2D91;
   /*@include corte($cl-yellow, $bg, $bsu*2, $bsu--small);*/ }
   .click-to-call-camp__form a {
-    color: #5C2D91; }
+    color: #A6CE39; }
   @media screen and (min-width: 1025px) {
     .click-to-call-camp__form a[href^="tel:"] {
       color: #fff;
@@ -4661,7 +4661,7 @@ li {
     .click-to-call-camp__form .div_text::after {
       border-style: solid;
       border-width: 0 0 10px 6.89655px;
-      border-color: transparent transparent #FFD400 transparent; }
+      border-color: transparent transparent #5C2D91 transparent; }
     .click-to-call-camp__form .wpcf7-form-control-wrap::before,
     .click-to-call-camp__form .div_text::before {
       /*border: $corte/2 solid transparent;
@@ -4681,7 +4681,7 @@ li {
     .click-to-call-camp__form .div_text > input,
     .click-to-call-camp__form .div_text > textarea,
     .click-to-call-camp__form .div_text > select {
-      background: #FFD400; }
+      background: #5C2D91; }
   .click-to-call-camp__form .btn {
     background-color: #A6CE39;
     padding: 10px;
@@ -4696,7 +4696,7 @@ li {
     .click-to-call-camp__form .btn::after {
       border-style: solid;
       border-width: 0 0 20px 13.7931px;
-      border-color: transparent transparent #FFD400 transparent; }
+      border-color: transparent transparent #5C2D91 transparent; }
   .click-to-call-camp__form .your-subject {
     display: none; }
   .click-to-call-camp__form .wpcf7 {
@@ -4711,7 +4711,7 @@ li {
     .click-to-call-camp__form .wpcf7-validation-errors.wpcf7-validation-errors::after {
       border-style: solid;
       border-width: 0 0 20px 13.7931px;
-      border-color: transparent transparent #FFD400 transparent; }
+      border-color: transparent transparent #5C2D91 transparent; }
   .click-to-call-camp__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
     color: #fff;
     border: none;
@@ -4722,12 +4722,12 @@ li {
     .click-to-call-camp__form .wpcf7-mail-sent-ok.wpcf7-mail-sent-ok::after {
       border-style: solid;
       border-width: 0 0 20px 13.7931px;
-      border-color: transparent transparent #FFD400 transparent; }
+      border-color: transparent transparent #5C2D91 transparent; }
 
 .s-clicktocall__form--open {
   visibility: visible;
   max-height: 750px;
-  top: 200px;
+  top: 120px;
   opacity: 1;
   transition: all 0.25s ease-in-out; }
 
@@ -4745,7 +4745,7 @@ li {
   .div_text::after {
     border-style: solid;
     border-width: 0 0 10px 6.89655px;
-    border-color: transparent transparent #FFD400 transparent; }
+    border-color: transparent transparent #5C2D91 transparent; }
   .div_text::before {
     /*border: $corte/2 solid transparent;
     border-right-color: $color;
@@ -4761,20 +4761,20 @@ li {
   .div_text > input,
   .div_text > textarea,
   .div_text > select {
-    background: #FFD400; }
+    background: #5C2D91; }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .click-to-call-camp__form {
     top: 45%;
     left: 0;
     margin-left: 0px;
     margin-top: -200px; } }
 
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 769px) {
   .click-to-call-camp__form {
     left: 50%;
     top: 45%;
-    margin-left: -320px;
+    margin-left: -400px;
     margin-top: -200px; } }
 
 /**********************************************
