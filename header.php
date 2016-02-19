@@ -78,7 +78,7 @@
       echo do_shortcode($formpage);
     ?>
     
-    <a href="tel:01131235537" class="mobile-tel">11 3123.5537</a>
+    <a href="tel:01121253255" class="mobile-tel">11 2125.3255</a>
     
     <div class="form__register"><?php wp_login_form(); ?></div>
   </header>
