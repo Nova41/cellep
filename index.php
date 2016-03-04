@@ -3,7 +3,7 @@
   <div class="flexfix"><div class="slider-grid grid-tiles__item">
     <section class="slider corte loading">
       <?php
-      
+        
         $slides = new WP_Query(array(
             'post_type'      => 'slide',
             'slider'         => 'home',

@@ -854,4 +854,24 @@
   //});
   
   
+  /* global PegaURL */
+  /* global TrataURL */
+  
+  var PegaURL = window.location.href.split('/');
+  var TrataURL = '/'+PegaURL[3]+'/';
+  
+  if (TrataURL === '/trabalhe-conosco/'){
+    window.location.href='/#institucional/trabalhe-conosco';
+  } else if (TrataURL === '/sobre-a-gente/'){
+    window.location.href='/#institucional/sobre-a-gente';
+  } else if (TrataURL === '/ouvidoria/'){
+    window.location.href='/#institucional/ouvidoria';
+  } else if (TrataURL === '/fornecedores/'){
+    window.location.href='/#institucional/fornecedores';
+  } else if (TrataURL === '/unidades/'){
+    window.location.href='/#institucional/unidades';
+  }
+  
+  
+  
 })(jQuery, window, document);

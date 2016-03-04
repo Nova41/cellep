@@ -1895,6 +1895,9 @@ div.wpcf7 img.ajax-loader {
 .check-valores {
   margin-bottom: 40px; }
 
+.ip {
+  display: none; }
+
 /* UI COMPONENTS */
 @-webkit-keyframes ball-scale {
   0% {

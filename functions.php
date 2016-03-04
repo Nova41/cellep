@@ -645,4 +645,26 @@ function site_scripts() {
 add_action( 'wp_enqueue_scripts', 'site_scripts' );
 
 
+function get_client_ip() {
+     $ipaddress = '';
+     if ($_SERVER['HTTP_CLIENT_IP'])
+         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+     else if($_SERVER['HTTP_X_FORWARDED_FOR'])
+         $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+     else if($_SERVER['HTTP_X_FORWARDED'])
+         $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+     else if($_SERVER['HTTP_FORWARDED_FOR'])
+         $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+     else if($_SERVER['HTTP_FORWARDED'])
+         $ipaddress = $_SERVER['HTTP_FORWARDED'];
+     else if($_SERVER['REMOTE_ADDR'])
+         $ipaddress = $_SERVER['REMOTE_ADDR'];
+     else
+         $ipaddress = 'UNKNOWN';
+
+     return $ipaddress;
+}
+add_shortcode('show_ip', 'get_client_ip');
+
+
 ?>

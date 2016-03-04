@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Com Cel.Lep, seu mundo fica maior. Aprenda inglês e espanhol no Cel.Lep, o curso de idiomas com o maior índice de reconhecimento de qualidade de São Paulo. Visite uma de nossas unidades e descubra."/>
+    <meta name="description" content="Com Cel.Lep, seu mundo fica maior. Aprenda inglês e espanhol no Cel.Lep, o curso de idiomas com o maior índice de reconhecimento de qualidade de São Paulo."/>
     <!--<meta name="robots" content="index, follow">-->
     <meta name="google-site-verification" content="google00b5df27e15424a7.html" />
     <meta property="og:title" content="Cel.Lep Idiomas | Os melhores cursos de Inglês e Espanhol de São Paulo"/>
@@ -14,7 +14,7 @@
     <meta property="og:url" content="http://br.cellep.com/"/>
     <meta property="og:image" content="http://centraldoaluno2.cellep.com/images/logo.png"/>
     <meta property="og:site_name" content="Cel.Lep"/>
-    <meta property="og:description" content="Com Cel.Lep, seu mundo fica maior. Aprenda inglês e espanhol no Cel.Lep, o curso de idiomas com o maior índice de reconhecimento de qualidade de São Paulo. Visite uma de nossas unidades e descubra."/>
+    <meta property="og:description" content="Com Cel.Lep, seu mundo fica maior. Aprenda inglês e espanhol no Cel.Lep, o curso de idiomas com o maior índice de reconhecimento de qualidade de São Paulo."/>
     <meta name="keywords" content="Idioma, Cursos, Inglês, Espanhol, Família, Filhos, Vida, Certificados, Cambridge, Site"/>
 
     <link href="//www.google-analytics.com" rel="dns-prefetch">
@@ -40,7 +40,6 @@
   </head>
 
   <body <?php body_class(); ?>>
-    
   
   <!-- Google Tag Manager -->
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZZX44"
