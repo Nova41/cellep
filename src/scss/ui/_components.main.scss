@@ -1245,19 +1245,82 @@
  *	header.php
  *********************************************/
 
-	.content__form,
-	.content-camp__form{
+	.content__form {
 		float: left;
 		padding: 20px;
 	}
+	
+	.content-camp__form {
+		padding: 80px 20px;
+		margin: 0 auto;
+	}
+	
+	@media screen and (min-width:769px){
+		.content-camp__form {
+			max-width: 60%;
+		}
+		.logo-landing {
+			width: 120px;
+			height: 46px;
+			margin-left: -60px;
+		}
+		
+		.btn__landing {
+		position: absolute;
+		}
+		
+		.click-to-call-camp__form,
+		.click-to-call-camp__form--open {
+			position: fixed;
+		}
+		
+		.close-camp__form.close-camp__form {
+			top: $bsu;
+			@include font-size($milli-size, 1);
+		}
+	}
+	
+	@media screen and (max-width:768px){
+		.content-camp__form {
+			max-width: 100%;
+		}
+		.logo-landing {
+			width: 90px;
+			height: 35px;
+			margin-left: -45px;
+		}
+		.btn__landing {
+			display: none;
+		}
+		
+		.click-to-call-camp__form,
+		.click-to-call-camp__form--open {
+			position: absolute;
+			min-height: 700px;
+		}
+		
+		.close-camp__form.close-camp__form {
+			top: $bsu*5;
+			@include font-size($base-font-size, 1);
+		}
+	}
+	
+	.logo-landing {
+		position: absolute;
+		left: 50%;
+		top: 3%;
+	}
+	
+	.btn__landing {
+		font-size: 12px;
+	}
  
 	.close__form.close__form,
-	.close-camp__form.close-camp__form{
+	.close-camp__form.close-camp__form {
 		position: absolute;
 		right: $bsu;
-		top: $bsu;
 		color: $white;
-		@include font-size($milli-size, 1);
+		
 	}
  
 	.click-to-call,
@@ -1317,11 +1380,12 @@
 	
 	.click-to-call-camp__form{
 		visibility: hidden;
-		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
 		overflow: hidden;
-		max-width: $bsu*40;
 		opacity: 0;
-		width: 100%;
 		z-index: 10;
 		transition: all $timing/2 ease-in-out;
 		background-color: $cl-purple;
@@ -1374,30 +1438,16 @@
 		
 		.s-clicktocall-camp__form--open{
 			visibility: visible;
-			top: 50%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
 			opacity: 1;
 			transition: all $timing/2 ease-in-out;
 		}
 		
 		.div_text { 
 			@include input($white, $cl-purple, $bsu--small);
-		}
-		
-		@media screen and (max-width: 768px) {
-			.click-to-call-camp__form{
-				top: 45%;
-				left: 0;
-				margin-left: 0px;
-				margin-top: -200px;
-			}
-		}
-		@media screen and (min-width: 769px) {
-			.click-to-call-camp__form{
-				left: 50%;
-				top: 45%;
-				margin-left: -400px;
-				margin-top: -200px;
-			}
 		}
 		
 		

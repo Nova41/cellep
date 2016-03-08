@@ -504,13 +504,13 @@
 		e.preventDefault();
 	});
 	
-	$('#header').on('click', '.close-camp__form' ,function(e){
+	$('#header').on('click', '.close-camp__form, .btn__landing' ,function(e){
 		$('.click-to-call-camp__form').removeClass('s-clicktocall-camp__form--open');
 		e.preventDefault();
 	});
 	
 	outsideClose($('.click-to-call, .click-to-call__form'), 's-clicktocall__form--open');
-	outsideClose($('.click-to-call-camp, .click-to-call-camp__form'), 's-clicktocall-camp__form--open');
+	//outsideClose($('.click-to-call-camp, .click-to-call-camp__form'), 's-clicktocall-camp__form--open');
 	masks();
 	$('.click-to-call-camp__form').toggleClass('s-clicktocall-camp__form--open');
 	
